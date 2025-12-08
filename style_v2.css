@@ -608,7 +608,7 @@ footer {
     }
 }
 
-/* --- MOBILE RESPONSIVENESS (Max-Width: 768px) --- */
+/* Netlify Trigger Block */
 @media (max-width: 768px) {
     /* Container Padding */
     .container {
