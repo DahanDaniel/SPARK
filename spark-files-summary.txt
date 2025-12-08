@@ -1,0 +1,17 @@
+PODSUMOWANIE PLIKÓW PROJEKTOWYCH SPARK
+
+1. spark-coldmail.txt
+   - Zawiera treść krótkiego cold maila (10-13 linii) skierowanego do właścicieli firm.
+   - Skupia się na problemie chaosu operacyjnego i oferuje jasne rozwiązanie (Mapping Lite).
+   - Zawiera 3 warianty Call To Action (CTA) o różnym stopniu zaangażowania.
+
+2. landing-page-SPARK.txt
+   - Treść minimalistycznego Landing Page'a.
+   - Struktura: Problem -> Rozwiązanie (Mapping Lite) -> Konkrety (Co dostajesz: mapa, rekomendacje) -> Cena (497 PLN).
+   - Uzasadnienie promocji (budowa portfolio case study) i budowanie zaufania (doświadczenie od 1991).
+
+3. spark-entry-comms-plan.md
+   - Strategia komunikacji łącząca maila z landing pagem.
+   - Harmonogram 5 follow-upów rozpisany na 14 dni.
+   - Przykładowe wiadomości "light" na LinkedIn i SMS.
+   - Wyjaśnienie narracji psychologicznej (dlaczego to zadziała).
