@@ -642,7 +642,7 @@ footer {
     .hero {
         height: auto;
         min-height: auto; /* Let content define height */
-        padding: 4rem 0 4rem; /* Reduced top padding since navbar is relative */
+        padding: 1.5rem 0 3rem; /* Reduced top padding since navbar is relative */
         text-align: center;
         background-position: center bottom;
     }
