@@ -617,6 +617,7 @@ footer {
 
     /* Navbar */
     .navbar {
+        position: relative; /* Fixes overlap issue by pushing content down */
         padding: 1rem 0;
     }
     .navbar-content {
@@ -640,8 +641,8 @@ footer {
     /* Hero Section */
     .hero {
         height: auto;
-        min-height: 100svh; /* Use SVH for better mobile handling */
-        padding: 8rem 0 4rem;
+        min-height: auto; /* Let content define height */
+        padding: 4rem 0 4rem; /* Reduced top padding since navbar is relative */
         text-align: center;
         background-position: center bottom;
     }
