@@ -67,43 +67,35 @@
         </div>
     </section>
 
-    <section id="process" class="section-process">
+    <section id="ai-risks" class="section-about" style="background-color: #0F172A; color: white;">
         <div class="container">
             <div class="section-header center">
-                <div class="section-label">ROZWIĄZANIE</div>
-                <h2>Raport "Traffic Light"</h2>
-                <p>Prosty sygnał dla Zarządu. Zielone - wdrażać. Czerwone - sprzątać.</p>
+                <div class="section-label" style="color: #3B82F6;">RYZYKO</div>
+                <h2 style="color: white;">AI to wzmacniacz.</h2>
+                <p style="color: #94A3B8;">Wzmacnia to, co masz. Jeśli masz chaos, AI wzmocni chaos.</p>
             </div>
-            
-            <div class="process-showcase">
-                <div class="process-img-col">
-                    <img src="images/spark_ai_hero.png" alt="Wizualizacja Audytu" class="process-img">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🗑️</div>
+                    <h3>Garbage In, Garbage Out</h3>
+                    <p>AI karmione śmieciowymi danymi produkuje śmieciowe wyniki. 80% firm próbuje wdrażać boty na nieuporządkowanych Excelach – to prosta droga do katastrofy.</p>
                 </div>
-                <div class="process-steps-col">
-                    <div class="step-card">
-                        <div class="step-num">01</div>
-                        <div class="step-content">
-                            <h3>Analiza Danych</h3>
-                            <p>Czy masz dane? Czy są cyfrowe? Czy są czyste? AI karmi się informacją.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-num">02</div>
-                        <div class="step-content">
-                            <h3>Analiza Procedur</h3>
-                            <p>Czy pracownicy wiedzą co robić, czy improwizują? AI nie potrafi improwizować.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-num">03</div>
-                        <div class="step-content">
-                            <h3>Raport + Werdykt</h3>
-                            <p>Jasna ocena gotowości. Oszczędzisz tysiące złotych na nieudanym wdrożeniu.</p>
-                        </div>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">😵‍💫</div>
+                    <h3>Halucynacje Proceduralne</h3>
+                    <p>Model językowy (LLM) nie domyśli się, jak działa Twoja firma. Jeśli nie masz spisanych procedur krok po kroku, bot zacznie zmyślać fakty przed klientem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">💸</div>
+                    <h3>Przepalony Budżet</h3>
+                    <p>Wdrażanie narzędzi "bo modne" kończy się drogą subskrypcją, z której nikt nie korzysta. Nasz audyt chroni Cię przed inwestycją w "zabawki".</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="process" class="section-process">
+        <!-- ... existing process content ... -->
     </section>
 
     <section id="pricing" class="section-pricing">
@@ -128,7 +120,26 @@
                         <li><span class="icon">✓</span> Raport Końcowy "Traffic Light"</li>
                         <li><span class="icon">✓</span> Rekomendacja narzędziowa</li>
                     </ul>
-                    <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary btn-full">Zamawiam Raport (497 PLN)</a>
+                    
+                    <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary btn-full">Umów Rozmowę Wstępną (Weryfikacja)</a>
+                    <p class="micro-copy">Płatność (497 PLN) po potwierdzeniu zakresu audytu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-contact">
+        <div class="container">
+            <h2>Zatrzymaj chaos. Zrób pierwszy krok.</h2>
+            <div class="contact-actions">
+                <button class="btn btn-primary btn-lg" onclick="window.location.href='https://calendar.app.google/ufEWQ4dGt9DwBgnJA'">Zarezerwuj 90-min Sesję</button>
+                <div class="divider">LUB</div>
+                <div class="callback-box">
+                    <p>Wolisz rozmowę telefoniczną?</p>
+                    <form action="https://formspree.io/f/xvgebblj" method="POST" data-netlify="true">
+                        <input type="tel" name="phone" placeholder="Twój numer telefonu" required>
+                        <button type="submit">Oddzwońcie</button>
+                    </form>
                 </div>
             </div>
         </div>

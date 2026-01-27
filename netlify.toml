@@ -1,0 +1,9 @@
+[build]
+  base = "web_landing_page"
+  publish = "deploy"
+
+[context.production]
+  publish = "deploy"
+
+[context.deploy-preview]
+  publish = "deploy"
