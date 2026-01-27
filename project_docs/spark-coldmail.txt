@@ -9,11 +9,13 @@ Kwota jest symboliczna, tylko by wykluczyć "turystów". Ryzyko żadne – brak 
 
 Czy znajdziesz 15-20 minut na krótką rozmowę diagnostyczną, by ocenić czy to dla Ciebie?
 
+
 ---
 CTA GŁÓWNE:
-"Zarezerwuj 15-min diagnostykę tutaj: [Link]" + "Lub odpisz TAK, a zadzwonię w dogodnej porze."
+"Opisałem szczegóły propozycji (i to dlaczego jest 10x tańsza niż rynkowa) na tej stronie:
+[LINK_DO_TWOJEGO_LANDING_PAGE]
 
-CTA ALTERNATYWNE (do wyboru):
-1. (Lekkie): "Jeśli brzmi to sensownie, podeślę link do opisu sesji. Zainteresowany?"
-2. (Średnie): "Możemy zdzwonić się w czwartek na 10 minut? Opowiem, jak to wyglądało u innych."
-3. (Konkretne): "Tu jest link do kalendarza – wybierz termin, zanim pula promocyjna się wyczerpie."
+Znajdziesz tam pełny opis sesji i kalendarz. Wybierz termin, zanim pula promocyjna się wyczerpie."
+
+CTA ALTERNATYWNE (do follow-upu):
+"Jeśli wolisz najpierw rzucić okiem na konkrety – tutaj wrzuciłem opis techniczny Mapping Lite: [LINK_DO_TWOJEGO_LANDING_PAGE]"
