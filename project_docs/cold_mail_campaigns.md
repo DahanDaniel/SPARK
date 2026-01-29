@@ -18,7 +18,7 @@ Większość firm traci pieniądze nie przez brak klientów, ale przez chaos wew
 Chcemy to dla Was narysować. Inżynierska mapa Waszego procesu, która pokaże dokładnie, gdzie tracicie czas i pieniądze. Bez zbędnego gadania, czysta diagnoza.
 
 Zobacz, jak wygląda taki raport i co możemy dla Was zmapować:
-[LINK DO OFERTY - MAPPING LITE]
+https://corevalue.pl/lp-process
 
 Pozdrawiam,
 Zespół SPARK
@@ -37,7 +37,7 @@ Chciałbym zaproponować 20-minutową rozmowę. Opowiesz mi o tym procesie, a ja
 To darmowa próbka naszej metody, żebyś zobaczył wartość inżynierskiego podejścia.
 
 Zarezerwuj termin tutaj:
-[LINK DO ROZMOWY - FREE SKETCH]
+https://corevalue.pl/lp-consulting
 
 Pozdrawiam,
 Zespół SPARK
@@ -57,7 +57,7 @@ Każdy chce teraz wdrażać AI. Ale wdrożenie automatyzacji na chaotyczne proce
 Zanim wydacie budżet na narzędzia AI, sprawdźcie czy Wasza firma jest na to gotowa. Przygotowaliśmy usługę "AI Readiness Check". Sprawdzamy Wasze dane i procedury, a potem dostajecie jasny sygnał: czy można wdrażać, czy trzeba najpierw posprzątać.
 
 Sprawdź szczegóły audytu tutaj:
-[LINK DO OFERTY - AI READINESS]
+https://corevalue.pl/lp-ai-audit
 
 Pozdrawiam,
 Zespół SPARK
@@ -76,7 +76,7 @@ Proponuję krótką, niezobowiązującą rozmowę. Rzucasz pomysł (np. "automat
 Bez sprzedaży, czysta weryfikacja pomysłu przez inżyniera.
 
 Wybierz termin rozmowy:
-[LINK DO ROZMOWY - AI POTENTIAL]
+https://corevalue.pl/lp-automation
 
 Pozdrawiam,
 Zespół SPARK

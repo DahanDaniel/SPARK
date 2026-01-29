@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Check | SPARK Tech</title>
+    <meta name="description" content="Zanim wdrożysz AI, uporządkuj procesy. Sprawdź swoją gotowość technologiczną.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style_v2.css">
+    <link rel="stylesheet" href="../style_variants.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWFRMF2LHJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HWFRMF2LHJ');
+    </script>
+</head>
+<body class="theme-ai">
+
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="brand">SPARK <span class="est">EST. 1991</span></div>
+            <div class="nav-links">
+                <a href="#audit">Narzędzie Audytu</a>
+                <a href="#why">Dlaczego Procesy?</a>
+                <a href="#contact">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container center" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="hero-text" style="max-width: 800px; margin: 0 auto;">
+                <span class="badg" style="border-color:var(--accent-color); color:var(--accent-color);">AI Foundation Check</span>
+                <h1>Bez mapy procesów<br>AI to tylko kosztowny gadżet.</h1>
+                <p class="hero-sub">Automatyzowanie chaosu tylko go przyspiesza. Sprawdź, czy Twoja firma jest gotowa na technologiczną rewolucję.</p>
+            </div>
+
+            <!-- Quiz Component -->
+            <div class="tech-quiz" id="audit">
+                <div class="tech-quiz-header">
+                    <span style="color:white; font-size:0.8rem; text-transform:uppercase;">Narzędzie Weryfikacji</span>
+                    <h3 style="color:var(--accent-color); margin:0;">AI Readiness Tool v.1.0</h3>
+                </div>
+
+                <div id="quiz-step-1">
+                    <div class="quiz-question">1. Czy Twoje kluczowe procesy są spisane?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextStep(1, 0)">Nie, są w "głowach"</button>
+                        <button class="quiz-btn" onclick="nextStep(1, 5)">Częściowo</button>
+                        <button class="quiz-btn" onclick="nextStep(1, 10)">Tak, mamy mapy BPMN</button>
+                    </div>
+                </div>
+
+                <div id="quiz-step-2" style="display:none;">
+                    <div class="quiz-question">2. Czy Twoje dane o klientach są w CRM?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextStep(2, 0)">Excel / Kartki</button>
+                        <button class="quiz-btn" onclick="nextStep(2, 5)">Mamy CRM, ale bałagan</button>
+                        <button class="quiz-btn" onclick="nextStep(2, 10)">Tak, pełna integracja</button>
+                    </div>
+                </div>
+
+                <div id="quiz-step-3" style="display:none;">
+                    <div class="quiz-question">3. Czy masz standardy (SOP)?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextStep(3, 0)">Brak standardów</button>
+                        <button class="quiz-btn" onclick="nextStep(3, 10)">Tak, używamy checklist</button>
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="quiz-result">
+                    <p style="text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem; color: #aaa;">Wynik Audytu:</p>
+                    <span class="quiz-score" id="final-score">0%</span>
+                    <p id="score-msg" style="margin-bottom: 2rem;">...</p>
+                    
+                    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color:white; margin-bottom:1rem; font-size: 1rem;">Odbierz Raport + Plan Naprawczy</h3>
+                        <form action="https://formspree.io/f/xvgebblj" method="POST">
+                            <input type="hidden" name="source" value="AI_Quiz_Score">
+                            <input type="hidden" id="form-score" name="quiz_score" value="">
+                            <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+                                <input type="email" name="email" placeholder="Twój e-mail firmowy" required 
+                                       style="padding: 0.8rem; border-radius: 4px; border:none; width: 100%; max-width: 250px; background: #fff; color: #000;">
+                                <button type="submit" class="btn btn-primary" style="border:none; background:var(--accent-color); color:black; font-weight:700; width: 100%; max-width: 250px;">Prześlij Wynik</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Value Framing Section: The Trap -->
+    <section class="section-value-framing" style="background: #000; padding: 4rem 0 10rem 0; border-bottom: none; position: relative; z-index: 10;">
+        <div class="container center">
+            <h2 style="font-family: 'Orbitron', sans-serif; color: #fff; margin-bottom: 2rem;">AI to Mnożnik. Co mnożysz?</h2>
+            
+            <p style="margin-bottom: 3rem; font-size: 1.2rem; color: #ccc;">Większość firm pomija ten krok. Wdrażanie AI na chaos to samobójstwo.</p>
+
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: -14rem; position: relative; z-index: 20;">
+                <!-- Card 1: Disaster -->
+                <div style="flex: 1; min-width: 300px; background: #0a0000; border: 1px solid #FF4444; padding: 2rem; border-radius: 8px; text-align: left; box-shadow: 0 0 30px rgba(255, 68, 68, 0.1);">
+                    <div style="color: #FF4444; font-size: 2rem; margin-bottom: 1rem;">⚠️ Wynik 0</div>
+                    <h3 style="color: #fff;">Chaos × AI = Katastrofa</h3>
+                    <p style="color: #ccc; font-size: 0.9rem;">Jeśli wdrożysz automatyzację na bałagan w danych, AI będzie popełniać błędy 1000x szybciej niż człowiek. To kosztuje fortunę.</p>
+                </div>
+                
+                <!-- Card 2: Arrow -->
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 2rem; color: #555;">VS</span>
+                </div>
+
+                <!-- Card 3: Success -->
+                <div style="flex: 1; min-width: 300px; background: #000a05; border: 1px solid #00FF94; padding: 2rem; border-radius: 8px; text-align: left; box-shadow: 0 0 30px rgba(0, 255, 148, 0.1);">
+                    <div style="color: #00FF94; font-size: 2rem; margin-bottom: 1rem;">🚀 Wynik 100</div>
+                    <h3 style="color: #fff;">Proces × AI = Dominacja</h3>
+                    <p style="color: #ccc; font-size: 0.9rem;">Czyste procesy są paliwem dla AI. Tylko wtedy algorytmy realnie zarabiają, a nie tylko generują koszty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="section-about" style="padding-top: 16rem;">
+        <div class="container">
+            <div class="grid-split">
+                <div>
+                    <h2>Najpierw Procesy,<br>Potem Robotyzacja</h2>
+                    <p>Większość firm zaczyna od narzędzi. To błąd. "Garbage In, Garbage Out". Jeśli nakarmisz AI bałaganem, otrzymasz zautomatyzowany bałagan.</p>
+                    <ul class="features-list">
+                        <li><span class="icon" style="color:var(--accent-color)">></span> Oczyszczenie danych</li>
+                        <li><span class="icon" style="color:var(--accent-color)">></span> Jasne reguły decyzyjne</li>
+                        <li><span class="icon" style="color:var(--accent-color)">></span> Standaryzacja input/output</li>
+                    </ul>
+                </div>
+                <!-- Launchpad Card -->
+                <div class="card-dark" style="padding:2rem; border-radius:12px; background: #111; border: 1px solid #333;">
+                    <div style="border-bottom: 1px solid #333; padding-bottom: 1rem; margin-bottom: 1rem;">
+                         <h3 style="color:white; margin:0;">AI Launchpad</h3>
+                         <span style="font-size: 0.8rem; color: #666; text-transform:uppercase;">Techniczny Plan Wdrożenia</span>
+                    </div>
+                    <p style="color: #aaa;">90-minutowa sesja, która przygotowuje architekturę danych pod wdrożenie.</p>
+                    <div style="margin-top:2rem;">
+                        <span style="display:block; font-size:2rem; color:var(--accent-color); font-weight:700;">Wycena indywidualna</span>
+                        <span style="color:#666; font-size:0.9rem;">(Zależna od skali danych)</span>
+                    </div>
+                    <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem; display:inline-block; width:100%; text-align:center; text-decoration:none;">Zapytaj o Audyt</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-contact" style="background: #0A0A0A; border-top: 1px solid #222;">
+        <div class="container">
+            <h2 style="color:white; margin-bottom: 2rem;">Pytania Techniczne?</h2>
+            <div class="contact-actions">
+                <div class="callback-box" style="background: #111; padding: 2rem; border-radius: 8px; border: 1px solid #333;">
+                    <p style="color: #aaa; margin-bottom: 1rem;">Zostaw kontakt do działu technicznego.</p>
+                    <form action="https://formspree.io/f/xvgebblj" method="POST" data-netlify="true" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                        <input type="tel" name="phone" placeholder="Twój numer telefonu" required style="padding: 1rem; border: 1px solid #444; background: #000; color: white; border-radius: 4px; min-width: 250px;">
+                        <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer; background: #333; color: white; border: 1px solid #555;">Kontakt</button>
+                    </form>
+                    <div style="margin-top: 1.5rem; border-top: 1px solid #333; padding-top: 1rem; width: 100%;">
+                        <p style="color: #888; font-size: 0.9rem; margin-bottom: 0.5rem;">Bezpośredni kontakt mailowy:</p>
+                        <a href="mailto:dd@goldenleadgeneration.com" style="color: var(--accent-color); text-decoration: none; font-size: 1rem; letter-spacing: 0.5px;">dd@goldenleadgeneration.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 SPARK. EST. 1991. Business Engineering.</p>
+            <div class="footer-legal">
+                <a href="https://idaco.pl/kontakt/polityka-prywatnosci/" target="_blank">Polityka Prywatności</a>
+                <span class="legal-note" style="margin-left: 1rem;">Administratorem danych jest SPARK.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="container cookie-content">
+            <p>Strona wykorzystuje pliki cookies w celu realizacji usług. Korzystając ze strony wyrażasz zgodę na ich używanie.</p>
+            <button class="btn" onclick="document.getElementById('cookie-banner').style.display='none'">Akceptuję</button>
+        </div>
+    </div>
+
+    <script>
+        let totalScore = 0;
+        const maxScore = 30;
+
+        function nextStep(currentStep, points) {
+            totalScore += points;
+            document.getElementById('quiz-step-' + currentStep).style.display = 'none';
+            const next = document.getElementById('quiz-step-' + (currentStep + 1));
+            if (next) {
+                next.style.display = 'block';
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.style.display = 'block';
+            
+            const percentage = Math.round((totalScore / maxScore) * 100);
+            document.getElementById('final-score').textContent = percentage + "%";
+            document.getElementById('form-score').value = percentage + "%";
+
+            const msg = document.getElementById('score-msg');
+            if(percentage < 50) {
+                msg.textContent = "Krytycznie niski poziom. Wdrożenie AI teraz spotęguje błędy.";
+                msg.style.color = "#FF4444";
+            } else if (percentage < 80) {
+                msg.textContent = "Przeciętny poziom. Wymagane uporządkowanie danych przed startem.";
+                msg.style.color = "#FFBB33";
+            } else {
+                msg.textContent = "Wysoki poziom gotowości! Możemy rozmawiać o zaawansowanej automatyzacji.";
+                msg.style.color = "var(--accent-color)";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK | Inżynieria Chaosu</title>
+    <meta name="description" content="AI Readiness Check. Zamień chaos w strukturę.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_high.css">
+    
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body class="dark-theme">
+
+    <div class="loader">
+        <div class="loader-text">Initialising Spark Protocol...</div>
+    </div>
+
+    <!-- The Stage -->
+    <main>
+        <!-- Sticky Canvas Container -->
+        <div id="canvas-container">
+            <canvas id="hero-canvas"></canvas>
+            
+            <!-- Scrollytelling Overlays -->
+            <div class="overlay-text" data-step="0">
+                <span class="glitch">ERROR: PROCESS OVERLOAD</span>
+                <h1>Automatyzacja Chaosu...</h1>
+            </div>
+            
+            <div class="overlay-text" data-step="1">
+                <span class="warning">WARNING: INEFFICIENCY DETECTED</span>
+                <h1>...Tylko Skaluje Błędy.</h1>
+            </div>
+            
+            <div class="overlay-text" data-step="2">
+                <span class="success">SYSTEM: OPTIMIZED</span>
+                <h1>Najpierw Struktura.<br>Potem AI.</h1>
+            </div>
+        </div>
+
+        <!-- Spacer for Scroll Duration -->
+        <div class="scroll-spacer"></div>
+
+        <!-- Content Sections (Appear after scroll sequence) -->
+        <section id="audit-offer" class="content-section">
+            <div class="container">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <span class="badge">AI Readiness Check</span>
+                        <h2>Audyt Gotowości</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Sprawdź, czy Twoja firma jest gotowa na AI, zanim przepalisz budżet.</p>
+                        <ul class="feature-list">
+                            <li>Analiza Danych</li>
+                            <li>Mapowanie Procesów</li>
+                            <li>Raport Traffic Light</li>
+                        </ul>
+                        <div class="pricing">
+                            <span class="price">497 PLN</span>
+                            <button class="btn-glow" onclick="window.location.href='https://calendar.app.google/ufEWQ4dGt9DwBgnJA'">Zarezerwuj Audyt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/scroll-animation.js"></script>
+</body>
+</html>
