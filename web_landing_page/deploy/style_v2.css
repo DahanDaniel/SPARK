@@ -146,6 +146,7 @@ h1, h2, h3, .brand { font-family: var(--font-heading); }
     background: url('images/spark_hero_modern.png') no-repeat center center/cover;
     color: white;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    padding-top: 120px; /* Fix for fixed navbar overlap */
 }
 
 .hero-overlay {
