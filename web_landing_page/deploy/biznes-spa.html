@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA dla Biznesu | Odzyskaj Spokój w Firmie</title>
+    <meta name="description" content="Zamień chaos w krystaliczną strukturę. Mapowanie procesów jako rytuał klarowności dla Twojej firmy.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style_v2.css">
+    <link rel="stylesheet" href="style_variants.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWFRMF2LHJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HWFRMF2LHJ');
+    </script>
+</head>
+<body class="theme-spa">
+
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="brand">SPARK <span class="est">EST. 1991</span></div>
+            <div class="nav-links">
+                <a href="#calculator">Kalkulator Strat</a>
+                <a href="#process">Metoda SPA</a>
+                <a href="#contact">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="grid-split">
+                <div class="hero-text">
+                    <span class="badg" style="background:transparent; color:#D4AF37; border-color:#D4AF37;">Harmonia w Biznesie</span>
+                    <h1>Twoja firma zasługuje na głęboki oddech.</h1>
+                    <p class="hero-sub">Czy wstydzisz się pokazać procesy nowym pracownikom? SPARK to Twoje firmowe SPA. Zamień toksyczny chaos w krystaliczną strukturę w 5 dni.</p>
+                    <div class="cta-group">
+                        <a href="#process" class="btn btn-primary">Rozpocznij Rytuał Klarowności</a>
+                    </div>
+                </div>
+                <!-- Calculator Component -->
+                <div class="chaos-calculator" id="calculator">
+                    <h3>Kalkulator Kosztów Chaosu</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #7F8C8D;">Ile pieniędzy "przepalasz" miesięcznie przez brak procesów?</p>
+                    
+                    <div class="calc-input-group">
+                        <label>Liczba pracowników biurowych</label>
+                        <input type="number" id="employees" value="5" min="1">
+                    </div>
+                    
+                    <div class="calc-input-group">
+                        <label>Średnia stawka godzinowa (brutto pracodawcy)</label>
+                        <input type="number" id="rate" value="50" min="1">
+                    </div>
+                    
+                    <div class="calc-input-group">
+                        <label>Zmarnowany czas dziennie (brak info, błędy)</label>
+                        <select id="inefficiency">
+                            <option value="0.10">10% (Optymista)</option>
+                            <option value="0.20" selected>20% (Realista)</option>
+                            <option value="0.30">30% (Pesymista)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-result">
+                        <div class="calc-result-label">Miesięczna Strata</div>
+                        <div class="calc-result-value" id="result">0 PLN</div>
+                        <p style="font-size: 0.8rem; margin-top: 5px; color: #95a5a6;">To koszt braku mapy procesu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="process" class="section-process" style="background:#fff;">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">METODOLOGIA</div>
+                <h2>Rytuał Porządkowania</h2>
+                <p>Nie naprawiamy wszystkiego naraz. Skupiamy się na jednym, kluczowym przepływie energii w Twojej firmie.</p>
+            </div>
+            
+            <div class="process-steps-col" style="flex-direction: row; gap: 2rem; overflow-x: auto;">
+                <div class="step-card" style="flex:1;">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>Diagnoza Stresu</h3>
+                        <p>Identyfikujemy miejsca, gdzie energia Twojego zespołu jest blokowana przez frustrujące procedury.</p>
+                    </div>
+                </div>
+                <div class="step-card" style="flex:1;">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>Oczyszczenie</h3>
+                        <p>Eliminujemy zbędne kroki. Twoje procesy stają się lekkie i przejrzyste jak woda.</p>
+                    </div>
+                </div>
+                <div class="step-card" style="flex:1;">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>Nowy Balans</h3>
+                        <p>Otrzymujesz mapę (PDF), która jest instrukcją spokoju dla Ciebie i pracowników.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section-pricing" style="background: #1A252F;">
+        <div class="container">
+            <div class="pricing-card enhanced">
+                <div class="pricing-header">
+                    <span class="offer-badge" style="background:#D4AF37; color:white;">Oferta Wstępna</span>
+                    <h2>Sesja Krystalizacji</h2>
+                    <p style="color: #7F8C8D; margin-bottom: 0;">Strategia & Mapa Procesu</p>
+                    <div class="price-wrapper" style="margin-top: 1rem;">
+                        <span class="new-price" style="color: #2C3E50;">497 PLN</span>
+                    </div>
+                </div>
+                <div class="pricing-body">
+                    <p>Zanim zainwestujesz w drogie wdrożenia, zacznij od fundamentów. </p>
+                    <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary btn-full" style="background: #2C3E50;">Rezerwuję Sesję Oczyszczającą</a>
+                    <p class="micro-copy">Gwarancja Satysfakcji lub zwrot środków.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-contact" style="background: #FDFBF7;">
+        <div class="container">
+            <h2>Masz pytania przed rozpoczęciem?</h2>
+            <div class="contact-actions">
+                <div class="callback-box">
+                    <p>Zostaw telefon lub zapytanie - oddzwonimy ze spokojem.</p>
+                    <!-- Form prepared for Formspree (Universal) or Netlify Forms (Hosting) -->
+                    <form action="https://formspree.io/f/xvgebblj" method="POST" data-netlify="true" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                        <input type="tel" name="phone" placeholder="Twój numer telefonu" required style="padding: 1rem; border: 1px solid #D4AF37; border-radius: 4px; min-width: 250px;">
+                        <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer;">Zapytaj o szczegóły</button>
+                    </form>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #7F8C8D;">
+                        lub napisz bezpośrednio: <a href="mailto:dd@goldenleadgeneration.com" style="color: #D4AF37; text-decoration: none; font-weight: 600;">dd@goldenleadgeneration.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 SPARK. 30 lat doświadczenia w porządkowaniu biznesu.</p>
+            <div class="footer-legal">
+                <a href="https://idaco.pl/kontakt/polityka-prywatnosci/" target="_blank">Polityka Prywatności</a>
+                <span class="legal-note" style="margin-left: 1rem;">Administratorem danych jest SPARK.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="container cookie-content">
+            <p>Strona wykorzystuje pliki cookies w celu realizacji usług. Korzystając ze strony wyrażasz zgodę na ich używanie.</p>
+            <button class="btn" onclick="document.getElementById('cookie-banner').style.display='none'">Akceptuję</button>
+        </div>
+    </div>
+
+    <!-- Calculator Logic -->
+    <script>
+        const els = {
+            emp: document.getElementById('employees'),
+            rate: document.getElementById('rate'),
+            eff: document.getElementById('inefficiency'),
+            res: document.getElementById('result')
+        };
+
+        function calculate() {
+            const employees = parseFloat(els.emp.value) || 0;
+            const rate = parseFloat(els.rate.value) || 0;
+            const inefficiency = parseFloat(els.eff.value) || 0;
+            const hoursPerDay = 8;
+            const daysPerMonth = 21;
+
+            // Cost = Employees * Hours * Days * Rate * Inefficiency
+            const monthlyLoss = employees * hoursPerDay * daysPerMonth * rate * inefficiency;
+            
+            els.res.textContent = Math.round(monthlyLoss).toLocaleString('pl-PL') + " PLN";
+        }
+
+        // Add listeners
+        Object.values(els).forEach(el => {
+            if(el !== els.res) el.addEventListener('input', calculate);
+        });
+
+        // Init
+        calculate();
+    </script>
+
+</body>
+</html>
