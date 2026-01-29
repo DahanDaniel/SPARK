@@ -38,6 +38,11 @@
     background: transparent; /* Remove dark overlay */
 }
 
+.theme-spa .hero p.hero-sub {
+    color: #666666; /* Slightly softer than #555 */
+    font-weight: 500;
+}
+
 .theme-spa .btn-primary {
     background-color: var(--primary-color);
     color: white;
