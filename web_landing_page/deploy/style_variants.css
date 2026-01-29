@@ -139,9 +139,16 @@
 }
 .theme-ai .brand { color: #ffffff; }
 .theme-ai .nav-links a { color: var(--text-dark); }
-.theme-ai .section-about, .theme-ai .section-process, .theme-ai .section-contact {
+.theme-ai .section-about, .theme-ai .section-process, .theme-ai .section-contact, .theme-ai .section-value-framing {
     background-color: var(--bg-light);
     color: var(--text-dark);
+}
+
+.theme-ai .hero p.hero-sub {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
 }
 
 .theme-ai .hero {
