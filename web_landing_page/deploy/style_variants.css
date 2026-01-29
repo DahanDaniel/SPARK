@@ -352,3 +352,36 @@
     background: var(--accent-color);
     color: black;
 }
+
+/* --- RESPONSIVE FIXES (Added for Mobile) --- */
+
+/* Process/Ritual Overlap Container */
+.process-overlap-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    overflow-x: visible; /* Show shadows properly */
+    margin-bottom: -5rem;
+    position: relative;
+    z-index: 20;
+    padding: 1rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .process-overlap-container {
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 1.5rem;
+        margin-bottom: -4rem; /* Slightly less overlap on mobile or same */
+        padding: 0.5rem; /* Less side padding */
+    }
+
+    .process-overlap-container .step-card {
+        width: 100%; /* Full width cards */
+    }
+    
+    /* Adjust top padding of the next section to accommodate the stack */
+    .section-value-framing {
+        padding-top: 6rem !important; 
+    }
+}
