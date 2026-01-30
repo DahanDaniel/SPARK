@@ -23,13 +23,19 @@ h1, h2, h3, h4 {
     letter-spacing: -0.02em;
 }
 
+/* Updated Section Label Style */
 .section-label {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--premium-gold);
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .text-gold { color: var(--premium-gold) !important; }
@@ -37,46 +43,53 @@ h1, h2, h3, h4 {
 
 /* --- Buttons --- */
 .btn-gold {
-    background: var(--premium-gold);
+    background: linear-gradient(135deg, #D4AF37 0%, #B4962E 100%);
     color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 8px;
+    padding: 1.2rem 3rem; /* Larger */
+    border-radius: 50px; /* Pill shape */
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--premium-gold);
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btn-gold:hover {
-    background: white;
-    color: var(--premium-gold);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.6);
+    filter: brightness(1.1);
 }
 
 .btn-outline-gold {
-    background: transparent;
-    color: var(--premium-gold);
-    border: 1px solid var(--premium-gold);
-    padding: 1rem 2.5rem;
-    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    color: #F8FAFC;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s;
+    backdrop-filter: blur(10px);
 }
 
 .btn-outline-gold:hover {
-    background: var(--premium-gold-dim);
-    color: white; /* Often on dark bg */
+    background: rgba(255,255,255,0.15);
+    border-color: white;
+    transform: translateY(-2px);
 }
 
 /* --- Hero Section Fix --- */
 .hero-long {
-    min-height: 95vh; /* Taller */
-    padding-top: 100px; /* Reduced from 120px to balance */
+    min-height: 95vh;
+    padding-top: 100px;
     padding-bottom: 4rem;
-    background: linear-gradient(135deg, #020617 0%, #0f172a 100%); /* Deep Navy/Black */
+    /* Image BG with Dark Overlay */
+    background: 
+        linear-gradient(to bottom, rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)), 
+        url('../../images/spark_hero_modern.png') center/cover no-repeat;
     color: white;
     display: flex;
     flex-direction: column;
@@ -88,21 +101,20 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
-    max-width: 1000px; /* Wider for desktop */
+    max-width: 1000px;
     margin: 0 auto;
     z-index: 10;
     padding: 2rem;
 }
 
 .hero-long h1 {
-    font-size: 4.5rem; /* Larger */
+    font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 2rem;
-    font-weight: 800; /* Bolder */
+    font-weight: 800;
     letter-spacing: -0.03em;
-    background: linear-gradient(to right, #fff, #cbd5e1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Better contrast */
+    color: white; /* Solid white for readability over img */
 }
 
 .hero-sub {
@@ -255,29 +267,36 @@ h1, h2, h3, h4 {
     color: #1E293B;
 }
 
-.quiz-options-row {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+/* --- Quiz Component Update --- */
+.quiz-options-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 in a row */
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .quiz-btn {
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 1rem; /* Taller */
     border-radius: 12px;
     border: 2px solid #E2E8F0;
     background: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
-    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
 }
 
 .quiz-btn:hover {
     border-color: var(--premium-gold);
-    color: var(--premium-gold);
-    background: #FAFAFA;
-    transform: translateY(-2px);
+    background: #FFFCF5;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
 }
 
 /* --- Calculator Section --- */
@@ -352,7 +371,7 @@ h1, h2, h3, h4 {
 
 /* --- Method Section (Snake) --- */
 .section-method {
-    padding: 8rem 0;
+    padding: 6rem 0; /* Reduced from 8rem */
     background: #FAFAFA;
 }
 
@@ -365,8 +384,8 @@ h1, h2, h3, h4 {
 .snake-item {
     display: flex;
     align-items: center;
-    gap: 4rem;
-    margin-bottom: 6rem;
+    gap: 2rem; /* Reduced from 4rem */
+    margin-bottom: 4rem; /* Reduced from 6rem */
 }
 
 .snake-item:nth-child(even) {
@@ -514,6 +533,22 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
+    border: 1px solid #F1F5F9;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative BG for Cases */
+.case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 0 0 0 100%;
+    z-index: 0;
 }
 
 .case-img-ph {

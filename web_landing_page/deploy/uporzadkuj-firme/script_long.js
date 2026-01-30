@@ -99,8 +99,12 @@ function renderQuestion(index) {
     const q = quizData[index];
     const progress = ((index) / quizData.length) * 100;
 
+    // Use grid layout for 3 options
     let optionsHTML = q.options.map((opt, i) => `
-        <button class="quiz-btn" onclick="handleAnswer(${opt.score}, ${index})">${opt.text}</button>
+        <button class="quiz-btn" onclick="handleAnswer(${opt.score}, ${index})">
+            <span style="display:block; font-size:1.1rem; margin-bottom:0.2rem;">${opt.text}</span>
+            <span style="font-size:0.8rem; color:#94A3B8; font-weight:400;">(+${opt.score} pkt)</span>
+        </button>
     `).join('');
 
     container.innerHTML = `
@@ -128,69 +132,98 @@ window.handleAnswer = function(points, currentIndex) {
 
 // --- CALCULATOR LOGIC ---
 function initCalculator() {
-    const els = ['calc-team', 'calc-hours', 'calc-rate'].map(id => document.getElementById(id));
-    if (!els[0]) return;
-
-    els.forEach(el => el.addEventListener('input', calculateLoss));
-    calculateLoss();
+    const inputs = ['calc-team', 'calc-hours', 'calc-rate'];
+    inputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', updateCalculator);
+    });
+    updateCalculator();
 }
 
-function calculateLoss() {
+function updateCalculator() {
     const team = parseInt(document.getElementById('calc-team').value) || 0;
     const hours = parseInt(document.getElementById('calc-hours').value) || 0;
     const rate = parseInt(document.getElementById('calc-rate').value) || 0;
 
-    // Update labels
     document.getElementById('val-team').innerText = team;
     document.getElementById('val-hours').innerText = hours;
     document.getElementById('val-rate').innerText = rate;
 
-    // Calc
-    const monthly = team * hours * rate * 4;
-    
-    // Formatting
-    const formatted = new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', maximumFractionDigits: 0 }).format(monthly);
-    document.getElementById('result-monthly').innerText = formatted;
+    // Weekly loss = people * hours * rate
+    // Monthly = weekly * 4
+    const monthlyLoss = team * hours * rate * 4;
+    const yearlyLoss = monthlyLoss * 12;
+
+    const monthlyEl = document.getElementById('result-monthly');
+    const yearlyEl = document.getElementById('val-yearly-display');
+
+    if (monthlyEl) {
+        monthlyEl.innerText = formatCurrency(monthlyLoss) + " PLN";
+        
+        // Add pulse animation on change
+        monthlyEl.style.transform = "scale(1.05)";
+        setTimeout(() => monthlyEl.style.transform = "scale(1)", 200);
+    }
+
+    if (yearlyEl) {
+        yearlyEl.innerText = formatCurrency(yearlyLoss);
+    }
 }
 
+function formatCurrency(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 
-// --- CAROUSEL LOGIC ---
-let crslIdx = 0;
+/* --- CAROUSEL LOGIC --- */
 function initCarousel() {
     const track = document.querySelector('.carousel-track');
-    if (!track) return;
-    updateCarousel();
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.btn-right');
+    const prevButton = document.querySelector('.btn-left');
 
-    document.querySelector('.btn-left').addEventListener('click', () => moveCarousel(-1));
-    document.querySelector('.btn-right').addEventListener('click', () => moveCarousel(1));
-}
+    if (!track || slides.length === 0) return;
 
-function moveCarousel(dir) {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const total = slides.length;
-    crslIdx = (crslIdx + dir + total) % total; // wrap around
-    updateCarousel();
-}
+    let currentIndex = 0;
 
-function updateCarousel() {
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    
-    track.style.transform = `translateX(-${crslIdx * 100}%)`;
-    
-    slides.forEach((s, i) => {
-        if (i === crslIdx) s.classList.add('active');
-        else s.classList.remove('active');
+    function updateSlidePosition() {
+        // Move track
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        // Adding gap calculation if needed or just percentage
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        
+        // Update active class for scaling effect
+        slides.forEach(s => s.classList.remove('active'));
+        slides[currentIndex].classList.add('active');
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
     });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlidePosition();
+    });
+    
+    // Auto-advance every 7s
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
+    }, 7000);
 }
 
 
-// --- FAQ ---
+/* --- FAQ LOGIC --- */
 function initFAQ() {
-    document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const parent = btn.parentElement;
-            parent.classList.toggle('active');
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            item.classList.toggle('active');
+            const icon = item.querySelector('.faq-icon');
+            if (icon) {
+                icon.textContent = item.classList.contains('active') ? '▲' : '▼';
+            }
         });
     });
 }
