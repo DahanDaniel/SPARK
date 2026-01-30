@@ -1,0 +1,281 @@
+/* SPARK Long Landing Page Specific Styles */
+
+:root {
+    --premium-dark: #0B0F19;
+    --premium-gold: #D4AF37;
+    --prob-red: #EF4444;
+    --prob-green: #10B981;
+}
+
+/* --- Global Overrides for Premium Feel --- */
+body.long-page {
+    background-color: #FAFAFA;
+}
+
+.section-dark {
+    background-color: var(--premium-dark);
+    color: white;
+}
+
+.text-gold { color: var(--premium-gold) !important; }
+.text-red { color: var(--prob-red) !important; }
+.text-green { color: var(--prob-green) !important; }
+
+/* --- Hero Specifics --- */
+.hero-long {
+    min-height: 85vh;
+    padding-top: 140px;
+    background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.7)), url('../../images/spark_hero_modern.png') center/cover;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-long h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Interactive Quiz Component --- */
+.quiz-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    height: 4px;
+    background: #E2E8F0;
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.quiz-option:hover {
+    border-color: var(--accent-color);
+    background: #F8FAFC;
+    transform: translateX(5px);
+}
+
+.quiz-option.scary {
+    border-color: #FECACA;
+}
+.quiz-option.scary:hover {
+    background: #FEF2F2;
+    border-color: #EF4444;
+}
+
+.quiz-result-card {
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.score-display {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+/* --- Cost Calculator Component --- */
+.calc-container {
+    background: var(--premium-dark);
+    color: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.calc-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+.calc-range {
+    width: 100%;
+    height: 6px;
+    background: #334155;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.calc-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--premium-gold);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calc-value-display {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.calc-result-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.result-main {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--prob-red);
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+/* --- Timeline Component --- */
+.timeline-section {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #E2E8F0;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-content {
+    width: 45%;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+.timeline-item:nth-child(2n) .timeline-content { text-align: right; }
+
+.timeline-dot {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border: 4px solid white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* --- FAQ Accordion --- */
+.faq-item {
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: var(--text-muted);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Approximate */
+    padding-bottom: 1.5rem;
+}
+
+.faq-icon {
+    transition: transform 0.3s;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .calc-container { grid-template-columns: 1fr; }
+    
+    .timeline-line { left: 20px; }
+    .timeline-item { flex-direction: column; align-items: flex-start; margin-left: 20px; }
+    .timeline-item:nth-child(odd) { flex-direction: column; }
+    .timeline-content { width: 90%; margin-left: 30px; text-align: left !important; }
+    .timeline-dot { left: 0; transform: translateX(-50%); }
+
+    .hero-long h1 { font-size: 2.2rem; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

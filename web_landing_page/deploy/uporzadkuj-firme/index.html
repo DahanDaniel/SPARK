@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uporządkuj Firmę | SPARK Inżynieria Biznesu</title>
+    <meta name="description" content="Uporządkuj firmę tak, żeby działała bez ciągłego gaszenia pożarów. Odzyskaj czas i kontrolę dzięki metodzie SPARK.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="../style_v2.css">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="style_long.css">
+    
+    <!-- Google Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWFRMF2LHJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HWFRMF2LHJ');
+    </script>
+</head>
+<body class="long-page">
+
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="brand">SPARK <span class="est">EST. 1991</span></div>
+            <div class="nav-links">
+                <a href="#audit">Audyt Chaosu</a>
+                <a href="#calculator">Koszt</a>
+                <a href="#process">Metoda</a>
+                <button class="btn btn-nav" onclick="window.location.href='https://calendar.app.google/ufEWQ4dGt9DwBgnJA'">Diagnoza 90 min</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-long">
+        <div class="container center">
+            <span class="badg" style="background:rgba(212, 175, 55, 0.2); border-color:#D4AF37; color:#D4AF37;">Dla Właścicieli Firm (1-20 mln PLN)</span>
+            <h1>Uporządkuj firmę tak,<br>żeby działała bez gaszenia pożarów.</h1>
+            <p class="hero-sub" style="margin: 0 auto 3rem; max-width: 700px;">
+                Masz firmę. Masz ludzi. Masz klientów.<br>
+                A mimo to — wciąż wszystko wraca do Ciebie.
+            </p>
+            <div class="cta-group" style="justify-content: center;">
+                <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary btn-glow" style="background:#D4AF37; border-color:#D4AF37;">Umów Diagnozę (90 min)</a>
+                <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-outline">Krótka rozmowa (15 min)</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #94A3B8;">SPARK pomaga Ci ustalić jasny sposób pracy: bez teorii, bez slajdów. Realne wdrożenie.</p>
+        </div>
+    </header>
+
+    <!-- PAIN / QUIZ SECTION -->
+    <section id="audit" class="section-about">
+        <div class="container center">
+            <div class="section-label">AUDYT CHAOSU</div>
+            <h2 style="margin-bottom: 2rem;">Jeśli to brzmi znajomo — SPARK jest dla Ciebie</h2>
+            
+            <div id="quiz-dynamic" class="quiz-container">
+                <!-- Quiz loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- COST CALCULATOR SECTION -->
+    <section id="calculator" class="section-dark">
+        <div class="container center">
+            <div class="section-label text-gold">KOSZT BIERNOŚCI</div>
+            <h2>Prawda, której nikt Ci nie mówi:<br>Chaos jest drogi.</h2>
+            <p style="color:#94A3B8; margin-bottom: 2rem;">To nie jest tylko "niewygodne". Zobacz, ile pieniędzy tracisz co miesiąc.</p>
+
+            <div class="calc-container">
+                <div class="calc-inputs" style="text-align: left;">
+                    <div class="calc-group">
+                        <label>Liczba pracowników "w chaosie"</label>
+                        <input type="range" id="calc-team" min="1" max="20" value="5" class="calc-range">
+                        <div class="calc-value-display" id="val-team">5 os.</div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label>Stracone godziny tygodniowo (na os.)</label>
+                        <input type="range" id="calc-hours" min="1" max="15" value="8" class="calc-range">
+                        <div class="calc-value-display" id="val-hours">8 h</div>
+                    </div>
+
+                    <div class="calc-group">
+                        <label>Średnia stawka godzinowa (brutto pracodawcy)</label>
+                        <input type="range" id="calc-rate" min="30" max="200" step="10" value="60" class="calc-range">
+                        <div class="calc-value-display" id="val-rate">60 PLN</div>
+                    </div>
+                </div>
+
+                <div class="calc-result-box">
+                    <span style="text-transform:uppercase; color:#94A3B8; font-size:0.9rem;">Miesięczna Strata</span>
+                    <div id="result-monthly" class="result-main">0 PLN</div>
+                    <p style="color:#94A3B8; font-size:0.9rem;">To równowartość tygodnia pracy całego zespołu.<br>Wyrzucona w błoto. Co miesiąc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHOD / TIMELINE SECTION -->
+    <section id="process" class="timeline-section" style="background:#F8FAFC;">
+        <div class="container center">
+            <div class="section-label">JAK WYGLĄDA WSPÓŁPRACA</div>
+            <h2>Porządek krok po kroku. Bez paraliżu firmy.</h2>
+            <p style="color:#64748B; margin-bottom:3rem;">Nie robimy rewolucji. Dokładamy proste elementy.</p>
+
+            <div style="position: relative;">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>1. Diagnoza SPARK (90 min)</h3>
+                        <p>Widzimy co naprawdę blokuje firmę. Wychodzisz z jasnym planem na 30 dni. Zero lania wody.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2. Plan 30 Dni</h3>
+                        <p>Dostajesz konkretne narzędzia: checklisty, podział ról, 3 kluczowe liczby do kontroli.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>3. Wdrożenie (4-8 tygodni)</h3>
+                        <p>Krok po kroku implementujemy zmiany. Zespół pracuje normalnie, my tylko "dokręcamy śruby".</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background:#D4AF37; border-color:#D4AF37;"></div>
+                    <div class="timeline-content">
+                        <h3>4. Efekt: Samodzielność</h3>
+                        <p>Firma działa przewidywalnie. Ty odzyskujesz czas. Chaos nie wraca.</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary" style="margin-top: 2rem;">Sprawdź wykonalność - Diagnoza 90 min</a>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="section-about">
+        <div class="container">
+            <div class="center" style="margin-bottom:3rem;">
+                <div class="section-label">DOWODY</div>
+                <h2>To działa w realnym życiu</h2>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Case 1 -->
+                <div class="feature-card" style="background:white; border:1px solid #E2E8F0; color:var(--text-dark);">
+                    <div class="feature-icon-wrapper" style="background:#EFF6FF; color:var(--accent-color);">1</div>
+                    <h3 style="color:var(--text-dark);">Biuro Rachunkowe (9 osób)</h3>
+                    <p style="margin-bottom:1rem;"><strong>Problem:</strong> Wszystko wracało do właściciela. Każdy "pilny" temat lądował na jego biurku.</p>
+                    <p style="color:var(--accent-color); font-weight:700;">Efekt po 30 dniach:</p>
+                    <ul class="features-list" style="margin:0; font-size:0.9rem;">
+                        <li>↓ 70% pytań do szefa</li>
+                        <li>↓ 50% poprawek</li>
+                        <li>+12h odzyskanego czasu/tydz.</li>
+                    </ul>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="feature-card" style="background:white; border:1px solid #E2E8F0; color:var(--text-dark);">
+                    <div class="feature-icon-wrapper" style="background:#EFF6FF; color:var(--accent-color);">2</div>
+                    <h3 style="color:var(--text-dark);">Firma Budowlana</h3>
+                    <p style="margin-bottom:1rem;"><strong>Problem:</strong> Ciągłe zmiany klienta na telefon, brak materiałów, przestoje ekip.</p>
+                    <p style="color:var(--accent-color); font-weight:700;">Efekt po 6 tygodniach:</p>
+                    <ul class="features-list" style="margin:0; font-size:0.9rem;">
+                        <li>↓ 60% opóźnień</li>
+                        <li>Planowanie 3 tyg. do przodu</li>
+                        <li>Koniec chaosu w zamówieniach</li>
+                    </ul>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="feature-card" style="background:white; border:1px solid #E2E8F0; color:var(--text-dark);">
+                    <div class="feature-icon-wrapper" style="background:#EFF6FF; color:var(--accent-color);">3</div>
+                    <h3 style="color:var(--text-dark);">Hurtownia Narzędzi</h3>
+                    <p style="margin-bottom:1rem;"><strong>Problem:</strong> Nowi pracownicy wdrażali się wiecznie, dużo błędów w wysyłkach.</p>
+                    <p style="color:var(--accent-color); font-weight:700;">Efekt po 45 dniach:</p>
+                    <ul class="features-list" style="margin:0; font-size:0.9rem;">
+                        <li>↓ 50% krótsze wdrożenie</li>
+                        <li>↓ 70% mniej błędów</li>
+                        <li>Szef wrócił do sprzedaży</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER / CTA -->
+    <section id="pricing" class="section-dark" style="padding: 6rem 0;">
+        <div class="container center">
+            <h2 style="margin-bottom: 3rem;">Bezpieczny start: Najpierw diagnoza</h2>
+            <p style="color:#94A3B8; margin-bottom: 4rem; max-width:600px; margin-left:auto; margin-right:auto;">
+                Zero zgadywania. Decyzja po faktach. Po diagnozie dostajesz jasny obraz i plan na 30 dni. Dopiero wtedy decydujesz, czy idziemy dalej.
+            </p>
+
+            <div class="grid-split" style="align-items: stretch; gap: 2rem;">
+                <!-- Option 1 -->
+                <div class="pricing-card" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white;">
+                    <div class="pricing-header" style="background:none; border-bottom:1px solid rgba(255,255,255,0.1);">
+                        <h3>Krótka Rozmowa</h3>
+                        <p style="color:#94A3B8;">Check chemii i potencjału</p>
+                        <div class="new-price" style="font-size:2rem; color:white;">0 PLN</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="features-list">
+                            <li style="color:#CBD5E1;"><span class="icon">✓</span> 15 minut online</li>
+                            <li style="color:#CBD5E1;"><span class="icon">✓</span> Wstępna weryfikacja</li>
+                            <li style="color:#CBD5E1;"><span class="icon">✓</span> Sprawdzenie czy możemy pomóc</li>
+                        </ul>
+                        <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-outline" style="width:100%; text-align:center;">Umów Rozmowę</a>
+                    </div>
+                </div>
+
+                <!-- Option 2 (Highlighted) -->
+                <div class="pricing-card" style="background:white; color:var(--text-dark); border:2px solid #D4AF37; transform: scale(1.05);">
+                    <div class="pricing-header" style="background:#FFFBEB; border-bottom:1px solid #FEF3C7; padding-top:2rem;">
+                        <span class="offer-badge" style="background:#D4AF37; color:white;">Rekomendowane</span>
+                        <h3>Diagnoza SPARK</h3>
+                        <p style="color:#92400E;">Konkretny plan naprawczy</p>
+                        <div class="new-price" style="font-size:2.5rem; color:var(--primary-color);">Wycena Ind.</div>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="features-list">
+                            <li><span class="icon">✓</span> 90 minut pracy 1:1</li>
+                            <li><span class="icon">✓</span> Wskazanie wąskiego gardła</li>
+                            <li><span class="icon">✓</span> <strong>Plan działań na 30 dni</strong></li>
+                            <li><span class="icon">✓</span> Gwarancja satysfakcji</li>
+                        </ul>
+                        <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary btn-full" style="background:#D4AF37;">Rezerwuję Termin</a>
+                        <p class="micro-copy">Inwestycja zwraca się w pierwszym tygodniu po wdrożeniu zmian.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section-about">
+        <div class="container" style="max-width: 800px;">
+            <div class="center" style="margin-bottom: 3rem;">
+                <div class="section-label">FAQ</div>
+                <h2>Pytania, które zawsze padają</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Ile to trwa?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nie potrzebujesz roku zmian. Startujemy od Diagnozy (90 min), a wdrożenie trwa zwykle 4–8 tygodni. Pierwsze realne odciążenie czujesz często już po 7-14 dniach.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Czy da się to zrobić bez paraliżu firmy?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak — bo to nie rewolucja. Firma pracuje normalnie, a my dokładamy tylko proste elementy (checklisty, zasady). To jak wymiana kół w jadącym samochodzie — robimy to ostrożnie.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Co jeśli zespół będzie stawiał opór?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Opór to zwykle strach. Gdy ludzie widzą, że dzięki zmianom mają mniej 'wrzutek' i pretensji, opór znika. Włączamy kluczowe osoby w proces, żeby czuły się współautorami zmian.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Czy to działa w małej firmie?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>W małej firmie (2-10 osób) działa najszybciej, bo chaos najbardziej boli właściciela. Efekty widać niemal natychmiast.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 SPARK. Inżynieria Biznesu.</p>
+            <div class="footer-legal">
+                <a href="https://idaco.pl/kontakt/polityka-prywatnosci/" target="_blank">Polityka Prywatności</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script src="script_long.js"></script>
+
+</body>
+</html>
