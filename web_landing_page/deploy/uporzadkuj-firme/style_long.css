@@ -11,6 +11,48 @@
     --danger-red: #EF4444;
 }
 
+/* --- NAVBAR COMPACT --- */
+.navbar {
+    padding: 1rem 2rem; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Explicit compact height */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1E293B;
+    font-weight: 500;
+    font-size: 0.95rem; /* Slightly smaller */
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--premium-gold);
+}
+
+.nav-cta {
+    background: var(--premium-dark);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
 /* --- Typography & Base --- */
 body.long-page {
     background-color: #FAFAFA;
@@ -23,43 +65,71 @@ h1, h2, h3, h4 {
     letter-spacing: -0.02em;
 }
 
-/* Updated Section Label Style */
+/* --- SECTION SPACING & LABELS --- */
+
+/* Wrapper to handle overlaps or transitions */
+.section-wrapper {
+    position: relative;
+    padding-top: 4rem; /* Buffer for overlap */
+    z-index: 10;
+}
+
+/* The label pill itself */
 .section-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: 700;
     margin-bottom: 2rem;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 50px;
-    background: rgba(212, 175, 55, 0.1);
+    background: white;
     color: var(--premium-gold);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    /* Float effect */
+    position: relative;
+    top: -2rem; /* Pull up to bridge sections */
+    z-index: 20;
+}
+
+/* Ensure container has room */
+.container.center {
+    position: relative;
+}
+
+/* Specific Gap Fixes */
+.section-context {
+    padding-top: 4rem; 
+    background: #FAFAFA;
+    margin-top: -2rem; /* Pull up into Hero bottom padding */
+    border-radius: 30px 30px 0 0; /* Rounded top */
 }
 
 .text-gold { color: var(--premium-gold) !important; }
 .bg-dark { background-color: var(--premium-dark); color: white; }
 
-/* --- Buttons --- */
+/* --- HERO BUTTONS REFINED --- */
 .btn-gold {
     background: linear-gradient(135deg, #D4AF37 0%, #B4962E 100%);
     color: white;
-    padding: 1.2rem 3rem; /* Larger */
-    border-radius: 50px; /* Pill shape */
+    padding: 1rem 2.5rem; /* Compact pill */
+    border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1rem;
 }
 
 .btn-gold:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
     filter: brightness(1.1);
 }
 
@@ -67,12 +137,13 @@ h1, h2, h3, h4 {
     background: rgba(255,255,255,0.05);
     color: #F8FAFC;
     border: 1px solid rgba(255,255,255,0.3);
-    padding: 1.2rem 3rem;
+    padding: 1rem 2.5rem; /* Compact pill */
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s;
     backdrop-filter: blur(10px);
+    font-size: 1rem;
 }
 
 .btn-outline-gold:hover {
@@ -118,13 +189,24 @@ h1, h2, h3, h4 {
 }
 
 .hero-sub {
-    font-size: 1.4rem;
-    color: #94A3B8;
-    margin-bottom: 3.5rem;
-    line-height: 1.6;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 0.9rem;
+    color: var(--premium-gold); /* Gold color */
+    margin-top: 3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.hero-sub:hover {
+    opacity: 1;
+    transform: translateY(3px); /* Subtle nudge */
 }
 
 .scroll-indicator {
@@ -224,7 +306,7 @@ h1, h2, h3, h4 {
     padding: 6rem 0;
     background: #F8FAFC;
     border-top: 1px solid #E2E8F0;
-    border-bottom: 1px solid #E2E8F0;
+    position: relative;
 }
 
 .quiz-container {
@@ -524,43 +606,37 @@ h1, h2, h3, h4 {
     transform: scale(1);
 }
 
+/* --- Case Studies Images --- */
 .case-card {
     background: white;
     border-radius: 20px;
-    padding: 3rem;
+    overflow: hidden; /* For image bg */
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    border: 1px solid #F1F5F9;
+    grid-template-columns: 1fr 1fr; /* Split */
+    height: 400px; /* Fixed height for consistency */
     position: relative;
-    overflow: hidden;
 }
 
-/* Decorative BG for Cases */
-.case-card::before {
+.case-visual {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.case-visual::after {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, rgba(255,255,255,0) 70%);
-    border-radius: 0 0 0 100%;
-    z-index: 0;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0));
 }
 
-.case-img-ph {
-    background: #ECEFF1;
-    width: 100%;
-    height: 300px;
-    border-radius: 12px;
+.case-content {
+    padding: 3rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    color: #94A3B8;
-    font-size: 0.9rem;
+    background: white;
 }
 
 .carousel-btn {

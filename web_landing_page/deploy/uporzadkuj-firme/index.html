@@ -59,9 +59,9 @@
     </header>
 
     <!-- 2. CONTEXT AWARENESS -->
-    <section id="context" class="section-context">
+    <section id="context" class="section-context section-wrapper">
         <div class="container center">
-            <div class="section-label text-gold">OBJAWY</div>
+            <div class="section-label">OBJAWY</div>
             <h2 style="font-size:2.5rem; margin-bottom:1.5rem;">Chaos kosztuje Cię więcej, niż myślisz</h2>
             <p style="color:#64748B; max-width:700px; margin:0 auto; font-size:1.1rem;">
                 Czy wstydzisz się pokazać procesy nowym pracownikom? To nie jest kwestia motywacji zespołu.
@@ -89,10 +89,10 @@
     </section>
 
     <!-- 3. INTERACTIVE QUIZ -->
-    <section id="audit" class="quiz-section">
+    <section id="audit" class="quiz-section section-wrapper">
         <div class="container">
             <div class="center" style="margin-bottom:3rem;">
-                <div class="section-label text-gold">KROK 1: DIAGNOZA</div>
+                <div class="section-label">KROK 1: DIAGNOZA</div>
                 <h2>Audyt Chaosu</h2>
                 <p style="color:#64748B;">Sprawdź, czy Twoja firma ma problem strukturalny.</p>
             </div>
@@ -104,9 +104,9 @@
     </section>
 
     <!-- 4. CALCULATOR (DARK) -->
-    <section id="calculator" class="calc-section">
+    <section id="calculator" class="calc-section section-wrapper">
         <div class="container center">
-            <div class="section-label text-gold">KOSZT BIERNOŚCI</div>
+            <div class="section-label" style="background:rgba(255,255,255,0.1); color:white; border-color:rgba(255,255,255,0.2);">KOSZT BIERNOŚCI</div>
             <h2 style="font-size:3rem; margin-bottom:1rem;">Ile tracisz co miesiąc?</h2>
             <p style="color:#94A3B8;">Prawda w liczbach. Bezlitosna weryfikacja.</p>
 
@@ -148,9 +148,9 @@
     </section>
 
     <!-- 5. METHOD (SNAKE) -->
-    <section id="process" class="section-method">
+    <section id="process" class="section-method section-wrapper">
         <div class="container center">
-            <div class="section-label text-gold">ROZWIĄZANIE</div>
+            <div class="section-label">ROZWIĄZANIE</div>
             <h2>Metoda SPARK</h2>
             <p style="max-width:600px; margin:0 auto; color:#64748B;">Trzy proste kroki. Od chaosu do przewidywalności.</p>
 
@@ -192,7 +192,7 @@
     </section>
 
     <!-- 6. FOR WHOM -->
-    <section class="section-who">
+    <section class="section-who section-wrapper">
         <div class="container">
             <div class="who-grid">
                 <div class="who-col">
@@ -216,9 +216,9 @@
     </section>
 
     <!-- 7. PROOF (CAROUSEL) -->
-    <section id="proof" class="section-proof">
+    <section id="proof" class="section-proof section-wrapper">
         <div class="container center">
-            <div class="section-label text-gold">DOWODY</div>
+            <div class="section-label">DOWODY</div>
             <h2>Historie z Polskiego Biznesu</h2>
             <p style="color: #64748B; margin-bottom: 2rem;">Właściciele, którzy odzyskali kontrolę.</p>
             
@@ -230,21 +230,21 @@
                         <!-- Slide 1 -->
                         <div class="carousel-slide active">
                             <div class="case-card">
-                                <div class="case-info" style="text-align:left;">
-                                    <div class="case-tag" style="background:#EFF6FF; color:#3B82F6; padding:0.4rem 1rem; display:inline-block; border-radius:50px; font-size:0.8rem; font-weight:600; margin-bottom:1rem;">BIURO RACHUNKOWE</div>
+                                <div class="case-visual" style="background-image: url('../../images/spark_ai_analysis.png');">
+                                    <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">BIURO RACHUNKOWE</div>
+                                </div>
+                                <div class="case-content" style="text-align:left;">
                                     <div style="color:#F59E0B; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
                                     <h3>"Odzyskałem 12h tygodniowo"</h3>
                                     <p style="color:#64748B; margin-bottom:1.5rem; font-style:italic;">
-                                        "Mój zespół 9 osób ciągle pytał o wyjątki. Każdy 'pilny' temat lądował u mnie. Po wdrożeniu zasad decyzyjnych, pytania spadły o 70%. W końcu mogę zająć się strategią, a nie gaszeniem pożarów."
+                                        "Mój zespół 9 osób ciągle pytał o wyjątki. Po wdrożeniu zasad decyzyjnych, pytania spadły o 70%. W końcu mogę zająć się strategią, a nie gaszeniem pożarów."
                                     </p>
                                     <p style="font-weight:700;">— Dawid, Właściciel</p>
-                                </div>
-                                <div class="case-stats" style="text-align:left;">
-                                    <div style="font-size:2.5rem; color:var(--success-green); font-weight:700; margin-bottom:0.5rem;">-70%</div>
-                                    <p style="color:#64748B; font-size:0.9rem;">Mniej telefonów do szefa</p>
                                     <hr style="border:0; border-top:1px solid #E2E8F0; margin:1rem 0;">
-                                    <div style="font-size:2.5rem; color:var(--success-green); font-weight:700; margin-bottom:0.5rem;">+12h</div>
-                                    <p style="color:#64748B; font-size:0.9rem;">Odzyskanego czasu na tydzień</p>
+                                    <div style="display:flex; justify-content:space-between;">
+                                        <div><div style="color:var(--success-green); font-weight:700;">-70%</div><small>Telefonów</small></div>
+                                        <div><div style="color:var(--success-green); font-weight:700;">+12h</div><small>Czasu</small></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -252,21 +252,21 @@
                         <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <div class="case-card">
-                                <div class="case-info" style="text-align:left;">
-                                    <div class="case-tag" style="background:#FFF7ED; color:#EA580C; padding:0.4rem 1rem; display:inline-block; border-radius:50px; font-size:0.8rem; font-weight:600; margin-bottom:1rem;">FIRMA BUDOWLANA</div>
+                                <div class="case-visual" style="background-image: url('../../images/spark_process_collaboration.png');">
+                                    <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">FIRMA BUDOWLANA</div>
+                                </div>
+                                <div class="case-content" style="text-align:left;">
                                     <div style="color:#F59E0B; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
                                     <h3>"Koniec z łataniem dziur"</h3>
                                     <p style="color:#64748B; margin-bottom:1.5rem; font-style:italic;">
                                         "Materiały nie dojeżdżały, ekipy stały. Wprowadziliśmy proste checklisty startowe. Opóźnienia spadły drastycznie, a planowanie ruszyło 3 tygodnie do przodu zamiast 'na jutro'."
                                     </p>
                                     <p style="font-weight:700;">— Paweł, Prezes (25 os.)</p>
-                                </div>
-                                <div class="case-stats" style="text-align:left;">
-                                    <div style="font-size:2.5rem; color:var(--success-green); font-weight:700; margin-bottom:0.5rem;">-60%</div>
-                                    <p style="color:#64748B; font-size:0.9rem;">Mniej opóźnień na budowach</p>
                                     <hr style="border:0; border-top:1px solid #E2E8F0; margin:1rem 0;">
-                                    <div style="font-size:2.5rem; color:var(--success-green); font-weight:700; margin-bottom:0.5rem;">-40%</div>
-                                    <p style="color:#64748B; font-size:0.9rem;">Mniej przestojów ekip</p>
+                                    <div style="display:flex; justify-content:space-between;">
+                                        <div><div style="color:var(--success-green); font-weight:700;">-60%</div><small>Opóźnień</small></div>
+                                        <div><div style="color:var(--success-green); font-weight:700;">-40%</div><small>Przestojów</small></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -274,21 +274,21 @@
                          <!-- Slide 3 -->
                         <div class="carousel-slide">
                             <div class="case-card">
-                                <div class="case-info" style="text-align:left;">
-                                    <div class="case-tag" style="background:#F0FDF4; color:#15803D; padding:0.4rem 1rem; display:inline-block; border-radius:50px; font-size:0.8rem; font-weight:600; margin-bottom:1rem;">HURTOWNIA NARZĘDZI</div>
+                                <div class="case-visual" style="background-image: url('../../images/cool spark image.png');">
+                                    <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">HURTOWNIA</div>
+                                </div>
+                                <div class="case-content" style="text-align:left;">
                                     <div style="color:#F59E0B; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
                                     <h3>"Nowi wdrażają się 2x szybciej"</h3>
                                     <p style="color:#64748B; margin-bottom:1.5rem; font-style:italic;">
-                                        "Wdrożenie handlowca trwało wiecznie, a błędy w zamówieniach kosztowały nas zwroty. Zrobiliśmy '1 proces na 1 stronę' + checklistę. Błędy spadły niemal do zera."
+                                        "Wdrożenie handlowca trwało wiecznie. Zrobiliśmy '1 proces na 1 stronę' + checklistę. Błędy spadły niemal do zera."
                                     </p>
                                     <p style="font-weight:700;">— Marek, Właściciel</p>
-                                </div>
-                                <div class="case-stats" style="text-align:left;">
-                                    <div style="font-size:2.5rem; color:var(--success-green); font-weight:700; margin-bottom:0.5rem;">-50%</div>
-                                    <p style="color:#64748B; font-size:0.9rem;">Krótszy czas onboardingu</p>
                                     <hr style="border:0; border-top:1px solid #E2E8F0; margin:1rem 0;">
-                                    <div style="font-size:2.5rem; color:var(--success-green); font-weight:700; margin-bottom:0.5rem;">-70%</div>
-                                    <p style="color:#64748B; font-size:0.9rem;">Mniej błędów w wysyłkach</p>
+                                    <div style="display:flex; justify-content:space-between;">
+                                        <div><div style="color:var(--success-green); font-weight:700;">-50%</div><small>Onboarding</small></div>
+                                        <div><div style="color:var(--success-green); font-weight:700;">-70%</div><small>Błędów</small></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,9 +301,9 @@
     </section>
 
     <!-- 8. WHY US -->
-    <section class="section-why">
+    <section class="section-why section-wrapper">
         <div class="container center">
-            <div class="section-label text-gold">ZESPÓŁ</div>
+            <div class="section-label text-gold" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2);">ZESPÓŁ</div>
             <h2>Dlaczego SPARK?</h2>
             <p style="color:var(--premium-text-muted);">Jesteśmy praktykami, nie teoretykami. Łączymy świat biznesu, IT i psychologii.</p>
 
@@ -315,17 +315,17 @@
                 </div>
                 <div class="why-card">
                     <div class="why-icon">📐</div>
-                    <h4>Eksperci Procesów</h4>
+                    <h4>Inżynieria Procesów</h4>
                     <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Potrafimy rozłożyć skomplikowany bałagan na proste klocki, które każdy zrozumie.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">💻</div>
-                    <h4>Technologia</h4>
+                    <h4>Informatycy i Analitycy</h4>
                     <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Wykorzystujemy automatyzację i AI, żeby zdjąć Ci z głowy powtarzalną pracę.</p>
                 </div>
                 <div class="why-card">
                     <div class="why-icon">🧠</div>
-                    <h4>Wsparcie Zmiany</h4>
+                    <h4>Mentorzy i Coache</h4>
                     <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Wiemy jak wdrażać zmiany w zespole bez buntu i oporu ludzi.</p>
                 </div>
             </div>
@@ -333,7 +333,7 @@
     </section>
 
     <!-- 9. OFFER -->
-    <section class="section-about" style="padding: 6rem 0;">
+    <section class="section-about section-wrapper" style="padding: 6rem 0;">
         <div class="container hover-container center">
             <h2 style="margin-bottom: 3rem;">Bezpieczny start: Najpierw diagnoza</h2>
             <p style="margin-bottom: 4rem; max-width:600px; margin-left:auto; margin-right:auto; color:#64748B;">
@@ -376,7 +376,7 @@
     </section>
 
     <!-- 10. FAQ -->
-    <section class="section-about" style="background:#F8FAFC; padding-top:4rem;">
+    <section class="section-about section-wrapper" style="background:#F8FAFC; padding-top:4rem;">
         <div class="container" style="max-width:800px;">
             <div class="center" style="margin-bottom:2rem;">
                 <h3 style="font-size:1.5rem;">Częste pytania</h3>
@@ -400,11 +400,11 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Jakie dane muszę mieć? (minimum) <span class="faq-icon">▼</span></button>
-                    <div class="faq-answer"><p>Minimum. Naprawdę. Wystarczy: co sprzedajesz, jak wygląda typowe zlecenie, gdzie się sypie + podstawowe liczby (przychód/koszty, liczba zleceń/klientów).</p></div>
+                    <div class="faq-answer"><p>Minimum. Wystarczy wiedzieć: co sprzedajesz, jak wygląda typowe zlecenie i gdzie się sypie, oraz znać podstawowe liczby (przychód/koszty).</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Co jeśli mam chaos w sprzedaży lub realizacji? <span class="faq-icon">▼</span></button>
-                    <div class="faq-answer"><p>Zaczynamy tam, gdzie dziś ucieka Ci najwięcej czasu i pieniędzy. W diagnozie znajdujemy jedno wąskie gardło, które blokuje całą firmę — i od niego startujemy. Bez zgadywania.</p></div>
+                    <div class="faq-answer"><p>Zaczynamy tam, gdzie dziś ucieka Ci najwięcej czasu i pieniędzy. W diagnozie znajdujemy jedno wąskie gardło, które blokuje całą firmę — i od niego startujemy.</p></div>
                 </div>
             </div>
         </div>
