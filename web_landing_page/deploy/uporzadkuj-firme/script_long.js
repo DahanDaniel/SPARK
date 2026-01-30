@@ -230,7 +230,10 @@ function initCarousel() {
     }
 
     // Handle seamless loop on transition end
-    track.addEventListener('transitionend', () => {
+    track.addEventListener('transitionend', (e) => {
+        // Stop bubbling events (e.g. button hovers) from triggering this
+        if (e.target !== track) return;
+
         isTransitioning = false;
         
         const lastIndex = allSlides.length - 1;
