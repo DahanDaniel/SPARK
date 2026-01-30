@@ -302,16 +302,39 @@ function initCarousel() {
 }
 
 
-/* --- FAQ LOGIC --- */
-function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.querySelector('.faq-question').addEventListener('click', () => {
-            item.classList.toggle('active');
-            const icon = item.querySelector('.faq-icon');
-            if (icon) {
-                icon.textContent = item.classList.contains('active') ? '▲' : '▼';
-            }
+/* --- MOBILE MENU LOGIC --- */
+function initMobileMenu() {
+    const btn = document.querySelector('.mobile-menu-btn');
+    const menu = document.querySelector('.mobile-menu');
+    const links = document.querySelectorAll('.mobile-menu a');
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        menu.classList.toggle('active');
+        
+        // Prevent scrolling when menu is open
+        if (menu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            btn.classList.remove('active');
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initQuiz();
+    initCalculator();
+    initCarousel();
+    initFAQ();
+    initMobileMenu();
+});

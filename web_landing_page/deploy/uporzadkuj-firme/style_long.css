@@ -492,7 +492,7 @@ h1, h2, h3, h4 {
     /* Carousel */
     .case-card { grid-template-columns: 1fr; height: auto; }
     .case-visual { height: 200px; width: 100%; }
-    .carousel-btn { display: none; } /* Hide arrows */
+    .carousel-btn { display: flex; width: 36px; height: 36px; } /* Show arrows on mobile too */
     
     /* Method */
     .snake-item, .snake-item:nth-child(even) { flex-direction: column; text-align: center; gap: 1.5rem; }
