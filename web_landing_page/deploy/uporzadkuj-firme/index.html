@@ -39,24 +39,40 @@
     </nav>
 
     <!-- 1. HERO SECTION -->
-    <header class="hero-long">
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../../img/spark_logo.svg" alt="SPARK" style="height:24px;">
+            </div>
+            <nav class="nav-links">
+                <a href="#context">Objawy</a>
+                <a href="#process">Metoda</a>
+                <a href="#proof">Dowody</a>
+                <a href="#calculator" class="nav-cta">Sprawdź ile tracisz</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-long">
         <div class="hero-content">
-            <span class="badg" style="background:rgba(212, 175, 55, 0.2); border-color:#D4AF37; color:#D4AF37;">Dla Właścicieli Firm (1-20 mln PLN)</span>
-            <h1>Uporządkuj firmę tak,<br>żeby działała bez gaszenia pożarów.</h1>
-            <p class="hero-sub">
-                Masz firmę. Masz ludzi. Masz klientów.<br>
+            <h1>Żeby działało bez gaszenia <br><span class="text-gold">pożarów.</span></h1>
+            <p style="font-size:1.3rem; margin-bottom:2.5rem; opacity:0.9; max-width:700px; margin-left:auto; margin-right:auto;">
+                Masz firmę. Masz ludzi. Masz klientów. <br>
                 A mimo to — wciąż wszystko wraca do Ciebie.
             </p>
-            <div class="cta-group" style="justify-content: center;">
+            
+            <div class="hero-actions">
                 <a href="#audit" class="btn-gold">Sprawdź poziom chaosu</a>
-                <a href="#calculator" class="btn-outline-gold" style="color:white; border-color:rgba(255,255,255,0.3);">Zobacz ile tracisz</a>
+                <a href="#calculator" class="btn-outline-gold">Zobacz ile tracisz</a>
             </div>
+
+            <!-- Scroll Indicator Styled as Pill -->
+            <a href="#context" class="hero-sub">
+                <span class="scroll-arrow">▼</span>
+                Zrozum problem
+            </a>
         </div>
-        <a href="#context" class="scroll-indicator">
-            <span>Zrozum problem</span>
-            <span>▼</span>
-        </a>
-    </header>
+    </section>
 
     <!-- 2. CONTEXT AWARENESS -->
     <section id="context" class="section-context section-wrapper">
@@ -274,7 +290,7 @@
                          <!-- Slide 3 -->
                         <div class="carousel-slide">
                             <div class="case-card">
-                                <div class="case-visual" style="background-image: url('../../images/cool spark image.png');">
+                                <div class="case-visual" style="background-image: url('../../images/spark_sketch_hero.png');">
                                     <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">HURTOWNIA</div>
                                 </div>
                                 <div class="case-content" style="text-align:left;">

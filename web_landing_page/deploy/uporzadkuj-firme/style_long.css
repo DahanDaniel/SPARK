@@ -13,18 +13,26 @@
 
 /* --- NAVBAR COMPACT --- */
 .navbar {
-    padding: 1rem 2rem; /* Reduced padding */
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    height: 60px; /* Even more compact */
     position: fixed;
     width: 100%;
     z-index: 1000;
     transition: all 0.3s;
     border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px; /* Explicit compact height */
+    padding: 0 2rem;
 }
 
 .nav-links {
@@ -37,7 +45,7 @@
     text-decoration: none;
     color: #1E293B;
     font-weight: 500;
-    font-size: 0.95rem; /* Slightly smaller */
+    font-size: 0.9rem;
     transition: color 0.3s;
 }
 
@@ -48,12 +56,190 @@
 .nav-cta {
     background: var(--premium-dark);
     color: white !important;
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-/* --- Typography & Base --- */
+/* --- HERO BUTTONS REFINED --- */
+.hero-actions {
+    display: flex;
+    gap: 1.5rem; /* Explicit gap between buttons */
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #B4962E 100%);
+    color: white;
+    padding: 0.9rem 2rem; /* Reduced size */
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-outline-gold {
+    background: rgba(255,255,255,0.05);
+    color: #F8FAFC;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.9rem 2rem; /* Reduced size */
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    font-size: 0.95rem;
+}
+
+.btn-outline-gold:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* New Generic Outline Button (for Offer) */
+.btn-outline {
+    background: white;
+    color: #1E293B;
+    border: 1px solid #E2E8F0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px; /* Slightly boxier/standard UI */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-outline:hover {
+    border-color: var(--premium-gold);
+    color: var(--premium-gold);
+}
+
+
+/* --- Hero Section Fix --- */
+.hero-long {
+    min-height: 90vh; /* Slightly shorter */
+    padding-top: 80px;
+    padding-bottom: 4rem;
+    background: 
+        linear-gradient(to bottom, rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)), 
+        url('../../images/spark_hero_modern.png') center/cover no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 10;
+    padding: 2rem;
+}
+
+.hero-long h1 {
+    font-size: 4rem; /* Reduced from 4.5 */
+    line-height: 1.1;
+    margin-bottom: 1rem; /* Tighter spacing */
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    color: white;
+}
+
+.hero-sub {
+    /* Style as UI element */
+    margin-top: 3rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #E2E8F0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: none; /* Reset uppercase */
+    letter-spacing: 0.5px;
+}
+
+.hero-sub:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateY(3px);
+}
+
+.scroll-arrow {
+    font-size: 0.8rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(3px);}
+    60% {transform: translateY(2px);}
+}
+
+/* --- Carousel Fix --- */
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth ease */
+    gap: 0; /* Remove gap to fix alignment calc */
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 1rem; /* Internal padding for spacing */
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.case-card {
+    width: 100%; /* Take full width of slide padding */
+    /* ... rest consistent */
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 420px; /* Slight Increase */
+    position: relative;
+}
+
+.carousel-btn {
+    /* ... */
+}
+
+.carousel-btn:hover {
+    background: var(--premium-dark);
+    color: white;
+}
 body.long-page {
     background-color: #FAFAFA;
     color: #1E293B;
