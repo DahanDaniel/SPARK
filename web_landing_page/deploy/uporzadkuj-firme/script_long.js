@@ -206,6 +206,12 @@ function initCarousel() {
         const slideWidth = getSlideWidth();
         track.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // FORCE REFLOW: Critical for preventing the "rewind" glitch
+        // This ensures the browser applies 'transition: none' immediately before anything else happens.
+        if (!transition) {
+            void track.offsetHeight; 
+        }
     }
 
     // Initial positioning
@@ -213,7 +219,7 @@ function initCarousel() {
 
     function nextSlide() {
         if (isTransitioning) return;
-        if (currentIndex >= allSlides.length - 1) return; // Safety
+        if (currentIndex >= allSlides.length - 1) return; 
         
         isTransitioning = true;
         currentIndex++;
@@ -222,7 +228,7 @@ function initCarousel() {
 
     function prevSlide() {
         if (isTransitioning) return;
-        if (currentIndex <= 0) return; // Safety
+        if (currentIndex <= 0) return; 
 
         isTransitioning = true;
         currentIndex--;
@@ -234,8 +240,6 @@ function initCarousel() {
         // Stop bubbling events (e.g. button hovers) from triggering this
         if (e.target !== track) return;
 
-        isTransitioning = false;
-        
         const lastIndex = allSlides.length - 1;
         
         // If we are at the appended first clone -> Jump to real first
@@ -249,6 +253,11 @@ function initCarousel() {
             currentIndex = allSlides.length - 2;
             updateSlidePosition(false);
         }
+        
+        // Unlock only AFTER all adjustments are done
+        // Small timeout to ensure the teleport frame is rendered? 
+        // Usually reflow above is enough, but moving this flag down helps safety.
+        isTransitioning = false;
     });
 
     // Resize handler to fix width calcs if window changes (though using % helps)
