@@ -290,12 +290,26 @@ function initCarousel() {
     }
 
     function startAutoPlay() {
+        // Clear any existing interval just in case
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
         autoPlayInterval = setInterval(nextSlide, 5000);
     }
 
     function resetAutoPlay() {
         clearInterval(autoPlayInterval);
         startAutoPlay();
+    }
+
+    // Pause on Hover (Best Practice for Stability)
+    const container = document.querySelector('.carousel-container');
+    if (container) {
+        container.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
     }
 
     startAutoPlay();
