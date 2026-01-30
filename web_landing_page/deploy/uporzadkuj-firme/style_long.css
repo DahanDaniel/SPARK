@@ -110,8 +110,6 @@ h1, h2, h3, h4 {
     font-weight: 600;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    align-self: flex-start; /* Align top if wrapped */
-    margin-top: 2px;
 }
 
 /* On very small screens, hide EST to preserve layout */

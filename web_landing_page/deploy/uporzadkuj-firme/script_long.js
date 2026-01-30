@@ -263,6 +263,32 @@ function initCarousel() {
         resetAutoPlay();
     });
 
+    // Swipe Support for Touch Devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50; // min distance to trigger swipe
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        resetAutoPlay(); // Stop autoplay on touch interaction
+    }, {passive: true});
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {passive: true});
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swiped Left -> Next Slide
+            nextSlide();
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swiped Right -> Prev Slide
+            prevSlide();
+        }
+    }
+
     function startAutoPlay() {
         autoPlayInterval = setInterval(nextSlide, 5000);
     }
