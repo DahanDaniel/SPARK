@@ -101,14 +101,17 @@ h1, h2, h3, h4 {
 .nav-links a:hover { color: var(--premium-gold); }
 
 .est-badge {
-    font-size: 0.6rem;
-    color: var(--premium-gold);
-    border: 1px solid var(--premium-gold);
-    padding: 2px 6px;
+    font-size: 0.55rem;
+    color: #64748B;
+    background: #F1F5F9;
+    border: none;
+    padding: 3px 6px;
     border-radius: 4px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
+    align-self: flex-start; /* Align top if wrapped */
+    margin-top: 2px;
 }
 
 /* On very small screens, hide EST to preserve layout */
