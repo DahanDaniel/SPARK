@@ -175,42 +175,104 @@ function formatCurrency(num) {
 }
 
 /* --- CAROUSEL LOGIC --- */
+/* --- CAROUSEL LOGIC (Infinite Loop) --- */
 function initCarousel() {
     const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
+    let slides = Array.from(track.children);
     const nextButton = document.querySelector('.btn-right');
     const prevButton = document.querySelector('.btn-left');
 
     if (!track || slides.length === 0) return;
 
-    let currentIndex = 0;
+    // Clone logic for infinite loop
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
 
-    function updateSlidePosition() {
-        // Move track
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        // Adding gap calculation if needed or just percentage
-        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-        
-        // Update active class for scaling effect
-        slides.forEach(s => s.classList.remove('active'));
-        slides[currentIndex].classList.add('active');
+    // Add clones
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+
+    // Update slides array
+    const allSlides = Array.from(track.children);
+    let currentIndex = 1; // Start at real first slide
+    let isTransitioning = false;
+    let autoPlayInterval;
+
+    function getSlideWidth() {
+        return allSlides[0].getBoundingClientRect().width;
     }
 
+    function updateSlidePosition(transition = true) {
+        const slideWidth = getSlideWidth();
+        track.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Initial positioning
+    updateSlidePosition(false);
+
+    function nextSlide() {
+        if (isTransitioning) return;
+        if (currentIndex >= allSlides.length - 1) return; // Safety
+        
+        isTransitioning = true;
+        currentIndex++;
+        updateSlidePosition(true);
+    }
+
+    function prevSlide() {
+        if (isTransitioning) return;
+        if (currentIndex <= 0) return; // Safety
+
+        isTransitioning = true;
+        currentIndex--;
+        updateSlidePosition(true);
+    }
+
+    // Handle seamless loop on transition end
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        
+        const lastIndex = allSlides.length - 1;
+        
+        // If we are at the appended first clone -> Jump to real first
+        if (currentIndex === lastIndex) {
+            currentIndex = 1;
+            updateSlidePosition(false); // No transition = teleport
+        }
+
+        // If we are at the prepended last clone -> Jump to real last
+        if (currentIndex === 0) {
+            currentIndex = allSlides.length - 2;
+            updateSlidePosition(false);
+        }
+    });
+
+    // Resize handler to fix width calcs if window changes (though using % helps)
+    window.addEventListener('resize', () => {
+        updateSlidePosition(false);
+    });
+
     nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlidePosition();
+        nextSlide();
+        resetAutoPlay();
     });
 
     prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlidePosition();
+        prevSlide();
+        resetAutoPlay();
     });
-    
-    // Auto-advance every 7s
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlidePosition();
-    }, 7000);
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    startAutoPlay();
 }
 
 
