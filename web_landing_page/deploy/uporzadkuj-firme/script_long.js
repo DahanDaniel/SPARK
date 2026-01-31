@@ -328,6 +328,20 @@ function initCarousel() {
 }
 
 
+/* --- FAQ LOGIC --- */
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            item.classList.toggle('active');
+            const icon = item.querySelector('.faq-icon');
+            if (icon) {
+                icon.textContent = item.classList.contains('active') ? '▲' : '▼';
+            }
+        });
+    });
+}
+
 /* --- MOBILE MENU LOGIC --- */
 function initMobileMenu() {
     const btn = document.querySelector('.mobile-menu-btn');
