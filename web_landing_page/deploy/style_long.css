@@ -492,9 +492,22 @@ h1, h2, h3, h4 {
     /* Carousel */
     .case-card { grid-template-columns: 1fr; height: auto; }
     .case-visual { height: 200px; width: 100%; }
-    .carousel-btn { display: flex; width: 36px; height: 36px; } /* Show arrows on mobile too */
     
-    /* Method */
+    /* Move arrows inside */
+    .carousel-btn { 
+        display: flex; width: 36px; height: 36px; 
+        background: white; /* Ensure background opaque */
+        opacity: 0.9;
+    } 
+    .btn-left { left: 5px; } 
+    .btn-right { right: 5px; }
+    
+    /* Method & Offers */
     .snake-item, .snake-item:nth-child(even) { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .grid-split { flex-direction: column !important; }
+    
+    .grid-split { 
+        flex-direction: column !important; 
+        align-items: center; /* Fix alignment of cards */
+        gap: 2rem !important; /* Ensure gap between stacked cards */
+    }
 }
