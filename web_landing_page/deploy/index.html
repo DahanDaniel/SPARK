@@ -3,188 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPARK – Mapping Lite | Inżynieria Biznesu</title>
-    <meta name="description" content="Odzyskaj sterowność operacyjną w jeden dzień. Sesja strategiczna Mapping Lite dla właścicieli firm.">
+    <title>Uporządkuj Firmę | SPARK Inżynieria Biznesu</title>
+    <meta name="description" content="Koniec z chaosem. Uporządkuj firmę, odzyskaj czas i kontrolę. Metoda SPARK dla właścicieli firm 1-20 mln PLN.">
     
-    <!-- Social Media Tags -->
-    <meta property="og:title" content="SPARK – Mapping Lite | Inżynieria Biznesu">
-    <meta property="og:description" content="Twój biznes urósł, ale chaos urósł szybciej? Odzyskaj kontrolę dzięki inżynierii procesów.">
-    <meta property="og:image" content="https://corevalue.pl/images/spark_minimal_map_graphic.png">
-    <meta property="og:url" content="https://corevalue.pl">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style_v2.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-    <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="style_long.css">
+    
+    <!-- Google Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWFRMF2LHJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-HWFRMF2LHJ');
     </script>
 </head>
-<body>
+<body class="long-page">
 
-    <nav class="navbar">
-        <div class="container navbar-content">
-            <div class="brand">SPARK <span class="est">EST. 1991</span></div>
-            <div class="nav-links">
-                <a href="#about">Dlaczego my?</a>
-                <a href="#process">Mapping Lite</a>
-                <a href="#pricing">Oferta</a>
-                <button class="btn btn-nav" onclick="window.location.href='https://calendar.app.google/ufEWQ4dGt9DwBgnJA'">Zarezerwuj</button>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-container">
-            <div class="hero-text">
-                <span class="badg">Dla Właścicieli Firm (1-20 mln PLN)</span>
-                <h1>Twoja firma urosła,<br>ale chaos urósł szybciej?</h1>
-                <p class="hero-sub">Od 1991 roku łączymy twardą inżynierię procesów z mentoringiem zarządczym. Odzyskaj sterowność operacyjną w jeden dzień.</p>
-                <div class="cta-group">
-                    <a href="#pricing" class="btn btn-primary btn-glow">Sprawdź Mapping Lite</a>
-                    <a href="#about" class="btn btn-outline">Jak pracujemy?</a>
+    <!-- 1. HERO SECTION -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Fallback to text if img missing is acceptable, but user wants Logo. 
+                     Since I can't generate an SVG right now, I will use a styled text block that looks like a logo. -->
+                <div style="font-family:'Outfit', sans-serif; font-weight:700; font-size:1.5rem; letter-spacing:-0.05em; color:#1E293B; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+                    <div style="display:flex; align-items:baseline; gap:8px;">
+                        SPARK <span style="font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; color:#94A3B8; font-weight:500;">Inżynieria Biznesu</span>
+                    </div>
+                    <span class="est-badge">EST. 1991</span>
                 </div>
             </div>
+            <nav class="nav-links">
+                <a href="#context">Objawy</a>
+                <a href="#process">Metoda</a>
+                <a href="#proof">Dowody</a>
+                <a href="#team">Zespół</a>
+                <a href="#offer" class="nav-cta">Diagnoza</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu">
+            <a href="#context">Objawy</a>
+            <a href="#process">Metoda</a>
+            <a href="#proof">Dowody</a>
+            <a href="#team">Zespół</a>
+            <a href="#offer" class="mobile-cta">Diagnoza</a>
         </div>
     </header>
 
-    <section id="about" class="section-about">
-        <div class="container">
-            <div class="grid-split">
-                <div class="about-content">
-                    <div class="section-label">O NAS</div>
-                    <h2>Nie teoretyzujemy.<br>Działamy od 1991 roku.</h2>
-                    <p class="lead">Łączymy precyzję inżyniera z empatią mentora. To unikalna mieszanka, której brakuje na rynku.</p>
-                    <p>Przez ponad 3 dekady widzieliśmy każdy możliwy błąd operacyjny. Nie dostaniesz od nas raportu "pułkownika" (do odłożenia na półkę). Dostaniesz praktykę wypracowaną na żywym organizmie biznesu.</p>
-                    <div class="stats-row">
-                        <div class="stat">
-                            <strong>30+</strong>
-                            <span>Lat Doświadczenia</span>
-                        </div>
-                        <div class="stat">
-                            <strong>100%</strong>
-                            <span>Gwarancja Satysfakcji</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image-wrapper">
-                    <img src="images/spark_process_collaboration.png" alt="Konsultant SPARK przy pracy" class="about-img">
-                    <div class="floating-card">
-                        <span>Praktyka, nie teoria</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="section-process">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label">ROZWIĄZANIE</div>
-                <h2>Co to jest Mapping Lite?</h2>
-                <p>90 minut, które zmieni Twoje spojrzenie na własną firmę. Chirurgiczne cięcie przez chaos.</p>
-            </div>
+    <section class="hero-long">
+        <div class="hero-content">
+            <h1>Uporządkuj firmę tak, żeby działała bez ciągłego gaszenia <span class="text-gold">pożarów.</span></h1>
+            <p style="font-size:1.3rem; margin-bottom:2.5rem; opacity:0.9; max-width:700px; margin-left:auto; margin-right:auto;">
+                Masz firmę. Masz ludzi. Masz klientów. <br>
+                A mimo to wciąż wszystko wraca do Ciebie.
+            </p>
             
-            <div class="process-showcase">
-                <div class="process-img-col">
-                    <img src="images/spark_minimal_map_graphic.png" alt="Wizualizacja procesu Mapping Lite" class="process-img">
+            <div class="hero-actions">
+                <a href="#process" class="btn-gold">Metoda SPARK</a>
+                <a href="#calculator" class="btn-outline-gold">Zobacz ile tracisz</a>
+            </div>
+
+            <!-- Scroll Indicator Styled as Pill -->
+            <a href="#context" class="hero-sub">
+                <span class="scroll-arrow">▼</span>
+                Zrozum problem
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. CONTEXT AWARENESS -->
+    <section id="context" class="section-context section-wrapper">
+        <div class="container center">
+            <div class="section-label">OBJAWY</div>
+            <h2 style="font-size:2.5rem; margin-bottom:1.5rem;">Chaos kosztuje Cię więcej, niż myślisz</h2>
+            <p style="color:#64748B; max-width:700px; margin:0 auto; font-size:1.1rem;">
+                Czy wstydzisz się pokazać procesy nowym pracownikom? To nie jest kwestia motywacji zespołu.
+                To kwestia braku systemu. Albo ustawiasz zasady gry, albo chaos ustawia je za Ciebie.
+            </p>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">🔥</span>
+                    <h3 style="margin-bottom:1rem;">Ciągłe gaszenie pożarów</h3>
+                    <p style="color:#64748B; font-size:0.95rem;">Zamiast rozwijać firmę, wciąż naprawiasz te same błędy. Czujesz, że jesteś jedyną osobą, która "ogarnia".</p>
                 </div>
-                <div class="process-steps-col">
-                    <div class="step-card">
-                        <div class="step-num">01</div>
-                        <div class="step-content">
-                            <h3>Mapa Procesu</h3>
-                            <p>Zamiast domysłów – twarde fakty. Zobaczysz przepływ wartości w Twojej firmie na jednej, czytelnej planszy.</p>
+                <div class="pain-card">
+                    <span class="pain-icon">📉</span>
+                    <h3 style="margin-bottom:1rem;">Utrata kontroli</h3>
+                    <p style="color:#64748B; font-size:0.95rem;">Nie wiesz, co się dzieje, gdy nie ma Cię w biurze. Decyzje zajmują godziny zamiast minut.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">💸</span>
+                    <h3 style="margin-bottom:1rem;">Przepalanie pieniędzy</h3>
+                    <p style="color:#64748B; font-size:0.95rem;">Poprawki, reklamacje i przestoje zjadają Twoją marżę. Pracujesz więcej, żeby zarobić tyle samo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTERACTIVE QUIZ -->
+    <!-- 3. INTERACTIVE QUIZ MOVED TO wycena.html -->
+
+    <!-- 4. CALCULATOR (DARK) -->
+    <section id="calculator" class="calc-section section-wrapper">
+        <div class="container center">
+            <div class="section-label" style="background:rgba(255,255,255,0.1); color:white; border-color:rgba(255,255,255,0.2);">KOSZT BIERNOŚCI</div>
+            <h2 style="font-size:3rem; margin-bottom:1rem;">Ile tracisz co miesiąc?</h2>
+            <p style="color:#94A3B8;">Prawda w liczbach. Bezlitosna weryfikacja.</p>
+
+            <div class="calc-wrapper">
+                <div style="text-align: left;">
+                    <div class="calc-slider-group">
+                        <div class="calc-label-row">
+                            <span>Zespół (osoby w chaosie)</span>
+                            <span id="val-team" class="text-gold font-bold">5</span>
                         </div>
+                        <input type="range" id="calc-team" min="1" max="25" value="5" class="calc-range">
                     </div>
-                    <div class="step-card">
-                        <div class="step-num">02</div>
-                        <div class="step-content">
-                            <h3>Lista Blokad</h3>
-                            <p>Bezlitośnie wypunktujemy wąskie gardła. Dowiesz się, gdzie dokładnie uciekają Twoje pieniądze.</p>
+
+                    <div class="calc-slider-group">
+                        <div class="calc-label-row">
+                            <span>Stracone godziny / tydzień / os.</span>
+                            <span id="val-hours" class="text-gold font-bold">8</span>
                         </div>
+                        <input type="range" id="calc-hours" min="1" max="20" value="8" class="calc-range">
                     </div>
-                    <div class="step-card">
-                        <div class="step-num">03</div>
-                        <div class="step-content">
-                            <h3>3 Rekomendacje</h3>
-                            <p>Gotowy plan naprawczy. Trzy kluczowe zmiany do wdrożenia natychmiast po sesji.</p>
+
+                    <div class="calc-slider-group">
+                        <div class="calc-label-row">
+                            <span>Średnia stawka godzinowa (PLN brutto)</span>
+                            <span id="val-rate" class="text-gold font-bold">60</span>
                         </div>
+                        <input type="range" id="calc-rate" min="30" max="250" value="60" class="calc-range">
+                    </div>
+                </div>
+
+                <div class="loss-display">
+                    <span style="text-transform:uppercase; font-size:0.8rem; letter-spacing:2px; color:#94A3B8;">Miesięczny koszt chaosu</span>
+                    <div id="result-monthly" class="loss-amount">0 PLN</div>
+                    <p style="font-size:0.9rem; color:#94A3B8;">Tyle pieniędzy możesz odzyskać, porządkując procesy.</p>
+                    <p style="font-size:0.8rem; color:var(--premium-gold); margin-top:0.5rem; opacity:0.8;">(To aż <span id="val-yearly-display">0</span> PLN rocznie!)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. METHOD (SNAKE) -->
+    <section id="process" class="section-method section-wrapper">
+        <div class="container center">
+            <div class="section-label">ROZWIĄZANIE</div>
+            <h2>Metoda SPARK</h2>
+            <p style="max-width:600px; margin:0 auto; color:#64748B;">Trzy proste kroki. Od chaosu do przewidywalności.</p>
+
+            <div class="method-snake">
+                <div class="snake-item">
+                    <div class="snake-icon">🔍</div>
+                    <div class="snake-text" style="text-align:left;">
+                        <h3>1. Sprawdzamy (Audyt)</h3>
+                        <p style="color:#64748B;">
+                            Bez lukru. Mapujemy stan faktyczny. Widzisz, gdzie dokładnie ucieka pieniądz i czas. 
+                            Dostajesz diagnozę, której nikt inny Ci nie dał.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="snake-item">
+                    <div class="snake-icon">⚙️</div>
+                    <div class="snake-text" style="text-align:right;">
+                        <h3>2. Ustawiamy (System)</h3>
+                        <p style="color:#64748B;">
+                            Wdrażamy checklisty, role i procedury. Nie "na papierze", ale w życiu. 
+                            Każdy wie, co ma robić. Koniec pytań "szefie, co teraz?".
+                        </p>
+                    </div>
+                </div>
+
+                <div class="snake-item">
+                    <div class="snake-icon">📈</div>
+                    <div class="snake-text" style="text-align:left;">
+                        <h3>3. Kontrolujemy (Liczby)</h3>
+                        <p style="color:#64748B;">
+                            Wdrażamy 3-5 kluczowych mierników.
+                            Widzisz firmę jak na desce rozdzielczej. Masz spokój, bo liczby nie kłamią.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="section-pricing">
+    <!-- 6. FOR WHOM -->
+    <section class="section-who section-wrapper">
         <div class="container">
-            <div class="pricing-card enhanced">
-                <div class="pricing-header">
-                    <span class="offer-badge">Oferta Pilotażowa</span>
-                    <h2>Sesja Mapping Lite</h2>
-                    <div class="price-wrapper">
-                        <span class="new-price" style="font-size: 2.5rem;">Wycena indywidualna</span>
-                    </div>
-                </div>
-                <div class="pricing-body">
-                    <p class="pricing-reason">
-                        <strong>Dlaczego warto?</strong><br>
-                        Otwieramy nowy sektor usług. Potrzebujemy 5 wzorcowych Case Studies. 
-                        Dajemy naszą wiedzę w zamian za możliwość pochwalenia się Twoim sukcesem.
-                    </p>
-                    <ul class="features-list">
-                        <li><span class="icon">✓</span> 90 minut konsultacji online 1:1</li>
-                        <li><span class="icon">✓</span> Mapa procesu + Raport PDF</li>
-                        <li><span class="icon">✓</span> Gwarancja zwrotu pieniędzy</li>
+            <div class="who-grid">
+                <div class="who-col">
+                    <h3>✅ SPARK jest dla Ciebie, jeśli:</h3>
+                    <ul class="check-list">
+                        <li><span class="check-icon">✓</span> Masz zespół (nawet mały) i czujesz chaos.</li>
+                        <li><span class="check-icon">✓</span> Chcesz delegować bez utraty jakości.</li>
+                        <li><span class="check-icon">✓</span> Chcesz odzyskać czas i spokój jako właściciel.</li>
                     </ul>
-                    <a href="https://calendar.app.google/ufEWQ4dGt9DwBgnJA" class="btn btn-primary btn-full">Zapytaj o termin</a>
-                    <p class="micro-copy">Ostatnie 2 miejsca w ofercie pilotażowej.</p>
+                </div>
+                <div class="who-col">
+                    <h3>❌ To NIE jest dla Ciebie, jeśli:</h3>
+                    <ul class="check-list">
+                        <li><span class="cross-icon">✕</span> Liczysz na "magiczną sztuczkę" bez wdrożenia.</li>
+                        <li><span class="cross-icon">✕</span> Nie chcesz ustalić jasnych zasad odpowiedzialności.</li>
+                        <li><span class="cross-icon">✕</span> Uważasz, że "chaos to kreatywność".</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section-contact">
-        <div class="container">
-            <h2>Zatrzymaj chaos. Zrób pierwszy krok.</h2>
-            <div class="contact-actions">
-                <button class="btn btn-primary btn-lg" onclick="window.location.href='https://calendar.app.google/ufEWQ4dGt9DwBgnJA'">Zarezerwuj 15-min Diagnostykę</button>
-                <div class="divider">LUB</div>
-                <div class="callback-box">
-                    <p>Wolisz rozmowę telefoniczną?</p>
-                    <!-- Form prepared for Formspree (Universal) or Netlify Forms (Hosting) -->
-                    <form action="https://formspree.io/f/xvgebblj" method="POST" data-netlify="true">
-                        <input type="tel" name="phone" placeholder="Twój numer telefonu" required>
-                        <button type="submit">Oddzwońcie</button>
-                    </form>
+    <!-- 7. PROOF (CAROUSEL) -->
+    <section id="proof" class="section-proof section-wrapper">
+        <div class="container center">
+            <div class="section-label">DOWODY</div>
+            <h2>Historie z Polskiego Biznesu</h2>
+            <p style="color: #64748B; margin-bottom: 2rem;">Właściciele, którzy odzyskali kontrolę.</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn btn-left">←</button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <div class="case-card">
+                                <div class="case-visual" style="background-image: url('images/spark_accounting_literal.png');">
+                                    <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">BIURO RACHUNKOWE</div>
+                                </div>
+                                <div class="case-content" style="text-align:left;">
+                                    <div style="color:#F59E0B; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
+                                    <h3>"Odzyskałem 12h tygodniowo"</h3>
+                                    <p style="color:#64748B; margin-bottom:1.5rem; font-style:italic;">
+                                        "Mój zespół 9 osób ciągle pytał o wyjątki. Po wdrożeniu zasad decyzyjnych, pytania spadły o 70%. W końcu mogę zająć się strategią, a nie gaszeniem pożarów."
+                                    </p>
+                                    <p style="font-weight:700;">Dawid, Właściciel</p>
+                                    <hr style="border:0; border-top:1px solid #E2E8F0; margin:1rem 0;">
+                                    <div style="display:flex; justify-content:space-between;">
+                                        <div><div style="color:var(--success-green); font-weight:700;">-70%</div><small>Telefonów</small></div>
+                                        <div><div style="color:var(--success-green); font-weight:700;">+12h</div><small>Czasu</small></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="case-card">
+                                <div class="case-visual" style="background-image: url('images/spark_construction_literal.png');">
+                                    <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">FIRMA BUDOWLANA</div>
+                                </div>
+                                <div class="case-content" style="text-align:left;">
+                                    <div style="color:#F59E0B; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
+                                    <h3>"Koniec z łataniem dziur"</h3>
+                                    <p style="color:#64748B; margin-bottom:1.5rem; font-style:italic;">
+                                        "Materiały nie dojeżdżały, ekipy stały. Wprowadziliśmy proste checklisty startowe. Opóźnienia spadły drastycznie, a planowanie ruszyło 3 tygodnie do przodu zamiast 'na jutro'."
+                                    </p>
+                                    <p style="font-weight:700;">Paweł, Prezes (25 os.)</p>
+                                    <hr style="border:0; border-top:1px solid #E2E8F0; margin:1rem 0;">
+                                    <div style="display:flex; justify-content:space-between;">
+                                        <div><div style="color:var(--success-green); font-weight:700;">-60%</div><small>Opóźnień</small></div>
+                                        <div><div style="color:var(--success-green); font-weight:700;">-40%</div><small>Przestojów</small></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="case-card">
+                                <div class="case-visual" style="background-image: url('images/spark_logistics_literal.png');">
+                                    <div style="position:absolute; bottom:20px; left:20px; z-index:2; background:white; padding:5px 15px; border-radius:20px; font-weight:700; font-size:0.8rem;">HURTOWNIA</div>
+                                </div>
+                                <div class="case-content" style="text-align:left;">
+                                    <div style="color:#F59E0B; font-size:1.2rem; margin-bottom:0.5rem;">★★★★★</div>
+                                    <h3>"Nowi wdrażają się 2x szybciej"</h3>
+                                    <p style="color:#64748B; margin-bottom:1.5rem; font-style:italic;">
+                                        "Wdrożenie handlowca trwało wiecznie. Zrobiliśmy '1 proces na 1 stronę' + checklistę. Błędy spadły niemal do zera."
+                                    </p>
+                                    <p style="font-weight:700;">Marek, Właściciel</p>
+                                    <hr style="border:0; border-top:1px solid #E2E8F0; margin:1rem 0;">
+                                    <div style="display:flex; justify-content:space-between;">
+                                        <div><div style="color:var(--success-green); font-weight:700;">-50%</div><small>Onboarding</small></div>
+                                        <div><div style="color:var(--success-green); font-weight:700;">-70%</div><small>Błędów</small></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="carousel-btn btn-right">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. WHY US -->
+    <section id="team" class="section-why section-wrapper">
+        <div class="container center">
+            <div class="section-label text-gold" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2);">ZESPÓŁ</div>
+            <h2>Dlaczego SPARK?</h2>
+            <p style="color:var(--premium-text-muted);">Jesteśmy praktykami, nie teoretykami. Łączymy świat biznesu, IT i psychologii.</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🏗️</div>
+                    <h4>Praktycy Biznesu</h4>
+                    <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Sami budowaliśmy firmy od zera. Znamy ból nieprzespanych nocy i chaosu.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📐</div>
+                    <h4>Architekci Procesów</h4>
+                    <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Potrafimy rozłożyć skomplikowany bałagan na proste klocki, które każdy zrozumie.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💻</div>
+                    <h4>Informatycy i Analitycy</h4>
+                    <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Wykorzystujemy automatyzację i AI, żeby zdjąć Ci z głowy powtarzalną pracę.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🧠</div>
+                    <h4>Mentorzy i Coache</h4>
+                    <p style="font-size:0.9rem; color:#94A3B8; margin-top:0.5rem;">Wiemy jak wdrażać zmiany w zespole bez buntu i oporu ludzi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. OFFER -->
+    <section id="offer" class="section-about section-wrapper" style="padding: 6rem 0;">
+        <div class="container hover-container center">
+            <h2 style="margin-bottom: 3rem;">Bezpieczny start: Najpierw diagnoza</h2>
+            <p style="margin-bottom: 4rem; max-width:600px; margin-left:auto; margin-right:auto; color:#64748B;">
+                Zero zgadywania. Decyzja po faktach. Po diagnozie dostajesz jasny obraz i plan na 30 dni. Dopiero wtedy decydujesz, czy idziemy dalej.
+            </p>
+
+            <div class="grid-split" style="align-items: center; max-width: 900px; margin: 0 auto; gap: 3rem;">
+                
+                <!-- Small Card -->
+                <div style="padding:2rem; border:1px solid #E2E8F0; border-radius:16px; width:100%; text-align:center;">
+                    <h3 style="font-size:1.2rem;">Rozmowa Wstępna</h3>
+                    <div style="font-size:1.5rem; font-weight:700; margin:1rem 0;">0 PLN</div>
+                    <ul class="features-list" style="font-size:0.9rem; margin-bottom:2rem; display:block; text-align:center;">
+                        <li>15 minut online</li>
+                        <li>Weryfikacja problemu</li>
+                        <li>Sprawdzenie "chemii"</li>
+                    </ul>
+                    <a href="https://api.leadconnectorhq.com/widget/booking/Ppa45Pv09x6RoClT5Aev" class="btn btn-outline" style="width:100%; justify-content:center;">Umów 15 min</a>
+                </div>
+
+                <!-- Big Card (Hero) -->
+                <div style="padding:3rem; border:2px solid #D4AF37; background:white; border-radius:24px; width:100%; position:relative; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transform:scale(1.05);">
+                    <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:#D4AF37; color:white; padding:0.4rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:700; text-transform:uppercase;">Rekomendowane</div>
+                    <h3 style="font-size:1.8rem; color:#1E293B;">Diagnoza SPARK</h3>
+                    <p style="color:#64748B; margin-bottom:1rem;">Pełne prześwietlenie firmy</p>
+                    <div style="font-size:2.5rem; font-weight:700; color:#D4AF37; margin-bottom:2rem;">Wycena Indywidualna</div>
+                    
+                    <ul class="features-list" style="margin-bottom:2rem;">
+                        <li><span class="icon">✓</span> Wskazanie wąskich gardeł</li>
+                        <li><span class="icon">✓</span> <strong>Gotowy Plan</strong> na 30 dni</li>
+                        <li><span class="icon">✓</span> Raport Ryzyka i Szans</li>
+                    </ul>
+
+                    <a href="wycena.html" class="btn-gold" style="width:100%; display:flex; justify-content:center;">Sprawdź cenę</a>
+                    <p class="micro-copy" style="margin-top:1rem;">Bezpieczna decyzja. Najpierw plan, potem wdrożenie.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="section-about section-wrapper" style="background:#F8FAFC; padding-top:4rem;">
+        <div class="container" style="max-width:800px;">
+            <div class="center" style="margin-bottom:2rem;">
+                <h3 style="font-size:1.5rem;">Częste pytania</h3>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Ile to trwa? <span class="faq-icon">▼</span></button>
+                    <div class="faq-answer"><p>Nie potrzebujesz roku zmian. Startujemy od Diagnozy SPARK (90 minut), a wdrożenie trwa zwykle 4–8 tygodni. Pierwsze realne odciążenie często czujesz już po 7–14 dniach.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Czy da się to zrobić bez paraliżu firmy? <span class="faq-icon">▼</span></button>
+                    <div class="faq-answer"><p>Tak, bo to nie rewolucja. To porządek wdrażany krok po kroku. Firma pracuje normalnie, a my dokładamy proste elementy: checklista, zasada odpowiedzialności, rytm kontroli.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Co jeśli zespół będzie stawiał opór? <span class="faq-icon">▼</span></button>
+                    <div class="faq-answer"><p>Opór to zwykle strach, nie bunt. Gdy ludzie widzą mniej poprawek, mniej chaosu i mniej pretensji, opór topnieje. Włączamy kluczowe osoby i pokazujemy szybkie efekty.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Czy to działa w małej firmie? <span class="faq-icon">▼</span></button>
+                    <div class="faq-answer"><p>W małej firmie działa najszybciej, bo chaos najbardziej boli właściciela. Nawet przy 2–10 osobach porządek daje natychmiastową ulgę.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Jakie dane muszę mieć? (minimum) <span class="faq-icon">▼</span></button>
+                    <div class="faq-answer"><p>Minimum. Wystarczy wiedzieć: co sprzedajesz, jak wygląda typowe zlecenie i gdzie się sypie, oraz znać podstawowe liczby (przychód/koszty).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Co jeśli mam chaos w sprzedaży lub realizacji? <span class="faq-icon">▼</span></button>
+                    <div class="faq-answer"><p>Zaczynamy tam, gdzie dziś ucieka Ci najwięcej czasu i pieniędzy. W diagnozie znajdujemy jedno wąskie gardło, które blokuje całą firmę, i od niego startujemy.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2025 SPARK. Inżynieria Biznesu & Mentoring.</p>
-            <div class="footer-legal">
-                <a href="https://idaco.pl/kontakt/polityka-prywatnosci/" target="_blank">Polityka Prywatności</a>
-                <span class="legal-note">Administratorem danych jest SPARK.</span>
-            </div>
+        <div class="container footer-content center" style="flex-direction:column; gap:1rem;">
+            <div class="brand" style="color:white;">SPARK <span class="est">EST. 1991</span></div>
+            <p>&copy; 2026 Inżynieria Biznesu.</p>
+            <a href="https://idaco.pl/kontakt/polityka-prywatnosci/" target="_blank" style="color:#64748B; text-decoration:none;">Polityka Prywatności</a>
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="container cookie-content">
-            <p>Strona wykorzystuje pliki cookies w celu realizacji usług. Korzystając ze strony wyrażasz zgodę na ich używanie.</p>
-            <button class="btn btn-outline-dark" onclick="document.getElementById('cookie-banner').style.display='none'">Akceptuję</button>
-        </div>
-    </div>
-
+    <script src="script_final.js" defer></script>
 </body>
 </html>
