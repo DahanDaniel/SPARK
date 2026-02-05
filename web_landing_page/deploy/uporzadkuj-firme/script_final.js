@@ -331,6 +331,7 @@ function initCarousel() {
 /* --- FAQ LOGIC --- */
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
+    console.log(`[FAQ] Found ${faqItems.length} items to initialize.`);
     faqItems.forEach(item => {
         item.querySelector('.faq-question').addEventListener('click', () => {
             item.classList.toggle('active');
