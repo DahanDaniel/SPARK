@@ -514,18 +514,22 @@ h1, h2, h3, h4 {
     .snake-item, .snake-item:nth-child(even) { flex-direction: column; text-align: center; gap: 1.5rem; }
     
     .grid-split { 
+        display: flex !important;
         flex-direction: column !important; 
-        align-items: center; 
+        align-items: center !important; 
         gap: 2rem !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        width: 100% !important;
     }
     
-    /* Reset transform on big card for mobile to avoid alignment issues */
+    /* Reset transform on big card for mobile to avoid alignment issues & Force Centering */
     .grid-split > div { 
         transform: none !important; 
         width: 100% !important; 
+        max-width: 400px !important; /* Prevent too wide on tablets/mobile */
         box-sizing: border-box !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        padding: 2rem !important; /* Reduce padding on mobile */
     }
 }
