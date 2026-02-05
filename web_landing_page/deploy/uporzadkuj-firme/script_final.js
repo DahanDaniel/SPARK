@@ -139,11 +139,13 @@ const SPARK = {
                     <h3 style="margin-bottom:1rem; color:${color}; font-size:2.5rem;">${percentage}% Chaosu</h3>
                     <p style="font-size:1.2rem; margin-bottom:2rem; color:#64748B; max-width:600px; margin-left:auto; margin-right:auto;">${msg}</p>
                     <div style="display:flex; justify-content:center; gap:1rem;">
-                         <a href="#calculator" class="btn-gold">Zobacz ile to kosztuje (Dalej)</a>
-                         <button onclick="location.reload()" class="btn-outline-gold" style="border:none; padding:1rem;">Powtórz</button>
+                         <button onclick="document.getElementById('pricing').style.display='block'; document.getElementById('pricing').scrollIntoView({behavior: 'smooth'}); this.style.display='none';" class="btn-gold">Przejdź do Rozwiązania &raquo;</button>
                     </div>
                 </div>
             `;
+            
+            // Auto-reveal if preferred, but button gives user control to read result first
+            // document.getElementById('pricing').style.display = 'block';
         }
     },
 

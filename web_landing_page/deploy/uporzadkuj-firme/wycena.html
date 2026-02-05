@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wycena Diagnozy | SPARK Inżynieria Biznesu</title>
+    <meta name="description" content="Sprawdź ile kosztuje chaos w Twojej firmie. Diagnoza SPARK.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style_v2.css">
+    <link rel="stylesheet" href="style_long.css">
+    
+    <!-- Google Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWFRMF2LHJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HWFRMF2LHJ');
+    </script>
+
+    <style>
+        .valuation-hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        .valuation-price-card {
+            background: white;
+            border: 2px solid #D4AF37;
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        .price-header {
+            margin-bottom: 2rem;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #94A3B8;
+            font-size: 1.5rem;
+        }
+        .new-price {
+            color: #D4AF37;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .countdown-timer {
+            color: #EF4444;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .order-form {
+            text-align: left;
+            margin-top: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #1E293B;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: #D4AF37;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .form-submit:hover {
+            background: #B59325;
+        }
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="long-page">
+
+    <nav class="navbar" style="position:static;">
+        <div class="nav-container center" style="justify-content:center;">
+             <div class="logo">
+                <div style="font-family:'Outfit', sans-serif; font-weight:700; font-size:1.5rem; letter-spacing:-0.05em; color:#1E293B; display:flex; align-items:baseline; gap:10px;">
+                    SPARK <span style="font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; color:#94A3B8; font-weight:500;">Inżynieria Biznesu</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. CHAOS AUDIT (Moved from Home) -->
+    <section id="audit" class="quiz-section section-wrapper">
+        <div class="container">
+            <div class="center" style="margin-bottom:3rem;">
+                <div class="section-label">KROK 1</div>
+                <h2>Audyt Chaosu</h2>
+                <p style="color:#64748B;">Zanim przejdziesz do wyceny, upewnij się, że masz co porządkować.</p>
+            </div>
+            
+            <!-- We need to ensure the quiz script targets this container -->
+            <div id="quiz-view" class="quiz-container">
+                <!-- JS Loads Quiz Here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SALES TEXT -->
+    <section class="section-wrapper" style="background:#F8FAFC;">
+        <div class="container" style="max-width:800px;">
+            <div class="center">
+                <h2 style="margin-bottom:2rem;">Dlaczego Diagnoza SPARK?</h2>
+                <p style="font-size:1.1rem; line-height:1.8; color:#334155; margin-bottom:2rem; text-align:left;">
+                    Większość konsultantów chce Ci sprzedać "wdrożenie" za dziesiątki tysięcy złotych, zanim w ogóle zrozumieją, gdzie leży problem. My działamy jak lekarz. 
+                    <strong>Najpierw diagnoza (RTG), potem leczenie.</strong>
+                </p>
+                <p style="font-size:1.1rem; line-height:1.8; color:#334155; margin-bottom:2rem; text-align:left;">
+                    Podczas 90-minutowej sesji rozkładamy Twoją firmę na czynniki pierwsze. Nie dostajesz ogólników. Dostajesz brutalnie szczerą mapę sytuacji i konkretny plan naprawczy.
+                </p>
+                <div style="background:white; padding:2rem; border-radius:12px; border-left:4px solid #D4AF37; text-align:left;">
+                    <h3 style="margin-bottom:1rem;">Co otrzymasz po spotkaniu?</h3>
+                    <ul class="check-list" style="display:grid; gap:10px;">
+                        <li><span class="check-icon">✓</span> <strong>Mapę Wąskich Gardeł</strong> – wiemy dokładnie, co blokuje wzrost.</li>
+                        <li><span class="check-icon">✓</span> <strong>Plan "Chaos Zero"</strong> – lista zadań na 30 dni.</li>
+                        <li><span class="check-icon">✓</span> <strong>Decyzję "Go/No-Go"</strong> – czy Twój biznes jest skalowalny.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CHECKOUT / VALUATION -->
+    <section id="pricing" class="section-wrapper" style="display:none;">
+        <div class="container center">
+            <div class="valuation-price-card">
+                <div class="price-header">
+                    <h3>Pełna Diagnoza SPARK</h3>
+                    <p style="color:#64748B;">90-minutowa sesja strategiczna + Raport</p>
+                </div>
+                
+                <div style="margin-bottom:2rem;">
+                    <span class="old-price">1997 PLN</span> <br>
+                    <span class="new-price">497 PLN</span> <br>
+                    <span style="color:#94A3B8; font-size:0.9rem;">netto</span>
+                </div>
+
+                <div id="promo-timer" class="countdown-timer">
+                    <!-- JS will populates this -->
+                    Oferta wygasa za: ...
+                </div>
+
+                <div class="order-form" style="min-height: 800px;">
+                    <!-- Crazy CRM Embed -->
+                    <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/AEu3BD4i6DH0yq0AAIgX"
+                        style="width:100%;height:100%;border:none;border-radius:3px"
+                        id="inline-AEu3BD4i6DH0yq0AAIgX" 
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Diagnoza SPARK"
+                        data-height="862"
+                        data-layout-iframe-id="inline-AEu3BD4i6DH0yq0AAIgX"
+                        data-form-id="AEu3BD4i6DH0yq0AAIgX"
+                        title="Diagnoza SPARK"
+                    ></iframe>
+                    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                </div>
+
+                <div class="guarantee-badge">
+                    <span>🔒 Bezpieczna płatność przez Stripe</span>
+                    <span>•</span>
+                    <span>30 dni gwarancji satysfakcji</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content center" style="flex-direction:column; gap:1rem;">
+             <p>&copy; 2026 Inżynieria Biznesu.</p>
+        </div>
+    </footer>
+
+    <!-- Load existing scripts -->
+    <script src="script_final.js"></script>
+    
+    <script>
+        // Separate script for Valuation Page Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Countdown Timer
+            const timerEl = document.getElementById('promo-timer');
+            
+            function updateTimer() {
+                const now = new Date();
+                // End of current month
+                const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+                
+                const diff = endOfMonth - now;
+                
+                if (diff <= 0) {
+                    timerEl.innerHTML = "Promocja zakończona";
+                    return;
+                }
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                timerEl.innerHTML = `Oferta wygasa za: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+            
+            setInterval(updateTimer, 1000);
+            updateTimer();
+        });
+    </script>
+</body>
+</html>
