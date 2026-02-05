@@ -493,21 +493,39 @@ h1, h2, h3, h4 {
     .case-card { grid-template-columns: 1fr; height: auto; }
     .case-visual { height: 200px; width: 100%; }
     
-    /* Move arrows inside */
+    /* Move arrows inside & Style properly */
     .carousel-btn { 
-        display: flex; width: 36px; height: 36px; 
-        background: white; /* Ensure background opaque */
-        opacity: 0.9;
+        display: flex !important; 
+        justify-content: center !important; 
+        align-items: center !important;
+        width: 36px; height: 36px; 
+        background: rgba(255,255,255,0.9); /* More opaque */
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 10;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        position: absolute !important;
     } 
-    .btn-left { left: 5px; } 
-    .btn-right { right: 5px; }
+    .btn-left { left: 10px !important; } 
+    .btn-right { right: 10px !important; }
     
     /* Method & Offers */
     .snake-item, .snake-item:nth-child(even) { flex-direction: column; text-align: center; gap: 1.5rem; }
     
     .grid-split { 
         flex-direction: column !important; 
-        align-items: center; /* Fix alignment of cards */
-        gap: 2rem !important; /* Ensure gap between stacked cards */
+        align-items: center; 
+        gap: 2rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Reset transform on big card for mobile to avoid alignment issues */
+    .grid-split > div { 
+        transform: none !important; 
+        width: 100% !important; 
+        box-sizing: border-box !important;
+        margin: 0 !important;
     }
 }
