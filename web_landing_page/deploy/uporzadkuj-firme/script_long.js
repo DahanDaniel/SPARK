@@ -372,6 +372,7 @@ function initMobileMenu() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("SPARK Script Loaded (Fixed FAQ)");
     initQuiz();
     initCalculator();
     initCarousel();
