@@ -14,6 +14,7 @@ const Dashboard = () => {
     const [error, setError] = useState('');
     const [filters, setFilters] = useState({ project: 'All', status: 'finished,running', startDate: null, endDate: null });
     const [selectedCampaignIds, setSelectedCampaignIds] = useState(new Set());
+    const [isCampaignListExpanded, setIsCampaignListExpanded] = useState(false);
     const [isDark, setIsDark] = useState(true);
 
     // Apply dark class to document gracefully
@@ -34,6 +35,34 @@ const Dashboard = () => {
         });
         setSelectedCampaignIds(matchingIds);
     }, [data]);
+
+    // Contextual Sync: Update selections when filters change, ONLY if the campaign list is closed
+    useEffect(() => {
+        if (!data?.listmonk?.allCampaigns || isCampaignListExpanded) return;
+        
+        const { project, status, startDate, endDate } = filters;
+        const sTime = startDate ? startDate.setHours(0,0,0,0) : null;
+        const eTime = endDate ? endDate.setHours(23,59,59,999) : null;
+
+        const matchingIds = new Set();
+        data.listmonk.allCampaigns.forEach(c => {
+            const projectMatch = project === 'All' || c.project === project;
+            const dateMatch = (!sTime || c.timestamp >= sTime) && (!eTime || c.timestamp <= eTime);
+            
+            let statusMatch = true;
+            if (status === 'finished,running') {
+                statusMatch = c.status === 'finished' || c.status === 'running';
+            } else if (status !== 'All') {
+                statusMatch = c.status === status;
+            }
+
+            if (projectMatch && dateMatch && statusMatch) {
+                matchingIds.add(c.id);
+            }
+        });
+        
+        setSelectedCampaignIds(matchingIds);
+    }, [filters, isCampaignListExpanded, data]);
 
     useEffect(() => {
         const fetchDashboardData = async () => {
@@ -209,6 +238,8 @@ const Dashboard = () => {
                         campaigns={renderData?.listmonk?.allCampaigns}
                         selectedCampaignIds={selectedCampaignIds}
                         onSelectionChange={setSelectedCampaignIds}
+                        isExpanded={isCampaignListExpanded}
+                        setIsExpanded={setIsCampaignListExpanded}
                     />
                 </div>
                 

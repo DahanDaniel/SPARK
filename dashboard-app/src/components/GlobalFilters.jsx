@@ -4,8 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useState } from 'react';
 import CampaignList from './CampaignList';
 
-const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, onSelectionChange }) => {
-    const [expanded, setExpanded] = useState(false);
+const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, onSelectionChange, isExpanded, setIsExpanded }) => {
 
     const handleProjectChange = (e) => {
         setFilters(prev => ({ ...prev, project: e.target.value }));
@@ -95,14 +94,14 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                 {/* Opcjonalny przycisk resetu i pokazania szczegółów */}
                 <div className="ml-auto w-auto flex items-center gap-3">
                     <button 
-                        onClick={() => setExpanded(!expanded)}
+                        onClick={() => setIsExpanded(!isExpanded)}
                         className="flex items-center gap-2 px-4 py-2 bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)] rounded-lg transition-colors text-sm font-medium text-[var(--color-text-primary)] whitespace-nowrap"
                     >
                         Wszystkie kampanie
                         <span className="text-xs px-2 py-0.5 bg-[var(--color-accent-purple)]/10 text-[var(--color-accent-purple)] rounded-full">
                             {selectedCampaignIds?.size || 0}
                         </span>
-                        <ChevronDown className={`w-4 h-4 text-[var(--color-text-secondary)] transition-transform ${expanded ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`w-4 h-4 text-[var(--color-text-secondary)] transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                     </button>
 
                     <button 
@@ -115,7 +114,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
             </div>
 
             {/* Expandable Campaign Filter Panel */}
-            {expanded && (
+            {isExpanded && (
                 <div className="mt-6 pt-6 border-t border-[var(--color-glass-border)]">
                     <CampaignList 
                         campaigns={campaigns} 
