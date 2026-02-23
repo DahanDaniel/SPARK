@@ -80,27 +80,10 @@ class ListmonkService {
                 let project = 'Inne';
                 const lowerName = (camp.name || '').toLowerCase();
                 const tagsDesc = (camp.tags || []).join(' ').toLowerCase();
-
-                // Custom hack for explicit campaign-to-project overrides defined by the CEO
-                const PROJECT_MAPPING = {
-                    'uporzadkuj': 'SPARK',
-                    'grzegorz kuca': 'VIRAL',
-                    'test': 'VIRAL', // DUMMY ALIAS FOR VERIFICATION
-                };
-
-                // Check Explicit Overrides First
-                for (const [key, explicitProject] of Object.entries(PROJECT_MAPPING)) {
-                    if (lowerName.includes(key) || tagsDesc.includes(key)) {
-                        project = explicitProject;
-                        break;
-                    }
-                }
-
                 const fromEmail = (camp.from_email || '').toLowerCase();
 
-                // If no explicit override fired, fallback to standard tagging
-                if (project === 'Inne') {
-                    if (lowerName.includes('grzegorz kuca') || tagsDesc.includes('viral') || fromEmail.includes('g.kuca') || lowerName.includes('viral studio')) {
+                // Assign project groups based on string matching
+                if (lowerName.includes('grzegorz kuca') || tagsDesc.includes('viral') || fromEmail.includes('g.kuca') || lowerName.includes('viral studio')) {
                         project = 'VIRAL STUDIO';
                     } else if (lowerName.includes('crazy') || tagsDesc.includes('crazy')) {
                         project = 'CRAZY CRM';
@@ -121,7 +104,6 @@ class ListmonkService {
                     } else if (lowerName.includes('directo') || tagsDesc.includes('directo') || fromEmail.includes('dariusz') || lowerName.includes('dp-1')) {
                         project = 'DIRECTO';
                     }
-                }
 
                 return {
                     id: camp.id,

@@ -106,8 +106,8 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                                     />
                                 </div>
                             </th>
-                            <th className="px-4 py-3 w-[120px]">Projekt</th>
-                            <th className="px-4 py-3 min-w-[300px]">Nazwa Kampanii</th>
+                            <th className="px-4 py-3 w-[160px]">Projekt</th>
+                            <th className="px-4 py-3 min-w-[400px]">Nazwa Kampanii</th>
                             <th className="px-4 py-3 w-[100px]">Status</th>
                             <th className="px-4 py-3 w-[100px]">Data</th>
                             <th className="px-4 py-3 text-right w-[100px]">Wysłano</th>
@@ -135,12 +135,12 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                                             className="w-4 h-4 accent-accent-purple cursor-pointer"
                                         />
                                     </td>
-                                    <td className="px-4 py-3">
+                                    <td className="px-4 py-3 whitespace-nowrap">
                                         <span className="px-2 py-1 bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] rounded font-medium text-xs text-spark-gold">
                                             {camp.project}
                                         </span>
                                     </td>
-                                    <td className="px-4 py-3 font-medium text-[var(--color-text-primary)] truncate max-w-[300px]" title={camp.name}>
+                                    <td className="px-4 py-3 font-medium text-[var(--color-text-primary)] truncate max-w-[500px]" title={camp.name}>
                                         {camp.name}
                                     </td>
                                     <td className="px-4 py-3">
