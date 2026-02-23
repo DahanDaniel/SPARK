@@ -70,7 +70,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                 </div>
 
                 {/* Zakres Dat Filter (React Datepicker) */}
-                <div className="relative group flex-1 min-w-[180px] max-w-[280px] flex items-center">
+                <div className="relative group flex-1 min-w-[180px] max-w-[280px] flex items-center z-50">
                     <Calendar className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-accent-blue)] z-10 pointer-events-none" />
                     <DatePicker
                         selectsRange={true}

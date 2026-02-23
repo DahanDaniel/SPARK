@@ -22,32 +22,18 @@ const Dashboard = () => {
         else document.documentElement.classList.remove('dark');
     }, [isDark]);
 
-    // Master Sync: When global filters or raw data changes, recalculate default checked campaigns
+    // Master Sync: ONLY on initial data load, populate default checked campaigns
     useEffect(() => {
-        if (!data?.listmonk?.allCampaigns) return;
+        if (!data?.listmonk?.allCampaigns || selectedCampaignIds.size > 0) return;
         
-        const { project, status, startDate, endDate } = filters;
-        const sTime = startDate ? startDate.setHours(0,0,0,0) : null;
-        const eTime = endDate ? endDate.setHours(23,59,59,999) : null;
-
         const matchingIds = new Set();
         data.listmonk.allCampaigns.forEach(c => {
-            const projectMatch = project === 'All' || c.project === project;
-            const dateMatch = (!sTime || c.timestamp >= sTime) && (!eTime || c.timestamp <= eTime);
-            
-            let statusMatch = true;
-            if (status === 'finished,running') {
-                statusMatch = c.status === 'finished' || c.status === 'running';
-            } else if (status !== 'All') {
-                statusMatch = c.status === status;
-            }
-
-            if (projectMatch && dateMatch && statusMatch) {
+            if (c.status === 'finished' || c.status === 'running') {
                 matchingIds.add(c.id);
             }
         });
         setSelectedCampaignIds(matchingIds);
-    }, [filters, data]);
+    }, [data]);
 
     useEffect(() => {
         const fetchDashboardData = async () => {
