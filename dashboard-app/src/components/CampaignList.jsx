@@ -1,25 +1,35 @@
 import { Mail, Search, CheckSquare, Square } from 'lucide-react';
 import { useState } from 'react';
 
-const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, currentStatusFilter }) => {
+const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filters }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     if (!campaigns || campaigns.length === 0) return null;
 
     const filtered = campaigns.filter(c => {
+        // 1. Local Search Filter
         const searchMatch = c.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                             c.project.toLowerCase().includes(searchQuery.toLowerCase());
         
+        // 2. Global Filters (Project, Status, Date)
+        const { project, status, startDate, endDate } = filters || {};
+        
+        const projectMatch = !project || project === 'All' || c.project === project;
+        
         let statusMatch = true;
-        if (currentStatusFilter && currentStatusFilter !== 'All') {
-            if (currentStatusFilter === 'finished,running') {
+        if (status && status !== 'All') {
+            if (status === 'finished,running') {
                 statusMatch = c.status === 'finished' || c.status === 'running';
             } else {
-                statusMatch = c.status === currentStatusFilter;
+                statusMatch = c.status === status;
             }
         }
         
-        return searchMatch && statusMatch;
+        const sTime = startDate ? startDate.setHours(0,0,0,0) : null;
+        const eTime = endDate ? endDate.setHours(23,59,59,999) : null;
+        const dateMatch = (!sTime || c.timestamp >= sTime) && (!eTime || c.timestamp <= eTime);
+        
+        return searchMatch && projectMatch && statusMatch && dateMatch;
     });
 
     const handleSelectAll = () => {

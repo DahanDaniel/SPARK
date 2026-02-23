@@ -120,7 +120,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                         campaigns={campaigns} 
                         selectedCampaignIds={selectedCampaignIds}
                         onSelectionChange={onSelectionChange}
-                        currentStatusFilter={filters.status}
+                        filters={filters}
                     />
                 </div>
             )}
