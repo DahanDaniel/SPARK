@@ -33,7 +33,7 @@ const CampaignFunnel = ({ funnelData }) => {
                 <h3 className="text-lg font-bold text-[var(--color-text-primary)]">Lejek Konwersji</h3>
             </div>
             
-            <div className="flex-1 w-full min-h-[480px]">
+            <div className="w-full" style={{ height: '480px' }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={data}

@@ -25,52 +25,52 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
     };
 
     return (
-        <div className="bento-card mb-6 flex flex-col transition-all duration-300">
+        <div className="bento-card mb-6 transition-all duration-300 p-4 lg:p-6">
             {/* Top Bar for Global Filters */}
-            <div className="p-3 bg-[var(--color-glass-bg)] flex flex-wrap items-center gap-4 border-b border-[var(--color-bento-border)]">
-                <div className="flex items-center gap-2 px-3 text-[var(--color-text-secondary)] border-r border-[var(--color-glass-border)]">
+            <div className="flex items-center gap-3 lg:gap-4">
+                <div className="hidden xl:flex items-center gap-2 pr-4 text-[var(--color-text-secondary)] border-r border-[var(--color-glass-border)]">
                     <Filter className="w-5 h-5" />
-                    <span className="text-sm font-semibold uppercase tracking-wider">Filtry Globalne</span>
+                    <span className="text-sm font-semibold uppercase tracking-wider whitespace-nowrap">Filtry Globalne</span>
                 </div>
                 
                 {/* Projekt Filter */}
-                <div className="relative group min-w-[200px]">
+                <div className="relative group flex-1 min-w-[120px] max-w-[220px]">
                     <select 
                         value={filters.project}
                         onChange={handleProjectChange}
-                        className="w-full appearance-none bg-[var(--color-glass-bg)] hover:bg-[var(--color-bento-card)] pl-10 pr-8 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-primary)] cursor-pointer outline-none transition-colors border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)]"
+                        className="w-full appearance-none bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] pl-10 pr-8 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-primary)] cursor-pointer outline-none transition-colors border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)]"
                     >
-                        <option value="All" className="bg-[var(--color-bento-bg)]">Wszystkie Projekty</option>
-                        <option value="SPARK" className="bg-[var(--color-bento-bg)]">SPARK</option>
-                        <option value="GLG" className="bg-[var(--color-bento-bg)]">Golden Lead Gen</option>
-                        <option value="MIND" className="bg-[var(--color-bento-bg)]">MIND</option>
-                        <option value="SEBASTIAN_WONS" className="bg-[var(--color-bento-bg)]">S. Wons</option>
-                        <option value="PPB" className="bg-[var(--color-bento-bg)]">PPB</option>
-                        <option value="DIRECTO" className="bg-[var(--color-bento-bg)]">Directo</option>
-                        <option value="Inne" className="bg-[var(--color-bento-bg)]">Inne Kampanie</option>
+                        <option value="All" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Wszystkie Projekty</option>
+                        <option value="SPARK" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">SPARK</option>
+                        <option value="GLG" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Golden Lead Gen</option>
+                        <option value="MIND" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">MIND</option>
+                        <option value="SEBASTIAN_WONS" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">S. Wons</option>
+                        <option value="PPB" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">PPB</option>
+                        <option value="DIRECTO" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Directo</option>
+                        <option value="Inne" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Inne Kampanie</option>
                     </select>
                     <Briefcase className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-spark-gold)] pointer-events-none" />
                 </div>
 
                 {/* Status Filter */}
-                <div className="relative group min-w-[200px]">
+                <div className="relative group flex-1 min-w-[120px] max-w-[220px]">
                     <select 
                         value={filters.status || 'finished,running'}
                         onChange={handleStatusChange}
-                        className="w-full appearance-none bg-[var(--color-glass-bg)] hover:bg-[var(--color-bento-card)] pl-10 pr-8 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-primary)] cursor-pointer outline-none transition-colors border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)]"
+                        className="w-full appearance-none bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] pl-10 pr-8 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-primary)] cursor-pointer outline-none transition-colors border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)]"
                     >
-                        <option value="All" className="bg-[var(--color-bento-bg)]">Wszystkie Statusy</option>
-                        <option value="finished,running" className="bg-[var(--color-bento-bg)]">Aktywne (Domyślne)</option>
-                        <option value="finished" className="bg-[var(--color-bento-bg)]">Zakończone (Finished)</option>
-                        <option value="running" className="bg-[var(--color-bento-bg)]">W Trakcie (Running)</option>
-                        <option value="draft" className="bg-[var(--color-bento-bg)]">Szkice (Draft)</option>
-                        <option value="paused" className="bg-[var(--color-bento-bg)]">Zatrzymane (Paused)</option>
+                        <option value="All" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Wszystkie Statusy</option>
+                        <option value="finished,running" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Aktywne (Domyślne)</option>
+                        <option value="finished" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Zakończone</option>
+                        <option value="running" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">W Trakcie</option>
+                        <option value="draft" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Szkice</option>
+                        <option value="paused" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Zatrzymane</option>
                     </select>
                     <CheckCircle2 className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-accent-green)] pointer-events-none" />
                 </div>
 
                 {/* Zakres Dat Filter (React Datepicker) */}
-                <div className="relative group min-w-[280px] flex items-center">
+                <div className="relative group flex-1 min-w-[180px] max-w-[280px] flex items-center">
                     <Calendar className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-accent-blue)] z-10 pointer-events-none" />
                     <DatePicker
                         selectsRange={true}
@@ -79,7 +79,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                         onChange={handleDateChange}
                         isClearable={false}
                         placeholderText="Wybierz zakres dat..."
-                        className="w-full bg-[var(--color-glass-bg)] hover:bg-[var(--color-bento-card)] pl-10 pr-10 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-primary)] cursor-pointer outline-none transition-colors border border-[var(--color-glass-border)] hover:border-[var(--color-accent-blue)]"
+                        className="w-full bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] pl-10 pr-10 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-primary)] cursor-pointer outline-none transition-colors border border-[var(--color-glass-border)] hover:border-[var(--color-accent-blue)]"
                         dateFormat="dd.MM.yyyy"
                     />
                     {(filters.startDate || filters.endDate) && (
@@ -93,12 +93,12 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                 </div>
                 
                 {/* Opcjonalny przycisk resetu i pokazania szczegółów */}
-                <div className="ml-auto flex items-center gap-4">
+                <div className="ml-auto w-auto flex items-center gap-3">
                     <button 
                         onClick={() => setExpanded(!expanded)}
-                        className="flex items-center gap-2 px-4 py-2 bg-[var(--color-glass-bg)] hover:bg-[var(--color-bento-card)] border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)] rounded-lg transition-colors text-sm font-medium text-[var(--color-text-primary)]"
+                        className="flex items-center gap-2 px-4 py-2 bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)] rounded-lg transition-colors text-sm font-medium text-[var(--color-text-primary)] whitespace-nowrap"
                     >
-                        Pokaż szczegóły i kampanie
+                        Pokaż szczegóły
                         <span className="text-xs px-2 py-0.5 bg-[var(--color-accent-purple)]/10 text-[var(--color-accent-purple)] rounded-full">
                             {selectedCampaignIds?.size || 0}
                         </span>
@@ -107,7 +107,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
 
                     <button 
                         onClick={() => setFilters({ project: 'All', status: 'finished,running', startDate: null, endDate: null })}
-                        className="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors underline"
+                        className="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors underline whitespace-nowrap"
                     >
                         Resetuj
                     </button>
@@ -116,7 +116,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
 
             {/* Expandable Campaign Filter Panel */}
             {expanded && (
-                <div className="border-t border-[var(--color-glass-border)] bg-[var(--color-glass-bg)]">
+                <div className="mt-6 pt-6 border-t border-[var(--color-glass-border)]">
                     <CampaignList 
                         campaigns={campaigns} 
                         selectedCampaignIds={selectedCampaignIds}
