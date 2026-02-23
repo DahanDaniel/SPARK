@@ -110,7 +110,6 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                             <th className="px-4 py-3 min-w-[300px]">Nazwa Kampanii</th>
                             <th className="px-4 py-3 w-[100px]">Status</th>
                             <th className="px-4 py-3 w-[100px]">Data</th>
-                            <th className="px-4 py-3 text-right w-[100px]">Odbiorcy</th>
                             <th className="px-4 py-3 text-right w-[100px]">Wysłano</th>
                             <th className="px-4 py-3 text-right text-accent-purple w-[80px]">OR</th>
                             <th className="px-4 py-3 text-right text-accent-blue w-[80px]">CTR</th>
@@ -155,9 +154,6 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                                     </td>
                                     <td className="px-4 py-3 text-text-secondary whitespace-nowrap">
                                         {new Date(camp.date).toLocaleDateString('pl-PL')}
-                                    </td>
-                                    <td className="px-4 py-3 text-right text-text-secondary">
-                                        {camp.target ? camp.target.toLocaleString('pl-PL') : '-'}
                                     </td>
                                     <td className="px-4 py-3 text-right text-text-secondary">
                                         {camp.sent.toLocaleString('pl-PL')}

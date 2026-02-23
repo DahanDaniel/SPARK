@@ -43,9 +43,13 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                         <option value="SPARK" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">SPARK</option>
                         <option value="GLG" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Golden Lead Gen</option>
                         <option value="MIND" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">MIND</option>
+                        <option value="CRAZY CRM" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">CRAZY CRM</option>
+                        <option value="VIRAL STUDIO" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Viral Studio</option>
+                        <option value="DIRECTO" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Directo</option>
                         <option value="SEBASTIAN_WONS" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">S. Wons</option>
                         <option value="PPB" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">PPB</option>
-                        <option value="DIRECTO" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Directo</option>
+                        <option value="TTPI" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">TTPI</option>
+                        <option value="RONI" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">RONI</option>
                         <option value="Inne" className="bg-[var(--color-bento-bg)] text-[var(--color-text-primary)]">Inne Kampanie</option>
                     </select>
                     <Briefcase className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-spark-gold)] pointer-events-none" />

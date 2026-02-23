@@ -96,14 +96,31 @@ class ListmonkService {
                     }
                 }
 
+                const fromEmail = (camp.from_email || '').toLowerCase();
+
                 // If no explicit override fired, fallback to standard tagging
                 if (project === 'Inne') {
-                    if (lowerName.includes('spark') || tagsDesc.includes('spark')) project = 'SPARK';
-                    else if (lowerName.includes('glg') || tagsDesc.includes('glg')) project = 'GLG';
-                    else if (lowerName.includes('mind') || tagsDesc.includes('mind')) project = 'MIND';
-                    else if (lowerName.includes('ppb') || tagsDesc.includes('ppb')) project = 'PPB';
-                    else if (lowerName.includes('wons') || tagsDesc.includes('wons')) project = 'SEBASTIAN_WONS';
-                    else if (lowerName.includes('directo') || tagsDesc.includes('directo')) project = 'DIRECTO';
+                    if (lowerName.includes('grzegorz kuca') || tagsDesc.includes('viral') || fromEmail.includes('g.kuca') || lowerName.includes('viral studio')) {
+                        project = 'VIRAL STUDIO';
+                    } else if (lowerName.includes('crazy') || tagsDesc.includes('crazy')) {
+                        project = 'CRAZY CRM';
+                    } else if (lowerName.includes('ttpi') || tagsDesc.includes('ttpi')) {
+                        project = 'TTPI';
+                    } else if (lowerName.includes('roni') || tagsDesc.includes('roni') || lowerName.includes('תמא') || lowerName.includes('tama')) {
+                        project = 'RONI';
+                    } else if (lowerName.includes('spark') || tagsDesc.includes('spark') || lowerName.includes('uporzadkuj') || lowerName.includes('ai readiness') || lowerName.includes('spa dla biznesu')) {
+                        project = 'SPARK';
+                    } else if (lowerName.includes('glg') || tagsDesc.includes('glg') || lowerName.includes('golden') || lowerName.includes('lead gen')) {
+                        project = 'GLG';
+                    } else if (lowerName.includes('mind') || tagsDesc.includes('mind')) {
+                        project = 'MIND';
+                    } else if (lowerName.includes('ppb') || tagsDesc.includes('ppb')) {
+                        project = 'PPB';
+                    } else if (lowerName.includes('wons') || tagsDesc.includes('wons') || lowerName.includes('sebastian')) {
+                        project = 'SEBASTIAN_WONS';
+                    } else if (lowerName.includes('directo') || tagsDesc.includes('directo') || fromEmail.includes('dariusz') || lowerName.includes('dp-1')) {
+                        project = 'DIRECTO';
+                    }
                 }
 
                 return {
@@ -114,7 +131,6 @@ class ListmonkService {
                     date: camp.created_at,
                     timestamp: new Date(camp.created_at).getTime(),
                     sent,
-                    target: camp.to_send || 0,
                     opened,
                     clicked,
                     openRate: sent > 0 ? parseFloat(((opened / sent) * 100).toFixed(1)) : 0,
