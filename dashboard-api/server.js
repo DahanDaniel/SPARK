@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://ceo.twojadomena.pl'], // Zmień to przy wdrożeniu na Seohost
+    origin: ['http://localhost:5173', 'https://corevalue.pl', 'https://www.corevalue.pl', 'https://cxo.goldenleadgeneration.com.pl'],
     credentials: true, // Wymagane dla ciasteczek (JWT)
 }));
 
