@@ -32,15 +32,16 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
         return searchMatch && projectMatch && statusMatch && dateMatch;
     });
 
-    const handleSelectAll = () => {
-        const newSet = new Set(selectedCampaignIds);
-        filtered.forEach(c => newSet.add(c.id));
-        onSelectionChange(newSet);
-    };
+    const allVisibleSelected = filtered.length > 0 && filtered.every(c => selectedCampaignIds.has(c.id));
+    const someVisibleSelected = filtered.length > 0 && filtered.some(c => selectedCampaignIds.has(c.id));
 
-    const handleDeselectAll = () => {
+    const handleMasterToggle = () => {
         const newSet = new Set(selectedCampaignIds);
-        filtered.forEach(c => newSet.delete(c.id));
+        if (allVisibleSelected) {
+            filtered.forEach(c => newSet.delete(c.id));
+        } else {
+            filtered.forEach(c => newSet.add(c.id));
+        }
         onSelectionChange(newSet);
     };
 
@@ -90,20 +91,29 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                 <table className="w-full text-sm text-left min-w-[800px]">
                     <thead className="text-xs text-text-secondary uppercase bg-[var(--color-glass-bg)] sticky top-0 backdrop-blur-md z-10">
                         <tr>
-                            <th className="px-4 py-3 rounded-tl-lg w-[100px] text-center">
-                                <div className="mb-2">Zaznacz</div>
-                                <div className="flex justify-center gap-2">
-                                    <button onClick={handleSelectAll} className="p-1 hover:text-[var(--color-text-primary)] transition-colors" title="Zaznacz widoczne"><CheckSquare className="w-4 h-4" /></button>
-                                    <button onClick={handleDeselectAll} className="p-1 hover:text-[var(--color-text-primary)] transition-colors" title="Odznacz widoczne"><Square className="w-4 h-4" /></button>
+                            <th className="px-4 py-3 rounded-tl-lg w-[80px] text-center">
+                                <div className="flex flex-col items-center justify-center gap-2">
+                                    <span className="text-[10px] leading-tight">WSZYSTKIE</span>
+                                    <input 
+                                        type="checkbox"
+                                        className="w-4 h-4 accent-accent-purple cursor-pointer"
+                                        checked={allVisibleSelected}
+                                        ref={input => {
+                                          if (input) input.indeterminate = someVisibleSelected && !allVisibleSelected;
+                                        }}
+                                        onChange={handleMasterToggle}
+                                        title="Zaznacz/odznacz widoczne"
+                                    />
                                 </div>
                             </th>
-                            <th className="px-4 py-3">Projekt</th>
-                            <th className="px-4 py-3">Nazwa Kampanii</th>
-                            <th className="px-4 py-3">Status</th>
-                            <th className="px-4 py-3">Data</th>
-                            <th className="px-4 py-3 text-right">Wysłano</th>
-                            <th className="px-4 py-3 text-right text-accent-purple">OR</th>
-                            <th className="px-4 py-3 text-right text-accent-blue">CTR</th>
+                            <th className="px-4 py-3 w-[120px]">Projekt</th>
+                            <th className="px-4 py-3 min-w-[300px]">Nazwa Kampanii</th>
+                            <th className="px-4 py-3 w-[100px]">Status</th>
+                            <th className="px-4 py-3 w-[100px]">Data</th>
+                            <th className="px-4 py-3 text-right w-[100px]">Odbiorcy</th>
+                            <th className="px-4 py-3 text-right w-[100px]">Wysłano</th>
+                            <th className="px-4 py-3 text-right text-accent-purple w-[80px]">OR</th>
+                            <th className="px-4 py-3 text-right text-accent-blue w-[80px]">CTR</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,7 +141,7 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                                             {camp.project}
                                         </span>
                                     </td>
-                                    <td className="px-4 py-3 font-medium text-[var(--color-text-primary)] max-w-[200px] truncate" title={camp.name}>
+                                    <td className="px-4 py-3 font-medium text-[var(--color-text-primary)] truncate max-w-[300px]" title={camp.name}>
                                         {camp.name}
                                     </td>
                                     <td className="px-4 py-3">
@@ -143,8 +153,11 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                                             {camp.status}
                                         </span>
                                     </td>
-                                    <td className="px-4 py-3 text-text-secondary">
+                                    <td className="px-4 py-3 text-text-secondary whitespace-nowrap">
                                         {new Date(camp.date).toLocaleDateString('pl-PL')}
+                                    </td>
+                                    <td className="px-4 py-3 text-right text-text-secondary">
+                                        {camp.target ? camp.target.toLocaleString('pl-PL') : '-'}
                                     </td>
                                     <td className="px-4 py-3 text-right text-text-secondary">
                                         {camp.sent.toLocaleString('pl-PL')}

@@ -114,6 +114,7 @@ class ListmonkService {
                     date: camp.created_at,
                     timestamp: new Date(camp.created_at).getTime(),
                     sent,
+                    target: camp.to_send || 0,
                     opened,
                     clicked,
                     openRate: sent > 0 ? parseFloat(((opened / sent) * 100).toFixed(1)) : 0,
