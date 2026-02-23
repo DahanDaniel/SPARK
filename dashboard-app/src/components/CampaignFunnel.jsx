@@ -16,14 +16,12 @@ const CustomTooltip = ({ active, payload }) => {
 const CampaignFunnel = ({ funnelData }) => {
     if (!funnelData) return null;
 
-    const safeLog = (val) => val > 0 ? Math.log10(val) : 0;
-
     const data = [
-        { name: 'Wysłane', value: funnelData.sent, logValue: safeLog(funnelData.sent), color: '#3B82F6' },
-        { name: 'Otwarte', value: funnelData.opened, logValue: safeLog(funnelData.opened), color: '#6366F1' },
-        { name: 'Kliknięte', value: funnelData.clicked, logValue: safeLog(funnelData.clicked), color: '#8B5CF6' },
-        { name: 'Leady', value: funnelData.leads, logValue: safeLog(funnelData.leads), color: '#10B981' },
-        { name: 'Golden Leady', value: funnelData.goldenLeads, logValue: safeLog(funnelData.goldenLeads), color: '#D4AF37' }
+        { name: 'Wysłane', value: funnelData.sent, color: '#3B82F6' },
+        { name: 'Otwarte', value: funnelData.opened, color: '#6366F1' },
+        { name: 'Kliknięte', value: funnelData.clicked, color: '#8B5CF6' },
+        { name: 'Leady', value: funnelData.leads, color: '#10B981' },
+        { name: 'Golden Leady', value: funnelData.goldenLeads, color: '#D4AF37' }
     ];
 
     return (
@@ -33,7 +31,7 @@ const CampaignFunnel = ({ funnelData }) => {
                 <h3 className="text-lg font-bold text-[var(--color-text-primary)]">Lejek Konwersji</h3>
             </div>
             
-            <div className="w-full" style={{ height: '480px' }}>
+            <div className="w-full" style={{ height: '260px' }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={data}
@@ -56,7 +54,7 @@ const CampaignFunnel = ({ funnelData }) => {
                             width={100}
                         />
                         <Tooltip content={<CustomTooltip />} cursor={{fill: 'var(--color-glass-bg)'}} />
-                        <Bar dataKey="logValue" radius={[4, 4, 4, 4]} barSize={24}>
+                        <Bar dataKey="value" minPointSize={5} radius={[4, 4, 4, 4]} barSize={24}>
                             {data.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={entry.color} />
                             ))}

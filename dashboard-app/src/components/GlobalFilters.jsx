@@ -30,7 +30,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
             <div className="flex items-center gap-3 lg:gap-4">
                 <div className="hidden xl:flex items-center gap-2 pr-4 text-[var(--color-text-secondary)] border-r border-[var(--color-glass-border)]">
                     <Filter className="w-5 h-5" />
-                    <span className="text-sm font-semibold uppercase tracking-wider whitespace-nowrap">Filtry Globalne</span>
+                    <span className="text-sm font-semibold uppercase tracking-wider whitespace-nowrap">Filtry</span>
                 </div>
                 
                 {/* Projekt Filter */}
@@ -98,7 +98,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                         onClick={() => setExpanded(!expanded)}
                         className="flex items-center gap-2 px-4 py-2 bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)] rounded-lg transition-colors text-sm font-medium text-[var(--color-text-primary)] whitespace-nowrap"
                     >
-                        Pokaż szczegóły
+                        Wszystkie kampanie
                         <span className="text-xs px-2 py-0.5 bg-[var(--color-accent-purple)]/10 text-[var(--color-accent-purple)] rounded-full">
                             {selectedCampaignIds?.size || 0}
                         </span>

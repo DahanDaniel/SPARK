@@ -229,9 +229,7 @@ const Dashboard = () => {
                 <main className="space-y-6">
                     <ExecutiveSummary summary={renderData?.summary} />
 
-                    <div className="min-h-[500px]">
-                        <CampaignFunnel funnelData={renderData?.funnel} />
-                    </div>
+                    <CampaignFunnel funnelData={renderData?.funnel} />
                 </main>
             </div>
         </div>
