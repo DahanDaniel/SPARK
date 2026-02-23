@@ -109,14 +109,14 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                     <tbody>
                         {filtered.map((camp) => {
                             const isChecked = selectedCampaignIds.has(camp.id);
-                            const isInactive = camp.clicked === 0 && camp.clickRate === 0 && camp.opened === 0 && camp.openRate === 0;
+                            
                             return (
                                 <tr 
                                     key={camp.id} 
                                     onClick={() => toggleCampaign(camp.id)}
                                     className={`border-b border-[var(--color-glass-border)] cursor-pointer transition-colors ${
                                         isChecked ? 'bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)]' : 'hover:bg-[var(--color-glass-bg)] opacity-80 hover:opacity-100'
-                                    } ${isInactive ? 'opacity-40 grayscale hover:opacity-60' : ''}`}
+                                    } ${camp.status === 'draft' ? 'opacity-40 grayscale hover:opacity-60' : ''}`}
                                 >
                                     <td className="px-4 py-3 text-center">
                                         <input 
@@ -149,10 +149,10 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                                     <td className="px-4 py-3 text-right text-text-secondary">
                                         {camp.sent.toLocaleString('pl-PL')}
                                     </td>
-                                    <td className="px-4 py-3 text-right font-semibold text-accent-purple">
+                                    <td className={`px-4 py-3 text-right font-semibold ${camp.openRate > 0 ? 'text-accent-purple' : 'text-text-secondary opacity-40 font-normal'}`}>
                                         {Number(camp.openRate).toFixed(1)}%
                                     </td>
-                                    <td className="px-4 py-3 text-right font-semibold text-accent-blue">
+                                    <td className={`px-4 py-3 text-right font-semibold ${camp.clickRate > 0 ? 'text-accent-blue' : 'text-text-secondary opacity-40 font-normal'}`}>
                                         {Number(camp.clickRate).toFixed(1)}%
                                     </td>
                                 </tr>
