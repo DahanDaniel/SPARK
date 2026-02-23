@@ -39,11 +39,11 @@ const ExecutiveSummary = ({ summary }) => {
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {cards.map((card, idx) => {
                 const Icon = card.icon;
                 return (
-                    <div key={idx} className={`bento-card p-6 group transition-all duration-300 ${card.border}`}>
+                    <div key={idx} className={`bento-card p-4 sm:p-6 group transition-all duration-300 ${card.border}`}>
                         <div className="flex justify-between items-start mb-4">
                             <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${card.bg}`}>
                                 <Icon className={`w-6 h-6 ${card.color}`} />

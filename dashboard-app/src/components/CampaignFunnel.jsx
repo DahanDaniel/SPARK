@@ -25,8 +25,8 @@ const CampaignFunnel = ({ funnelData }) => {
     ];
 
     return (
-        <div className="bento-card p-6 h-full flex flex-col">
-            <div className="flex items-center gap-2 mb-6">
+        <div className="bento-card p-4 sm:p-6 h-full flex flex-col overflow-hidden">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
                 <Filter className="w-5 h-5 text-accent-purple" />
                 <h3 className="text-lg font-bold text-[var(--color-text-primary)]">Lejek Konwersji</h3>
             </div>

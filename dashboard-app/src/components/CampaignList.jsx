@@ -57,8 +57,8 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
     };
 
     return (
-        <div className="bento-card p-6 flex flex-col h-[600px]">
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
+        <div className="bento-card p-4 sm:p-6 flex flex-col h-[600px] overflow-hidden">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 sm:mb-6 gap-4">
                 <div className="flex items-center gap-2">
                     <Mail className="w-5 h-5 text-accent-purple" />
                     <h3 className="text-lg font-bold text-[var(--color-text-primary)]">Filtrowanie Kampanii</h3>

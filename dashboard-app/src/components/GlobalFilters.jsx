@@ -26,14 +26,14 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
     return (
         <div className="bento-card mb-6 transition-all duration-300 p-4 lg:p-6">
             {/* Top Bar for Global Filters */}
-            <div className="flex items-center gap-3 lg:gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 lg:gap-4">
                 <div className="hidden xl:flex items-center gap-2 pr-4 text-[var(--color-text-secondary)] border-r border-[var(--color-glass-border)]">
                     <Filter className="w-5 h-5" />
                     <span className="text-sm font-semibold uppercase tracking-wider whitespace-nowrap">Filtry</span>
                 </div>
                 
                 {/* Projekt Filter */}
-                <div className="relative group flex-1 min-w-[120px] max-w-[220px]">
+                <div className="relative group flex-1 w-full sm:min-w-[120px] sm:max-w-[220px]">
                     <select 
                         value={filters.project}
                         onChange={handleProjectChange}
@@ -56,7 +56,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                 </div>
 
                 {/* Status Filter */}
-                <div className="relative group flex-1 min-w-[120px] max-w-[220px]">
+                <div className="relative group flex-1 w-full sm:min-w-[120px] sm:max-w-[220px]">
                     <select 
                         value={filters.status || 'finished,running'}
                         onChange={handleStatusChange}
@@ -73,7 +73,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                 </div>
 
                 {/* Zakres Dat Filter (React Datepicker) */}
-                <div className="relative group flex-1 min-w-[180px] max-w-[280px] flex items-center z-50">
+                <div className="relative group flex-1 w-full sm:min-w-[180px] sm:max-w-[280px] flex items-center z-50">
                     <Calendar className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-accent-blue)] z-10 pointer-events-none" />
                     <DatePicker
                         selectsRange={true}
@@ -96,7 +96,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                 </div>
                 
                 {/* Opcjonalny przycisk resetu i pokazania szczegółów */}
-                <div className="ml-auto w-auto flex items-center gap-3">
+                <div className="w-full sm:w-auto sm:ml-auto flex items-center justify-between sm:justify-end gap-3 mt-2 sm:mt-0">
                     <button 
                         onClick={() => setIsExpanded(!isExpanded)}
                         className="flex items-center gap-2 px-4 py-2 bg-[var(--color-glass-bg)] hover:bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-spark-gold)] rounded-lg transition-colors text-sm font-medium text-[var(--color-text-primary)] whitespace-nowrap"

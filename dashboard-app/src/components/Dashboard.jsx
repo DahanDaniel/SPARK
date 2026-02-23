@@ -208,12 +208,12 @@ const Dashboard = () => {
     return (
         <div className="min-h-screen bg-[var(--color-bento-bg)] text-[var(--color-text-primary)] font-sans">
             <div className="max-w-[1440px] mx-auto p-4 lg:p-8">
-                <header className="flex justify-between items-center mb-8">
+                <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-6 sm:mb-8">
                     <div>
-                        <h1 className="text-3xl font-serif text-spark-gold tracking-wide">MIND CEO DASHBOARD</h1>
-                        <p className="text-sm text-text-secondary mt-1">Przegląd Operacyjny i Skuteczność Kampanii</p>
+                        <h1 className="text-2xl sm:text-3xl font-serif text-[var(--color-spark-gold)] tracking-wide">MIND CEO DASHBOARD</h1>
+                        <p className="text-xs sm:text-sm text-text-secondary mt-1">Przegląd Operacyjny i Skuteczność Kampanii</p>
                     </div>
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-4 sm:gap-6 w-full sm:w-auto justify-between sm:justify-end">
                         <button 
                             onClick={() => setIsDark(!isDark)}
                             className="flex items-center gap-2 text-text-secondary hover:text-[var(--color-spark-gold)] transition-colors"
