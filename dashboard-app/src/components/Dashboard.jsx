@@ -200,15 +200,33 @@ const Dashboard = () => {
 
     }, [data, filters, selectedCampaignIds]);
 
-    if (loading) return <div className="min-h-screen flex items-center justify-center bg-[var(--color-bento-bg)] text-spark-gold">Ładowanie danych operacyjnych...</div>;
-    if (error) return <div className="min-h-screen flex items-center justify-center bg-[var(--color-bento-bg)] text-red-500">{error}</div>;
+    if (loading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-[var(--color-bento-bg)] text-[var(--color-text-primary)] font-sans">
+                <div className="flex flex-col items-center gap-8">
+                    <div className="relative">
+                        {/* Outer rotating ring */}
+                        <div className="w-16 h-16 rounded-full border-4 border-[var(--color-glass-border)] animate-spin border-t-[var(--color-spark-gold)] shadow-[0_0_15px_rgba(184,134,11,0.2)]"></div>
+                        {/* Inner pulsing circle */}
+                        <div className="absolute inset-0 m-auto w-8 h-8 rounded-full bg-[var(--color-spark-gold)]/20 animate-pulse backdrop-blur-sm"></div>
+                    </div>
+                    <div className="text-center flex flex-col gap-2">
+                        <h2 className="text-xl sm:text-2xl font-serif text-[var(--color-spark-gold)] tracking-wide">MIND CEO DASHBOARD</h2>
+                        <p className="text-xs sm:text-sm text-text-secondary animate-pulse uppercase tracking-widest">Pobieranie Danych Operacyjnych...</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    
+    if (error) return <div className="min-h-screen flex items-center justify-center bg-[var(--color-bento-bg)] text-red-500 font-medium">{error}</div>;
 
     const renderData = filteredData || data;
 
     return (
         <div className="min-h-screen bg-[var(--color-bento-bg)] text-[var(--color-text-primary)] font-sans">
-            <div className="max-w-[1440px] mx-auto p-4 lg:p-8">
-                <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-6 sm:mb-8">
+            <div className="w-full mx-auto px-2 py-4 sm:p-4 lg:p-8 xl:px-12 2xl:px-16">
+                <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-6 sm:mb-8 px-2 sm:px-0">
                     <div>
                         <h1 className="text-2xl sm:text-3xl font-serif text-[var(--color-spark-gold)] tracking-wide">MIND CEO DASHBOARD</h1>
                         <p className="text-xs sm:text-sm text-text-secondary mt-1">Przegląd Operacyjny i Skuteczność Kampanii</p>
@@ -243,7 +261,7 @@ const Dashboard = () => {
                     />
                 </div>
                 
-                <main className="space-y-6">
+                <main className="space-y-4 sm:space-y-6">
                     <ExecutiveSummary summary={renderData?.summary} />
 
                     <CampaignFunnel funnelData={renderData?.funnel} />

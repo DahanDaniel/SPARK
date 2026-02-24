@@ -57,20 +57,22 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
     };
 
     return (
-        <div className="bento-card p-4 sm:p-6 flex flex-col h-[600px] overflow-hidden">
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 sm:mb-6 gap-4">
-                <div className="flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-accent-purple" />
-                    <h3 className="text-lg font-bold text-[var(--color-text-primary)]">Filtrowanie Kampanii</h3>
-                    <span className="text-xs font-semibold px-2 py-1 bg-[var(--color-glass-bg)] rounded-full text-text-secondary ml-2">
-                        {selectedCampaignIds.size} zaznaczonych
+        <div className="bg-[var(--color-bento-card)] border-y sm:border-[var(--color-bento-border)] sm:rounded-2xl border-[var(--color-glass-border)] py-4 sm:p-6 flex flex-col h-[75vh] sm:h-[600px] overflow-hidden -mx-4 sm:mx-0 shadow-lg sm:shadow-none relative z-10 w-[calc(100%+2rem)] sm:w-full">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 sm:mb-6 gap-3 sm:gap-4 px-3 sm:px-0">
+                <div className="flex items-center justify-between w-full lg:w-auto">
+                    <div className="flex items-center gap-2">
+                        <Mail className="w-5 h-5 text-accent-purple" />
+                        <h3 className="text-base sm:text-lg font-bold text-[var(--color-text-primary)]">Filtrowanie Kampanii</h3>
+                    </div>
+                    <span className="text-[10px] sm:text-xs font-semibold px-2 py-1 bg-[var(--color-glass-bg)] rounded-full text-text-secondary">
+                        {selectedCampaignIds.size} zazn.
                     </span>
                 </div>
                 
-                <div className="flex items-center gap-3 w-full lg:w-auto">
+                <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
                     <button 
                         onClick={handleClearEverything}
-                        className="text-xs text-[var(--color-text-secondary)] hover:text-red-400 transition-colors mr-2 hidden lg:block"
+                        className="text-[11px] sm:text-xs text-[var(--color-text-secondary)] hover:text-red-400 transition-colors sm:mr-2 text-center py-1 sm:py-0"
                     >
                         Wyczyść całe zaznaczenie
                     </button>
@@ -78,18 +80,18 @@ const CampaignList = ({ campaigns, selectedCampaignIds, onSelectionChange, filte
                         <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary" />
                         <input 
                             type="text" 
-                            placeholder="Szukaj..." 
+                            placeholder="Szukaj kampanii..." 
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-glass-border)] rounded-lg pl-9 pr-4 py-1.5 text-sm text-[var(--color-text-primary)] outline-none w-full lg:w-48 transition-colors"
+                            className="bg-[var(--color-glass-bg)] border border-[var(--color-glass-border)] hover:border-[var(--color-glass-border)] rounded-lg pl-9 pr-4 py-2 sm:py-1.5 text-sm text-[var(--color-text-primary)] outline-none w-full lg:w-48 transition-colors"
                         />
                     </div>
                 </div>
             </div>
 
-            <div className="overflow-x-auto overflow-y-auto flex-1 pr-2 custom-scrollbar">
+            <div className="overflow-x-auto overflow-y-auto flex-1 custom-scrollbar w-full">
                 <table className="w-full text-sm text-left min-w-[800px]">
-                    <thead className="text-xs text-text-secondary uppercase bg-[var(--color-glass-bg)] sticky top-0 backdrop-blur-md z-10">
+                    <thead className="text-xs text-text-secondary uppercase bg-[var(--color-glass-bg)] sticky top-0 backdrop-blur-md z-10 w-full">
                         <tr>
                             <th className="px-4 py-3 rounded-tl-lg w-[80px] text-center">
                                 <div className="flex flex-col items-center justify-center gap-2">

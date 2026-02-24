@@ -36,7 +36,7 @@ const CampaignFunnel = ({ funnelData }) => {
                     <BarChart
                         data={data}
                         layout="vertical"
-                        margin={{ top: 5, right: 30, left: 40, bottom: 20 }}
+                        margin={{ top: 5, right: 15, left: 0, bottom: 20 }}
                     >
                         <defs>
                             <linearGradient id="colorFunnel" x1="0" y1="0" x2="1" y2="0">
@@ -44,14 +44,14 @@ const CampaignFunnel = ({ funnelData }) => {
                                 <stop offset="100%" stopColor="#8B5CF6" stopOpacity={1}/>
                             </linearGradient>
                         </defs>
-                        <XAxis type="number" hide />
+                        <XAxis type="number" hide domain={[0, 'dataMax']} />
                         <YAxis 
                             dataKey="name" 
                             type="category" 
                             axisLine={false} 
                             tickLine={false} 
-                            tick={{ fill: '#9CA3AF', fontSize: 12, fontWeight: 500 }}
-                            width={100}
+                            tick={{ fill: '#9CA3AF', fontSize: 11, fontWeight: 500 }}
+                            width={85}
                         />
                         <Tooltip content={<CustomTooltip />} cursor={{fill: 'var(--color-glass-bg)'}} />
                         <Bar dataKey="value" minPointSize={5} radius={[4, 4, 4, 4]} barSize={24}>

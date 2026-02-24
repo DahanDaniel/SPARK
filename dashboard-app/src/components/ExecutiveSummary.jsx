@@ -39,19 +39,17 @@ const ExecutiveSummary = ({ summary }) => {
     ];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-3">
             {cards.map((card, idx) => {
                 const Icon = card.icon;
                 return (
-                    <div key={idx} className={`bento-card p-4 sm:p-6 group transition-all duration-300 ${card.border}`}>
-                        <div className="flex justify-between items-start mb-4">
-                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${card.bg}`}>
-                                <Icon className={`w-6 h-6 ${card.color}`} />
-                            </div>
+                    <div key={idx} className={`bento-card p-2.5 sm:p-3 group transition-all duration-300 ${card.border} flex items-center gap-2.5 sm:gap-3`}>
+                        <div className={`shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center ${card.bg}`}>
+                            <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${card.color}`} />
                         </div>
-                        <div>
-                            <p className="data-label mb-1">{card.title}</p>
-                            <h3 className="data-value">{card.value}</h3>
+                        <div className="flex flex-col min-w-0 justify-center">
+                            <p className="text-[9px] sm:text-[10px] text-[var(--color-text-secondary)] font-bold uppercase tracking-wider mb-0.5 opacity-80 truncate" title={card.title}>{card.title}</p>
+                            <h3 className="text-sm sm:text-base lg:text-lg font-bold tracking-tight text-[var(--color-text-primary)] truncate" title={card.value}>{card.value}</h3>
                         </div>
                     </div>
                 );
