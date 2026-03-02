@@ -104,6 +104,21 @@ const Dashboard = () => {
         }
     };
 
+    const handleReset = () => {
+        const defaultFilters = { project: 'All', status: 'finished,running', startDate: null, endDate: null };
+        setFilters(defaultFilters);
+        
+        if (data?.listmonk?.allCampaigns) {
+            const matchingIds = new Set();
+            data.listmonk.allCampaigns.forEach(c => {
+                if (c.status === 'finished' || c.status === 'running') {
+                    matchingIds.add(c.id);
+                }
+            });
+            setSelectedCampaignIds(matchingIds);
+        }
+    };
+
     // --- UNIVERSAL FILTERING LOGIC --- //
     const filteredData = useMemo(() => {
         if (!data) return null;
@@ -274,6 +289,7 @@ const Dashboard = () => {
                         onSelectionChange={setSelectedCampaignIds}
                         isExpanded={isCampaignListExpanded}
                         setIsExpanded={setIsCampaignListExpanded}
+                        onReset={handleReset}
                     />
                 </div>
                 

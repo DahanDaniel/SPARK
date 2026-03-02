@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useState } from 'react';
 import CampaignList from './CampaignList';
 
-const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, onSelectionChange, isExpanded, setIsExpanded }) => {
+const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, onSelectionChange, isExpanded, setIsExpanded, onReset }) => {
 
     const handleProjectChange = (e) => {
         setFilters(prev => ({ ...prev, project: e.target.value }));
@@ -111,7 +111,7 @@ const GlobalFilters = ({ filters, setFilters, campaigns, selectedCampaignIds, on
                     </button>
 
                     <button 
-                        onClick={() => setFilters({ project: 'All', status: 'finished,running', startDate: null, endDate: null })}
+                        onClick={onReset}
                         className="text-xs font-medium px-2 py-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap"
                     >
                         Resetuj
