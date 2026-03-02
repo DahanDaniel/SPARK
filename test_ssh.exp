@@ -1,0 +1,30 @@
+#!/usr/bin/expect -f
+set timeout 10
+set user "srv86774"
+set password "tFk41KHRfDUT"
+set host "h59.seohost.pl"
+
+spawn ssh -o StrictHostKeyChecking=no $user@$host
+expect {
+    "password:" {
+        send "$password\r"
+        expect {
+            "$" {
+                send "echo SSH_SUCCESS_BOY && exit\r"
+                expect eof
+            }
+            "#" {
+                send "echo SSH_SUCCESS_BOY && exit\r"
+                expect eof
+            }
+            "denied" {
+                puts "SSH_FAILED_AUTH"
+                exit 1
+            }
+        }
+    }
+    timeout {
+        puts "SSH_TIMEOUT"
+        exit 1
+    }
+}

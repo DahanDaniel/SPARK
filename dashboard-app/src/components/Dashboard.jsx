@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { LogOut, Sun, Moon } from 'lucide-react';
 import api from '../api';
 import GlobalFilters from './GlobalFilters';
@@ -16,6 +16,7 @@ const Dashboard = () => {
     const [selectedCampaignIds, setSelectedCampaignIds] = useState(new Set());
     const [isCampaignListExpanded, setIsCampaignListExpanded] = useState(false);
     const [isDark, setIsDark] = useState(true);
+    const prevFiltersRef = useRef(filters);
 
     // Apply dark class to document gracefully
     useEffect(() => {
@@ -36,9 +37,24 @@ const Dashboard = () => {
         setSelectedCampaignIds(matchingIds);
     }, [data]);
 
-    // Contextual Sync: Update selections when filters change, ONLY if the campaign list is closed
+    // Contextual Sync: Update selections ONLY when global filters actually change, and ONLY if the campaign list is closed
     useEffect(() => {
-        if (!data?.listmonk?.allCampaigns || isCampaignListExpanded) return;
+        if (!data?.listmonk?.allCampaigns) return;
+        
+        const filtersChanged = 
+            prevFiltersRef.current.project !== filters.project ||
+            prevFiltersRef.current.status !== filters.status ||
+            prevFiltersRef.current.startDate !== filters.startDate ||
+            prevFiltersRef.current.endDate !== filters.endDate;
+            
+        // Always update ref to current
+        prevFiltersRef.current = filters;
+
+        // If the hook triggered but filters didn't change (e.g. data loaded or expanded toggled), do nothing
+        if (!filtersChanged) return;
+
+        // If list is manually expanded, global filters only act as visual search queries, do not overwrite set selection
+        if (isCampaignListExpanded) return;
         
         const { project, status, startDate, endDate } = filters;
         const sTime = startDate ? startDate.setHours(0,0,0,0) : null;
