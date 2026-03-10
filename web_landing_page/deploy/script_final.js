@@ -139,7 +139,7 @@ const SPARK = {
                     <h3 style="margin-bottom:1rem; color:${color}; font-size:2.5rem;">${percentage}% Chaosu</h3>
                     <p style="font-size:1.2rem; margin-bottom:2rem; color:#64748B; max-width:600px; margin-left:auto; margin-right:auto;">${msg}</p>
                     <div style="display:flex; justify-content:center; gap:1rem;">
-                         <button onclick="document.getElementById('pricing').style.display='block'; document.getElementById('pricing').scrollIntoView({behavior: 'smooth'}); this.style.display='none';" class="btn-gold">Przejdź do Rozwiązania &raquo;</button>
+                         <button onclick="document.getElementById('rezerwacja').scrollIntoView({behavior: 'smooth'});" class="btn-gold">Umów darmową konsultację &raquo;</button>
                     </div>
                 </div>
             `;
