@@ -278,7 +278,7 @@ h1, h2, h3, h4 {
     box-shadow: 0 20px 40px rgba(0,0,0,0.06); 
     border-color: var(--premium-gold);
 }
-.pain-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+.pain-icon { display: flex; margin-bottom: 1rem; color: #D4AF37; }
 
 /* --- QUIZ --- */
 .quiz-section {
@@ -393,7 +393,7 @@ h1, h2, h3, h4 {
     transition: all 0.3s;
 }
 .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
-.why-icon { font-size: 2rem; margin-bottom: 1.5rem; display: inline-block; }
+.why-icon { margin-bottom: 1.5rem; display: inline-flex; justify-content: center; color: #D4AF37; }
 
 /* --- WHO FOR --- */
 .section-who { padding: 6rem 0; background: white; }
