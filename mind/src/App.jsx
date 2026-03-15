@@ -400,7 +400,7 @@ function App() {
             </div>
 
             <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="/mind/team/eytan.png" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover', objectPosition: 'center top' }} />
+              <img src="/mind/team/eytan.jpg" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover', objectPosition: 'center top' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Eytan Dahan</h3>
               <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>CEO</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
