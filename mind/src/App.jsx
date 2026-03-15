@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, Brain, Sparkles, Target, Users, Sun, Moon, 
   BarChart3, Activity, Layers, Shuffle, TrendingUp, CheckCircle2, 
-  XCircle, ChevronRight, Briefcase
+  XCircle, ChevronRight, Briefcase, HardHat, Presentation, Cherry
 } from 'lucide-react';
 
 function App() {
@@ -122,14 +122,17 @@ function App() {
       {/* PROBLEM & WIZJA */}
       <section id="wizja" className="section-padding" style={{ position: 'relative' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'flex-start', marginBottom: '4rem' }}>
             <div>
               <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>Symptomy Chaosu</div>
               <h2 style={{ marginBottom: '1.5rem' }}>Dlaczego wiele firm <span style={{ color: '#ef4444' }}>przestaje rosnąć</span>?</h2>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
                 Większość firm nie ma problemu z potencjałem. Ma problem z chaosem operacyjnym. Gdy firma rośnie szybciej niż jej struktura zarządzania, pojawia się chaos. Zamiast rozwijać się stabilnie, firma zaczyna działać reaktywnie.
               </p>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+            </div>
+            
+            <div>
+              <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
                 {[
                   'Brak spójnego systemu zarządzania',
                   'Decyzje podejmowane intuicyjnie',
@@ -138,24 +141,25 @@ function App() {
                   'Przeciążenie właściciela operacyjną codziennością',
                   'Chaos technologiczny i nadmiar narzędzi'
                 ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
-                    <XCircle size={20} style={{ color: '#ef4444', marginTop: '0.125rem', flexShrink: 0 }} />
-                    <span>{item}</span>
+                  <li key={i} className="glass-panel" style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
+                    <XCircle size={24} style={{ color: '#ef4444', flexShrink: 0 }} />
+                    <span style={{ fontSize: '1.05rem', fontWeight: '500' }}>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            
-            <div className="glass-panel" style={{ padding: '3rem' }}>
-              <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(34, 197, 94, 0.1)', color: '#22c55e', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>Nasza Wizja</div>
-              <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Od chaosu do <br/><span className="text-gradient">przewidywalnego wzrostu</span></h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '2rem', lineHeight: '1.7' }}>
-                MIND kompleksowo wspiera przedsiębiorstwa z sektora MŚP. Edukujemy i szkolimy zarządy, układamy organizację od fundamentów po skalowanie, łącząc technologię z biznesowym kunsztem.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ width: '40px', height: '4px', background: 'var(--accent-primary)', borderRadius: '2px' }}></div>
-                <div style={{ width: '20px', height: '4px', background: 'var(--accent-secondary)', borderRadius: '2px' }}></div>
-              </div>
+          </div>
+
+          <div className="glass-panel animate-fade-in" style={{ padding: '4rem', textAlign: 'center', maxWidth: '1000px', margin: '0 auto', borderTop: '4px solid var(--accent-primary)' }}>
+            <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(34, 197, 94, 0.1)', color: '#22c55e', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Nasza Wizja</div>
+            <h3 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Od chaosu do <br className="hide-on-desktop" /><span className="text-gradient">przewidywalnego wzrostu</span></h3>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto 2.5rem' }}>
+              MIND kompleksowo wspiera przedsiębiorstwa z sektora MŚP. Edukujemy i szkolimy zarządy, układamy organizację od fundamentów po skalowanie, łącząc technologię z biznesowym kunsztem.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '4px', background: 'var(--accent-primary)', borderRadius: '2px' }}></div>
+              <div style={{ width: '20px', height: '4px', background: 'var(--accent-secondary)', borderRadius: '2px' }}></div>
+              <div style={{ width: '40px', height: '4px', background: 'var(--accent-primary)', borderRadius: '2px' }}></div>
             </div>
           </div>
         </div>
@@ -297,7 +301,7 @@ function App() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <Briefcase size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
+              <HardHat size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Firma Budowlana</h3>
               <p style={{ fontWeight: 'bold', color: '#22c55e', marginBottom: '1.5rem', fontSize: '0.875rem' }}>Od 1,2 mln zł straty do 4 mln zł zysku</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
@@ -305,7 +309,7 @@ function App() {
               </p>
             </div>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <BarChart3 size={28} color="var(--accent-secondary)" style={{ marginBottom: '1rem' }} />
+              <Presentation size={28} color="var(--accent-secondary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Studio Marketingowe</h3>
               <p style={{ fontWeight: 'bold', color: 'var(--text-primary)', marginBottom: '1.5rem', fontSize: '0.875rem' }}>Odzyskana stabilność w dynamicznym wzroście</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
@@ -313,7 +317,7 @@ function App() {
               </p>
             </div>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <Users size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
+              <Cherry size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Firma BERRY (Branża sezonowa)</h3>
               <p style={{ fontWeight: 'bold', color: '#22c55e', marginBottom: '1.5rem', fontSize: '0.875rem' }}>Wzrost o 1,25 mln zł w jednym sezonie</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
@@ -373,23 +377,6 @@ function App() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             
             <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="https://via.placeholder.com/150x150.png?text=ED" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover' }} />
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Eytan Dahan</h3>
-              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>CEO</p>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-                Przedsiębiorca i doradca biznesowy z ponad 40-letnim doświadczeniem w budowaniu i rozwijaniu firm.
-              </p>
-              <div style={{ textAlign: 'left', width: '100%', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                <strong>Specjalizuje się w:</strong>
-                <ul style={{ paddingLeft: '1.25rem', marginTop: '0.5rem' }}>
-                  <li>Strategii rozwoju przedsiębiorstw</li>
-                  <li>Systemach zarządzania</li>
-                  <li>Strukturach organizacyjnych</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-secondary)', objectFit: 'cover', objectPosition: 'center top' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Daniel Dahan</h3>
               <p style={{ color: 'var(--accent-secondary)', fontWeight: 'bold', marginBottom: '1rem' }}>Systemy technologiczne</p>
@@ -402,6 +389,23 @@ function App() {
                   <li>Optymalizacji systemów biznesowych</li>
                   <li>Automatyzacji procesów</li>
                   <li>Integracji technologii i wdrażania AI</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <img src="https://via.placeholder.com/150x150.png?text=ED" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover' }} />
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Eytan Dahan</h3>
+              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>CEO</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+                Przedsiębiorca i doradca biznesowy z ponad 40-letnim doświadczeniem w budowaniu i rozwijaniu firm.
+              </p>
+              <div style={{ textAlign: 'left', width: '100%', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                <strong>Specjalizuje się w:</strong>
+                <ul style={{ paddingLeft: '1.25rem', marginTop: '0.5rem' }}>
+                  <li>Strategii rozwoju przedsiębiorstw</li>
+                  <li>Systemach zarządzania</li>
+                  <li>Strukturach organizacyjnych</li>
                 </ul>
               </div>
             </div>
@@ -447,7 +451,7 @@ function App() {
             <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '1rem', overflow: 'hidden' }}>
               <iframe 
                 src="https://api.crazy-crm.com/widget/booking/DHXu63ftJx46QdYzUeVC" 
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} 
+                style={{ width: '100%', border: 'none', minHeight: '850px' }} 
                 scrolling="no" 
                 id="DHXu63ftJx46QdYzUeVC_1773595317760"
                 title="CRAZY CRM Calendar"
