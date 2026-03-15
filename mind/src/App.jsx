@@ -113,7 +113,7 @@ function App() {
       </header>
 
       {/* ZAUFALI NAM */}
-      <section className="section-padding" style={{ background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+      <section style={{ padding: '3rem 0 1.5rem', background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Zaufali nam / Korzystali z naszych systemów</p>
           <div className="logos-grid">
@@ -131,7 +131,7 @@ function App() {
       {/* PROBLEM & WIZJA */}
       <section id="wizja" className="section-padding" style={{ position: 'relative' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'flex-start', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '4rem', alignItems: 'flex-start', marginBottom: '4rem' }}>
             <div>
               <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>Symptomy Chaosu</div>
               <h2 style={{ marginBottom: '1.5rem' }}>Dlaczego wiele firm <br/><span style={{ color: '#ef4444' }}>przestaje rosnąć</span>?</h2>
@@ -184,7 +184,7 @@ function App() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2rem' }}>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
               <Target size={36} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Strategia</h3>
@@ -242,7 +242,7 @@ function App() {
       {/* SPARK & GLG */}
       <section className="section-padding" style={{ background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: '3rem' }}>
             
             <div className="glass-panel" style={{ padding: '3rem', borderTop: '4px solid var(--accent-primary)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
@@ -308,7 +308,7 @@ function App() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
               <HardHat size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Firma Budowlana</h3>
@@ -340,7 +340,7 @@ function App() {
       {/* DLA KOGO JESTEŚMY */}
       <section id="oferta" className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem' }}>
             <div>
               <h2 style={{ marginBottom: '2.5rem', minHeight: '80px' }}>Dla kogo jesteśmy?</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -385,7 +385,7 @@ function App() {
           <h2 style={{ marginBottom: '1rem' }}>Zespół MIND</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '4rem' }}>Integracja doświadczenia, technologii i operacyjnej skuteczności.</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
             
             <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-secondary)', overflow: 'hidden', flexShrink: 0 }}>
