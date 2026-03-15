@@ -2,8 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, Brain, Sparkles, Target, Users, Sun, Moon, 
   BarChart3, Activity, Layers, Shuffle, TrendingUp, CheckCircle2, 
-  XCircle, ChevronRight, Briefcase, HardHat, Presentation, Cherry
+  XCircle, ChevronRight, Briefcase, HardHat, Presentation
 } from 'lucide-react';
+
+const BerryIcon = ({ size = 28, color = "currentColor", style }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke={color} 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    style={style}
+  >
+    <path d="M12 2v4" />
+    <path d="M12 6c-2 0-4 1-5 3-1.4 2.8 0 8 5 13 5-5 6.4-10.2 5-13-1-2-3-3-5-3z" />
+    <circle cx="10" cy="11" r="1" />
+    <circle cx="14" cy="11" r="1" />
+    <circle cx="12" cy="15" r="1" />
+    <circle cx="10" cy="18" r="1" />
+    <circle cx="14" cy="18" r="1" />
+  </svg>
+);
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -94,26 +117,9 @@ function App() {
           <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Zaufali nam / Korzystali z naszych systemów</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', opacity: '0.6', alignItems: 'center' }}>
             {[
-              { name: 'ADE Group', logo: null },
-              { name: 'BR Wykładziny', logo: null },
-              { name: 'Kaczorowski & Partnerzy', logo: null },
-              { name: 'Sensi Gray', logo: null },
-              { name: 'Clear', logo: null },
-              { name: 'Janowski Kancelaria Adwokacka', logo: null },
-              { name: 'Ben’s Lock & Key', logo: null },
-              { name: 'Energii', logo: null },
-              { name: 'Imago', logo: null },
-              { name: 'MSV24', logo: null },
-              { name: 'BR TEXO', logo: null },
-              { name: 'Scorise', logo: null },
-              { name: 'SOLACE', logo: null },
-              { name: 'Podnosimy.pl', logo: null }
-            ].map((brand, idx) => (
-              brand.logo ? (
-                <img key={idx} src={brand.logo} alt={brand.name} style={{ height: '40px', objectFit: 'contain' }} />
-              ) : (
-                <span key={idx} style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{brand.name}</span>
-              )
+              '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', 'I'
+            ].map((filename, idx) => (
+              <img key={idx} src={`/mind/logos_clients/${filename}.png`} alt={`Client Logo ${idx}`} style={{ height: '40px', objectFit: 'contain' }} />
             ))}
           </div>
         </div>
@@ -317,7 +323,7 @@ function App() {
               </p>
             </div>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <Cherry size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
+              <BerryIcon size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Firma BERRY (Branża sezonowa)</h3>
               <p style={{ fontWeight: 'bold', color: '#22c55e', marginBottom: '1.5rem', fontSize: '0.875rem' }}>Wzrost o 1,25 mln zł w jednym sezonie</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
@@ -394,7 +400,7 @@ function App() {
             </div>
 
             <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="https://via.placeholder.com/150x150.png?text=ED" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover' }} />
+              <img src="/mind/team/eytan.png" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover', objectPosition: 'center top' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Eytan Dahan</h3>
               <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>CEO</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
@@ -448,11 +454,11 @@ function App() {
               <p style={{ fontStyle: 'italic', textAlign: 'center', fontSize: '0.95rem' }}>Rozmowa nie jest sprzedażą. To moment, w którym sprawdzamy, czy nasze podejście może być pomocne.</p>
             </div>
 
-            <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '1rem', overflow: 'hidden' }}>
+            <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '1rem' }}>
               <iframe 
                 src="https://api.crazy-crm.com/widget/booking/DHXu63ftJx46QdYzUeVC" 
-                style={{ width: '100%', border: 'none', minHeight: '850px' }} 
-                scrolling="no" 
+                style={{ width: '100%', border: 'none', minHeight: '1200px' }} 
+                scrolling="yes" 
                 id="DHXu63ftJx46QdYzUeVC_1773595317760"
                 title="CRAZY CRM Calendar"
               />
