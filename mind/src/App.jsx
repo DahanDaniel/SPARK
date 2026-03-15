@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, Brain, Sparkles, Target, Users, Sun, Moon, 
   BarChart3, Activity, Layers, Shuffle, TrendingUp, CheckCircle2, 
-  XCircle, ChevronRight, Briefcase, HardHat, Presentation, Cherry
+  XCircle, ChevronRight, Briefcase, HardHat, Presentation, Cherry,
+  Menu, X
 } from 'lucide-react';
 
 
 
 function App() {
   const [theme, setTheme] = useState('dark');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Load theme from localStorage on initial render
   useEffect(() => {
@@ -38,15 +40,25 @@ function App() {
     <>
       {/* Navigation */}
       <nav className="nav-glass animate-fade-in">
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: '700', fontSize: '1.5rem', letterSpacing: '0.05em' }}>
             <Brain className="text-gradient" size={32} />
             MIND
           </div>
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
-            <a href="#wizja" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}>Wizja i Problem</a>
-            <a href="#metodologia" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}>Metodologia</a>
-            <a href="#zespol" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}>Zespół</a>
+
+          <div className="mobile-menu-btn" style={{ display: 'none' }}>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              style={{ background: 'transparent', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center' }}
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+
+          <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`} style={{ display: 'flex', gap: '2rem', alignItems: 'center', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+            <a href="#wizja" onClick={() => setIsMobileMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}>Wizja i Problem</a>
+            <a href="#metodologia" onClick={() => setIsMobileMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}>Metodologia</a>
+            <a href="#zespol" onClick={() => setIsMobileMenuOpen(false)} style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }}>Zespół</a>
             
             <button 
               onClick={toggleTheme} 
@@ -68,7 +80,7 @@ function App() {
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
-            <a href="#kontakt" className="btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.95rem' }}>Rozmowa strategiczna</a>
+            <a href="#kontakt" onClick={() => setIsMobileMenuOpen(false)} className="btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.95rem' }}>Rozmowa strategiczna</a>
           </div>
         </div>
       </nav>
