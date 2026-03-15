@@ -16,15 +16,17 @@ const BerryIcon = ({ size = 28, color = "currentColor", style }) => (
     strokeWidth="2" 
     strokeLinecap="round" 
     strokeLinejoin="round" 
-    style={style}
+    style={{ ...style, transform: 'rotate(15deg)' }}
   >
     <path d="M12 2v4" />
-    <path d="M12 6c-2 0-4 1-5 3-1.4 2.8 0 8 5 13 5-5 6.4-10.2 5-13-1-2-3-3-5-3z" />
-    <circle cx="10" cy="11" r="1" />
-    <circle cx="14" cy="11" r="1" />
-    <circle cx="12" cy="15" r="1" />
-    <circle cx="10" cy="18" r="1" />
-    <circle cx="14" cy="18" r="1" />
+    <path d="M11 6c-2.5 0-5 2-6 5-1.5 4.5 2 9 7 11 5-2 8.5-6.5 7-11-1-3-3.5-5-6-5z" />
+    <circle cx="10" cy="11" r="1" fill={color} />
+    <circle cx="14" cy="11" r="1" fill={color} />
+    <circle cx="12" cy="15" r="1" fill={color} />
+    <circle cx="9" cy="15" r="1" fill={color} />
+    <circle cx="15" cy="15" r="1" fill={color} />
+    <circle cx="11" cy="19" r="1" fill={color} />
+    <circle cx="13" cy="19" r="1" fill={color} />
   </svg>
 );
 
@@ -131,14 +133,14 @@ function App() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'flex-start', marginBottom: '4rem' }}>
             <div>
               <div style={{ display: 'inline-block', padding: '0.25rem 0.75rem', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '1rem' }}>Symptomy Chaosu</div>
-              <h2 style={{ marginBottom: '1.5rem' }}>Dlaczego wiele firm <span style={{ color: '#ef4444' }}>przestaje rosnąć</span>?</h2>
+              <h2 style={{ marginBottom: '1.5rem' }}>Dlaczego wiele firm <br/><span style={{ color: '#ef4444' }}>przestaje rosnąć</span>?</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
                 Większość firm nie ma problemu z potencjałem. Ma problem z chaosem operacyjnym. Gdy firma rośnie szybciej niż jej struktura zarządzania, pojawia się chaos. Zamiast rozwijać się stabilnie, firma zaczyna działać reaktywnie.
               </p>
             </div>
             
             <div>
-              <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
+              <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
                   'Brak spójnego systemu zarządzania',
                   'Decyzje podejmowane intuicyjnie',
@@ -147,8 +149,8 @@ function App() {
                   'Przeciążenie właściciela operacyjną codziennością',
                   'Chaos technologiczny i nadmiar narzędzi'
                 ].map((item, i) => (
-                  <li key={i} className="glass-panel" style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
-                    <XCircle size={24} style={{ color: '#ef4444', flexShrink: 0 }} />
+                  <li key={i} className="glass-panel" style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem', color: 'var(--text-primary)', borderRadius: 'var(--radius-md)' }}>
+                    <XCircle size={22} style={{ color: '#ef4444', flexShrink: 0 }} />
                     <span style={{ fontSize: '1.05rem', fontWeight: '500' }}>{item}</span>
                   </li>
                 ))}
@@ -334,12 +336,12 @@ function App() {
         </div>
       </section>
 
-      {/* DLA KOGO */}
-      <section className="section-padding" style={{ background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)' }}>
+      {/* DLA KOGO JESTEŚMY */}
+      <section id="oferta" className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <div>
-              <h2 style={{ marginBottom: '2rem' }}>Dla kogo jesteśmy?</h2>
+              <h2 style={{ marginBottom: '2.5rem', minHeight: '80px', display: 'flex', alignItems: 'flex-start' }}>Dla kogo jesteśmy?</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {[
                   'Firmy z sektora MŚP',
@@ -347,28 +349,30 @@ function App() {
                   'Rozwijające się szybciej niż ich struktura organizacyjna',
                   'Właściciele chcący uporządkować sposób zarządzania firmą'
                 ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
-                    <CheckCircle2 size={24} color="#22c55e" />
-                    <span style={{ fontSize: '1.125rem' }}>{item}</span>
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
+                    <CheckCircle2 color="#22c55e" size={24} style={{ flexShrink: 0 }} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 style={{ marginBottom: '2rem' }}>Dla kogo <span style={{ color: '#ef4444' }}>NIE</span> jesteśmy?</h2>
+              <h2 style={{ marginBottom: '2.5rem', minHeight: '80px', display: 'flex', alignItems: 'flex-start' }}>Dla kogo <span style={{ color: '#ef4444' }}>&nbsp;NIE&nbsp;</span> jesteśmy?</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {[
                   'Podmioty szukające "szybkich trików" marketingowych',
                   'Firmy, które nie są gotowe zmieniać sposobu działania',
                   'Osoby, które nie chcą pracować systemowo'
                 ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
-                    <XCircle size={24} color="#ef4444" />
-                    <span style={{ fontSize: '1.125rem', textDecoration: 'line-through' }}>{item}</span>
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', fontSize: '1.125rem', color: 'var(--text-secondary)', opacity: 0.6, textDecoration: 'line-through' }}>
+                    <XCircle color="#ef4444" size={24} style={{ flexShrink: 0 }} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p style={{ marginTop: '2rem', fontStyle: 'italic', color: 'var(--text-secondary)' }}>Nasze podejście wymaga realnej gotowości do zmian.</p>
+              <p style={{ marginTop: '2rem', fontStyle: 'italic', color: 'var(--text-secondary)', opacity: 0.8 }}>
+                Nasze podejście wymaga realnej gotowości do zmian.
+              </p>
             </div>
           </div>
         </div>
@@ -382,11 +386,13 @@ function App() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             
-            <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-secondary)', objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-secondary)', overflow: 'hidden', flexShrink: 0 }}>
+                <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.15) translateY(5%)', transformOrigin: 'top center' }} />
+              </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Daniel Dahan</h3>
-              <p style={{ color: 'var(--accent-secondary)', fontWeight: 'bold', marginBottom: '1rem' }}>Systemy technologiczne</p>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+              <p style={{ color: 'var(--accent-secondary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Systemy technologiczne</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6', flexGrow: 1 }}>
                 Pasjonat innowacji łączący świat biznesu z precyzją skalowalnego i nowoczesnego kodu.
               </p>
               <div style={{ textAlign: 'left', width: '100%', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
@@ -399,11 +405,13 @@ function App() {
               </div>
             </div>
 
-            <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="/mind/team/eytan.jpg" alt="Eytan Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-primary)', overflow: 'hidden', flexShrink: 0 }}>
+                <img src="/mind/team/eytan.jpg" alt="Eytan Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.15) translateY(5%)', transformOrigin: 'top center' }} />
+              </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Eytan Dahan</h3>
-              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>CEO</p>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>CEO</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6', flexGrow: 1 }}>
                 Przedsiębiorca i doradca biznesowy z ponad 40-letnim doświadczeniem w budowaniu i rozwijaniu firm.
               </p>
               <div style={{ textAlign: 'left', width: '100%', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
@@ -416,11 +424,13 @@ function App() {
               </div>
             </div>
 
-            <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover', objectPosition: 'center top' }} />
+            <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-primary)', overflow: 'hidden', flexShrink: 0 }}>
+                <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.15) translateY(5%)', transformOrigin: 'top center' }} />
+              </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Łukasz Krupa</h3>
-              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>Procesy i optymalizacja operacyjna</p>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Procesy i optymalizacja operacyjna</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6', flexGrow: 1 }}>
                 Wnikliwy analityk skutecznie usprawniający nawet w najbardziej zawiłe procesy logistyczne operacji.
               </p>
               <div style={{ textAlign: 'left', width: '100%', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
@@ -454,11 +464,11 @@ function App() {
               <p style={{ fontStyle: 'italic', textAlign: 'center', fontSize: '0.95rem' }}>Rozmowa nie jest sprzedażą. To moment, w którym sprawdzamy, czy nasze podejście może być pomocne.</p>
             </div>
 
-            <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '1rem' }}>
+            <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
               <iframe 
                 src="https://api.crazy-crm.com/widget/booking/DHXu63ftJx46QdYzUeVC" 
-                style={{ width: '100%', border: 'none', minHeight: '1200px' }} 
-                scrolling="yes" 
+                style={{ width: '100%', border: 'none', height: '1100px', display: 'block', borderRadius: 'var(--radius-lg)' }} 
+                scrolling="no" 
                 id="DHXu63ftJx46QdYzUeVC_1773595317760"
                 title="CRAZY CRM Calendar"
               />
