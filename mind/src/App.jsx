@@ -104,11 +104,11 @@ function App() {
       <section className="section-padding" style={{ background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Zaufali nam / Korzystali z naszych systemów</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3.5rem', opacity: '0.6', alignItems: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem 4.5rem', opacity: '0.6', alignItems: 'center', maxWidth: '1100px', margin: '0 auto' }}>
             {[
               '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', 'I'
             ].map((filename, idx) => (
-              <img key={idx} src={`/mind/logos_clients/${filename}.png`} alt={`Client Logo ${idx}`} style={{ height: '60px', objectFit: 'contain' }} />
+              <img key={idx} src={`/mind/logos_clients/${filename}.png`} alt={`Client Logo ${idx}`} style={{ height: '70px', maxWidth: '160px', objectFit: 'contain' }} />
             ))}
           </div>
         </div>
