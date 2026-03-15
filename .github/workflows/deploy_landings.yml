@@ -4,7 +4,8 @@ on:
   push:
     branches: ["main"]
     paths:
-      - 'web_landing_page/deploy/**' # Only trigger when deploy folder changes
+      - 'web_landing_page/deploy/**' # Trigger when deploy folder changes
+      - 'mind/**' # Trigger when new MIND project changes
 
   workflow_dispatch:
 
@@ -29,6 +30,19 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - name: Build MIND Page
+        working-directory: ./mind
+        run: |
+          npm ci
+          npm run build
+          mkdir -p ../web_landing_page/deploy/mind
+          cp -r dist/* ../web_landing_page/deploy/mind/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
