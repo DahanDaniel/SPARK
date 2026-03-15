@@ -390,7 +390,7 @@ function App() {
             </div>
 
             <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="https://via.placeholder.com/150x150.png?text=DD" alt="Daniel Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-secondary)', objectFit: 'cover' }} />
+              <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-secondary)', objectFit: 'cover' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Daniel Dahan</h3>
               <p style={{ color: 'var(--accent-secondary)', fontWeight: 'bold', marginBottom: '1rem' }}>Systemy technologiczne</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
@@ -407,7 +407,7 @@ function App() {
             </div>
 
             <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <img src="https://via.placeholder.com/150x150.png?text=LK" alt="Łukasz Krupa" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover' }} />
+              <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '150px', height: '150px', borderRadius: '50%', marginBottom: '1.5rem', border: '2px solid var(--accent-primary)', objectFit: 'cover' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Łukasz Krupa</h3>
               <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem' }}>Procesy i optymalizacja operacyjna</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
