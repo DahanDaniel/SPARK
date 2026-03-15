@@ -388,7 +388,7 @@ function App() {
             
             <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-secondary)', overflow: 'hidden', flexShrink: 0 }}>
-                <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.15) translateY(5%)', transformOrigin: 'top center' }} />
+                <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.2) translateY(3%)', transformOrigin: 'top center' }} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Daniel Dahan</h3>
               <p style={{ color: 'var(--accent-secondary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Systemy technologiczne</p>
@@ -407,7 +407,7 @@ function App() {
 
             <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-primary)', overflow: 'hidden', flexShrink: 0 }}>
-                <img src="/mind/team/eytan.jpg" alt="Eytan Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.15) translateY(5%)', transformOrigin: 'top center' }} />
+                <img src="/mind/team/eytan.jpg" alt="Eytan Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.3) translateY(-4%)', transformOrigin: 'top center' }} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Eytan Dahan</h3>
               <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>CEO</p>
@@ -426,7 +426,7 @@ function App() {
 
             <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-primary)', overflow: 'hidden', flexShrink: 0 }}>
-                <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.15) translateY(5%)', transformOrigin: 'top center' }} />
+                <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.3) translateY(4%)', transformOrigin: 'top center' }} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Łukasz Krupa</h3>
               <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Procesy i optymalizacja operacyjna</p>
