@@ -2,33 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, Brain, Sparkles, Target, Users, Sun, Moon, 
   BarChart3, Activity, Layers, Shuffle, TrendingUp, CheckCircle2, 
-  XCircle, ChevronRight, Briefcase, HardHat, Presentation
+  XCircle, ChevronRight, Briefcase, HardHat, Presentation, Cherry
 } from 'lucide-react';
 
-const BerryIcon = ({ size = 28, color = "currentColor", style }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke={color} 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    style={{ ...style, transform: 'rotate(15deg)' }}
-  >
-    <path d="M12 2v4" />
-    <path d="M11 6c-2.5 0-5 2-6 5-1.5 4.5 2 9 7 11 5-2 8.5-6.5 7-11-1-3-3.5-5-6-5z" />
-    <circle cx="10" cy="11" r="1" fill={color} />
-    <circle cx="14" cy="11" r="1" fill={color} />
-    <circle cx="12" cy="15" r="1" fill={color} />
-    <circle cx="9" cy="15" r="1" fill={color} />
-    <circle cx="15" cy="15" r="1" fill={color} />
-    <circle cx="11" cy="19" r="1" fill={color} />
-    <circle cx="13" cy="19" r="1" fill={color} />
-  </svg>
-);
+
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -38,6 +15,16 @@ function App() {
     const savedTheme = localStorage.getItem('mind-theme') || 'dark';
     setTheme(savedTheme);
     document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Initialize CRM Script for auto-resizing
+    const script = document.createElement('script');
+    script.src = 'https://api.crazy-crm.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -149,9 +136,9 @@ function App() {
                   'Przeciążenie właściciela operacyjną codziennością',
                   'Chaos technologiczny i nadmiar narzędzi'
                 ].map((item, i) => (
-                  <li key={i} className="glass-panel" style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem', color: 'var(--text-primary)', borderRadius: 'var(--radius-md)' }}>
-                    <XCircle size={22} style={{ color: '#ef4444', flexShrink: 0 }} />
-                    <span style={{ fontSize: '1.05rem', fontWeight: '500' }}>{item}</span>
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                    <XCircle size={24} style={{ color: '#ef4444', flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ fontSize: '1.125rem', fontWeight: '500' }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -199,7 +186,7 @@ function App() {
               </p>
             </div>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <Activity size={36} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
+              <Activity size={36} color="var(--accent-tertiary)" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Technologia i sprzedaż</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7' }}>
                 Integrujemy narzędzia technologiczne oraz budujemy systemy generowania klientów (np. BusinessHub, wirtualne działy handlowe).
@@ -325,7 +312,7 @@ function App() {
               </p>
             </div>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <BerryIcon size={28} color="var(--accent-primary)" style={{ marginBottom: '1rem' }} />
+              <Cherry size={28} color="var(--accent-tertiary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Firma BERRY (Branża sezonowa)</h3>
               <p style={{ fontWeight: 'bold', color: '#22c55e', marginBottom: '1.5rem', fontSize: '0.875rem' }}>Wzrost o 1,25 mln zł w jednym sezonie</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
@@ -341,7 +328,7 @@ function App() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
             <div>
-              <h2 style={{ marginBottom: '2.5rem', minHeight: '80px', display: 'flex', alignItems: 'flex-start' }}>Dla kogo jesteśmy?</h2>
+              <h2 style={{ marginBottom: '2.5rem', minHeight: '80px' }}>Dla kogo jesteśmy?</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {[
                   'Firmy z sektora MŚP',
@@ -357,7 +344,7 @@ function App() {
               </ul>
             </div>
             <div>
-              <h2 style={{ marginBottom: '2.5rem', minHeight: '80px', display: 'flex', alignItems: 'flex-start' }}>Dla kogo <span style={{ color: '#ef4444' }}>&nbsp;NIE&nbsp;</span> jesteśmy?</h2>
+              <h2 style={{ marginBottom: '2.5rem', minHeight: '80px' }}>Dla kogo <span style={{ color: '#ef4444' }}>NIE</span> jesteśmy?</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {[
                   'Podmioty szukające "szybkich trików" marketingowych',
@@ -425,11 +412,11 @@ function App() {
             </div>
 
             <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-              <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-primary)', overflow: 'hidden', flexShrink: 0 }}>
+              <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-tertiary)', overflow: 'hidden', flexShrink: 0 }}>
                 <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>Łukasz Krupa</h3>
-              <p style={{ color: 'var(--accent-primary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Procesy i optymalizacja operacyjna</p>
+              <p style={{ color: 'var(--accent-tertiary)', fontWeight: 'bold', marginBottom: '1rem', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Procesy i optymalizacja operacyjna</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6', flexGrow: 1 }}>
                 Wnikliwy analityk skutecznie usprawniający nawet w najbardziej zawiłe procesy logistyczne operacji.
               </p>
@@ -467,7 +454,7 @@ function App() {
             <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
               <iframe 
                 src="https://api.crazy-crm.com/widget/booking/DHXu63ftJx46QdYzUeVC" 
-                style={{ width: '100%', border: 'none', height: '1100px', display: 'block', borderRadius: 'var(--radius-lg)' }} 
+                style={{ width: '100%', border: 'none', minHeight: '650px', display: 'block', borderRadius: 'var(--radius-lg)' }} 
                 scrolling="no" 
                 id="DHXu63ftJx46QdYzUeVC_1773595317760"
                 title="CRAZY CRM Calendar"

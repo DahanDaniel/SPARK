@@ -6,9 +6,9 @@
   --bg-secondary: #13131a;
   --text-primary: #ffffff;
   --text-secondary: #a1a1aa;
-  
   --accent-primary: #6366f1;
   --accent-secondary: #a855f7;
+  --accent-tertiary: #0ea5e9;
   --accent-glow: rgba(99, 102, 241, 0.4);
 
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -36,9 +36,9 @@
   --bg-secondary: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  
   --accent-primary: #4f46e5;
   --accent-secondary: #9333ea;
+  --accent-tertiary: #0284c7;
   --accent-glow: rgba(79, 70, 229, 0.3);
 
   --glass-bg: rgba(255, 255, 255, 0.7);
