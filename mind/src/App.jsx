@@ -444,10 +444,14 @@ function App() {
               <p style={{ fontStyle: 'italic', textAlign: 'center', fontSize: '0.95rem' }}>Rozmowa nie jest sprzedażą. To moment, w którym sprawdzamy, czy nasze podejście może być pomocne.</p>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <button className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                Umów bezpłatną rozmowę strategiczną
-              </button>
+            <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', padding: '1rem', overflow: 'hidden' }}>
+              <iframe 
+                src="https://api.crazy-crm.com/widget/booking/DHXu63ftJx46QdYzUeVC" 
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} 
+                scrolling="no" 
+                id="DHXu63ftJx46QdYzUeVC_1773595317760"
+                title="CRAZY CRM Calendar"
+              />
             </div>
           </div>
         </div>
