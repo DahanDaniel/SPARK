@@ -224,34 +224,35 @@ details[open] .faq-summary::after {
 
 /* Logos Grid Layout */
 .logos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3.5rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2.5rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
+  justify-items: center;
 }
 
 .logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 85px;
+  height: 95px;
+  width: 100%;
   transition: transform var(--transition-normal);
 }
 
 .logo-wrapper:nth-child(even) {
-  transform: translateY(20px);
+  transform: translateY(15px);
 }
 
 .logo-wrapper:nth-child(odd) {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
 }
 
 .logo-wrapper img {
   max-height: 100%;
-  max-width: 190px;
+  max-width: 85%;
   object-fit: contain;
   opacity: 0.6;
   transition: opacity var(--transition-fast), transform var(--transition-fast);
@@ -260,4 +261,23 @@ details[open] .faq-summary::after {
 .logo-wrapper:hover img {
   opacity: 1;
   transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .logos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
 }
