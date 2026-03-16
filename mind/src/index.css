@@ -74,6 +74,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+p, h1, h2, h3, h4, h5, h6, span, li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
 h1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   letter-spacing: -0.02em;
@@ -300,6 +306,32 @@ details[open] .faq-summary::after {
   .logos-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Team Section Ordering */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* On Desktop: Eytan (CEO) in the middle */
+@media (min-width: 1025px) {
+  .team-mate-daniel { order: 1; }
+  .team-mate-eytan { order: 2; }
+  .team-mate-lukasz { order: 3; }
+}
+
+/* On Mobile/Tablet: Stacked layout with CEO first */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+  .team-mate-eytan { order: -1; } /* Always first */
+  .team-mate-daniel { order: 2; }
+  .team-mate-lukasz { order: 3; }
 }
 
 @media (max-width: 480px) {

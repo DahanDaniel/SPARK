@@ -385,9 +385,9 @@ function App() {
           <h2 style={{ marginBottom: '1rem' }}>Zespół MIND</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '4rem' }}>Integracja doświadczenia, technologii i operacyjnej skuteczności.</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
+          <div className="team-grid" style={{ gap: '3rem' }}>
             
-            <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <div className="glass-panel team-card team-mate-daniel" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-secondary)', overflow: 'hidden', flexShrink: 0 }}>
                 <img src="/mind/team/daniel.jpg" alt="Daniel Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
               </div>
@@ -406,7 +406,7 @@ function App() {
               </div>
             </div>
 
-            <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <div className="glass-panel team-card team-mate-eytan" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-primary)', overflow: 'hidden', flexShrink: 0 }}>
                 <img src="/mind/team/eytan.jpg" alt="Eytan Dahan" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 10%' }} />
               </div>
@@ -425,7 +425,7 @@ function App() {
               </div>
             </div>
 
-            <div className="glass-panel team-card" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <div className="glass-panel team-card team-mate-lukasz" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', marginBottom: '1.5rem', border: '3px solid var(--accent-tertiary)', overflow: 'hidden', flexShrink: 0 }}>
                 <img src="/mind/team/lukasz.png" alt="Łukasz Krupa" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
