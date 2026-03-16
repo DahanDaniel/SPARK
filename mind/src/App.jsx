@@ -19,15 +19,30 @@ const Strawberry = ({ size = 24, color = "currentColor", style }) => (
     strokeLinejoin="round" 
     style={style}
   >
-    <path d="M4 11a8 8 0 0 0 16 0 8 8 0 0 0-16 0" />
-    <path d="M12 2v6" />
-    <path d="M12 8c-2 0-3-2-3-2" />
-    <path d="M12 8c2 0 3-2 3-2" />
-    <circle cx="9" cy="14" r=".5" fill={color} />
-    <circle cx="15" cy="14" r=".5" fill={color} />
-    <circle cx="12" cy="16" r=".5" fill={color} />
-    <circle cx="10" cy="11" r=".5" fill={color} />
-    <circle cx="14" cy="11" r=".5" fill={color} />
+    {/* Body Outline Scallops */}
+    <path d="M8.5 9.5 
+             a2.5 2.5 0 0 0 -1.5 4.5 
+             a2.5 2.5 0 0 0 1.5 4.5 
+             a3 3 0 0 0 3.5 3 
+             a3 3 0 0 0 3.5 -3 
+             a2.5 2.5 0 0 0 1.5 -4.5 
+             a2.5 2.5 0 0 0 -1.5 -4.5" />
+    
+    {/* Top edge closing the body */}
+    <path d="M8.5 9.5 c 1 -1 2.5 -1.5 3.5 -1.5 c 1 0 2.5 0.5 3.5 1.5" />
+
+    {/* Inner beads/texture arcs */}
+    <path d="M7 14 a3 3 0 0 0 4.5 1.5" />
+    <path d="M12.5 15.5 a3 3 0 0 0 4.5 -1.5" />
+    <path d="M8.5 18.5 a3 3 0 0 0 7 0" />
+    
+    <path d="M9 11 a2.5 2.5 0 0 0 3 1.5" />
+    <path d="M12 12.5 a2.5 2.5 0 0 0 3 -1.5" />
+
+    {/* Stem and Leaves */}
+    <path d="M12 2 v 5" />
+    <path d="M12 7 c-2-3 -5-3 -5-3 s1 4 4 4" />
+    <path d="M12 7 c2-3 5-3 5-3 s-1 4 -4 4" />
   </svg>
 );
 
