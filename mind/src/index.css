@@ -246,18 +246,17 @@ details[open] .faq-summary::after {
   height: 115px; /* Increased 20% from 95px */
   width: 100%;
   transition: transform var(--transition-normal);
+  /* Default dark mode strong glow directly behind the logo resolving to transparency */
+  background: radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 60%);
 }
 
-/* Horizontal offset for desktop exactly 6 columns: rows 1/3 shift left, row 2 shifts right */
-@media (min-width: 1025px) {
-  .logo-wrapper:nth-child(-n+6),
-  .logo-wrapper:nth-child(n+13) {
-    transform: translateX(-1.5rem);
-  }
-  .logo-wrapper:nth-child(n+7):nth-child(-n+12) {
-    transform: translateX(1.5rem);
-  }
+[data-theme='light'] .logo-wrapper {
+  background: none;
 }
+
+/* Remove old desktop-only offset wrapper, replace with global brick effect added above 
+   Deleted old media query for @media(min-width: 1025px) 
+*/
 
 .logo-wrapper img {
   max-height: 100%;
@@ -294,18 +293,27 @@ details[open] .faq-summary::after {
   .mobile-menu-btn {
     display: block !important;
   }
-}
 
-@media (max-width: 1024px) {
+  /* Force 6 column grid on mobile to match desktop, but scale down height and gaps */
   .logos-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 0.5rem 0.5rem !important;
+  }
+  .logo-wrapper {
+    height: 35px !important;
+  }
+  .logo-wrapper img {
+    max-width: 95%;
   }
 }
 
-@media (max-width: 768px) {
-  .logos-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Maintain horizontal offset on ALL screen sizes for brick effect */
+.logo-wrapper:nth-child(-n+6),
+.logo-wrapper:nth-child(n+13) {
+  transform: translateX(-5%);
+}
+.logo-wrapper:nth-child(n+7):nth-child(-n+12) {
+  transform: translateX(5%);
 }
 
 /* Team Section Ordering */

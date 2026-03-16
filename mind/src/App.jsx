@@ -52,11 +52,19 @@ function App() {
   const [theme, setTheme] = useState('dark');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Load theme from localStorage on initial render
+  // Load theme: localStorage override > OS system preference > fallback light
   useEffect(() => {
-    const savedTheme = localStorage.getItem('mind-theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    const savedTheme = localStorage.getItem('mind-theme');
+    let initialTheme;
+    if (savedTheme) {
+      // User explicitly toggled before — respect their choice
+      initialTheme = savedTheme;
+    } else {
+      // First visit: read OS-level preference via CSS media query
+      initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    setTheme(initialTheme);
+    document.documentElement.setAttribute('data-theme', initialTheme);
 
     // Initialize CRM Script for auto-resizing
     const script = document.createElement('script');
@@ -213,6 +221,13 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* CTA after Wizja */}
+      <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+        <a href="#kontakt" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2.5rem', background: 'var(--gradient-brand)', color: '#fff', borderRadius: 'var(--radius-xl)', fontWeight: '600', fontSize: '1.1rem', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 4px 20px var(--accent-glow)' }}>
+          Umów bezpłatną rozmowę strategiczną <ArrowRight size={20} />
+        </a>
+      </div>
 
       {/* CZYM JEST MIND */}
       <section className="section-padding" style={{ background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)' }}>
@@ -377,6 +392,14 @@ function App() {
         </div>
       </section>
 
+      {/* CTA after Historie Transformacji */}
+      <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', fontSize: '1rem' }}>Chcesz podobnych wyników w swojej firmie?</p>
+        <a href="#kontakt" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2.5rem', background: 'var(--gradient-brand)', color: '#fff', borderRadius: 'var(--radius-xl)', fontWeight: '600', fontSize: '1.1rem', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 4px 20px var(--accent-glow)' }}>
+          Porozmawiajmy o Twojej firmie <ArrowRight size={20} />
+        </a>
+      </div>
+
       {/* DLA KOGO JESTEŚMY */}
       <section id="oferta" className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
@@ -418,6 +441,14 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* CTA after Dla Kogo */}
+      <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', fontSize: '1rem' }}>Spełniasz kryteria? Sprawdźmy, jak możemy pomóc.</p>
+        <a href="#kontakt" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2.5rem', background: 'var(--gradient-brand)', color: '#fff', borderRadius: 'var(--radius-xl)', fontWeight: '600', fontSize: '1.1rem', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 4px 20px var(--accent-glow)' }}>
+          Umów 15-minutową rozmowę <ArrowRight size={20} />
+        </a>
+      </div>
 
       {/* ZESPÓŁ */}
       <section id="zespol" className="section-padding">
