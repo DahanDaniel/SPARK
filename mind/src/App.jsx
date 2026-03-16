@@ -2,9 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, Brain, Sparkles, Target, Users, Sun, Moon, 
   BarChart3, Activity, Layers, Shuffle, TrendingUp, CheckCircle2, 
-  XCircle, ChevronRight, Briefcase, HardHat, Presentation, Cherry,
+  XCircle, ChevronRight, Briefcase, HardHat, Presentation,
   Menu, X
 } from 'lucide-react';
+
+const Strawberry = ({ size = 24, color = "currentColor", style }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke={color} 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    style={style}
+  >
+    <path d="M4 11a8 8 0 0 0 16 0 8 8 0 0 0-16 0" />
+    <path d="M12 2v6" />
+    <path d="M12 8c-2 0-3-2-3-2" />
+    <path d="M12 8c2 0 3-2 3-2" />
+    <circle cx="9" cy="14" r=".5" fill={color} />
+    <circle cx="15" cy="14" r=".5" fill={color} />
+    <circle cx="12" cy="16" r=".5" fill={color} />
+    <circle cx="10" cy="11" r=".5" fill={color} />
+    <circle cx="14" cy="11" r=".5" fill={color} />
+  </svg>
+);
 
 
 
@@ -326,7 +351,7 @@ function App() {
               </p>
             </div>
             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-              <Cherry size={28} color="var(--accent-tertiary)" style={{ marginBottom: '1rem' }} />
+              <Strawberry size={28} color="var(--accent-tertiary)" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Firma BERRY (Branża sezonowa)</h3>
               <p style={{ fontWeight: 'bold', color: '#22c55e', marginBottom: '1.5rem', fontSize: '0.875rem' }}>Wzrost o 1,25 mln zł w jednym sezonie</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
