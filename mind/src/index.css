@@ -228,11 +228,16 @@ details[open] .faq-summary::after {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Logos Section — always light background regardless of theme */
+.logos-section {
+  background: #ffffff !important;
+}
+
 /* Logos Grid Layout */
 .logos-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 1.5rem 1.5rem; /* Reduced row gap from 2.5rem */
+  gap: 1.5rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
@@ -243,34 +248,22 @@ details[open] .faq-summary::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 115px; /* Increased 20% from 95px */
+  height: 115px;
   width: 100%;
   transition: transform var(--transition-normal);
-  /* Default dark mode strong glow directly behind the logo resolving to transparency */
-  background: radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 60%);
 }
-
-[data-theme='light'] .logo-wrapper {
-  background: none;
-}
-
-/* Remove old desktop-only offset wrapper, replace with global brick effect added above 
-   Deleted old media query for @media(min-width: 1025px) 
-*/
 
 .logo-wrapper img {
   max-height: 100%;
   max-width: 85%;
   object-fit: contain;
-  opacity: 0.7; /* Slightly increased base opacity */
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25)); /* Soft white glow */
-  transition: opacity var(--transition-fast), transform var(--transition-fast), filter var(--transition-fast);
+  opacity: 0.65;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .logo-wrapper:hover img {
   opacity: 1;
   transform: scale(1.05);
-  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.45)); /* Stronger glow on hover */
 }
 
 /* Mobile responsive fixes */

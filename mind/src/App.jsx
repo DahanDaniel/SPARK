@@ -195,10 +195,10 @@ function App() {
         </div>
       </section>
 
-      {/* ZAUFALI NAM */}
-      <section style={{ padding: '3rem 0 1.5rem', background: 'var(--glass-bg)', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+      {/* ZAUFALI NAM — always light background for logo readability */}
+      <section className="logos-section" style={{ padding: '3rem 0 1.5rem', borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Zaufali nam / Korzystali z naszych systemów</p>
+          <p style={{ color: '#64748b', marginBottom: '2rem', fontSize: '0.875rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Zaufali nam / Korzystali z naszych systemów</p>
           <div className="logos-grid">
             {[
               '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '18', 'I'
